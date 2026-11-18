@@ -1,0 +1,3372 @@
+<!DOCTYPE html>
+<html lang="is"><head><script data-bard-client-injected="true">(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjExNjRiNzdiNDMzZDdhMDAyMWI4NjE4YjhjYTU3ZTMyZGI5MWUxMTMiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMzY0MjU3NDc1MzQwMzA0MjM2NCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiI4YzU4ZjFlNTQ1M2ItaW5kZXguaHRtbC0zODkifSwiZXhwIjoxNzk1MDQxOTI4LCJpYXQiOjE3OTUwMzgzMjgsImFsZyI6IlJTMjU2In0.TDZiIyXPbI5ifRTrHDr5A_-lxlQjHnVG3IHf2B0sMWjb0Ah6TL57SeuemKc9IQQC8e77lSsv-Bllq4R4usZICK7R6EiSAbXbb2tJJwG0tlW-5OPOmu8O5MMrZg77fbQ_7qebvaXtW19ELKmEmNKqbaiq62eOwYWOVRGTZrWjT73gR1WfikdXHOBh69eYLD9FD0z1udBzmMrknunApKFqMLmU9vn-2ygwZr0UNOV5cZoqNSZgy1htZXPpuoCuSx_n34q2Oxh37RAeXHxhb5ciufg15bQjm97Owo-U-Tw9TkR1Qonwy4bzlaJ2FwntrIvDCW5hC_4pIcUBUaMg7gojhA","8c58f1e5453b-index.html-389")</script><script data-bard-client-injected="true">
+  document.addEventListener('input', (event) => {
+    if (event.target && (event.target.isContentEditable || event.target.hasAttribute('contenteditable'))) {
+      const clonedDoc = document.cloneNode(true);
+      const injectedScripts = clonedDoc.querySelectorAll('[data-bard-client-injected="true"]');
+      injectedScripts.forEach(el => el.remove());
+      window.parent.postMessage({
+        type: 'inlineEdit',
+        html: '<!DOCTYPE html>\n' + clonedDoc.documentElement.outerHTML
+      }, '*');
+    }
+  });
+</script><script data-bard-client-injected="true">(function(){'use strict';window.addEventListener("message",a=>{a.data&&a.data.type==="SUPPLEMENTAL_DATA_UPDATE"&&window.dispatchEvent(new CustomEvent("supplementaldataupdate",{detail:a.data.data}))});}).call(this);
+</script><script data-bard-client-injected="true">(function(){'use strict';var k=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function m(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var q=m(this);
+function r(a,b){if(b)a:{var d=q;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&k(d,a,{configurable:!0,writable:!0,value:b})}}function t(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function u(a){return t(a())}
+r("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});r("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function v(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var aa=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let y=null;function z(a={}){return y?y:a.u?y=a.u:y=w(window.getComputedStyle(document.documentElement))}function A(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function B(a,b={}){var d;if(!(d=b.width)){d=A(a,"border-left-width");var c=A(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=A(a,"border-top-width"),c=A(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function C(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function ba(a){return u(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function ca(a,b,d){return u(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return ba(c)})}
+var D=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||D(a,b)};function da(a,b){return z(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function E(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=aa();try{b.className=`${b.className} ${f}`}catch(h){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=da(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function F(a){return a.search(/^(data:)/)!==-1}function G(a,b,d){return u(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var h=new FileReader;h.onerror=g;h.onloadend=()=>{try{f(d({v:c,result:h.result}))}catch(l){g(l)}};h.readAsDataURL(e)})})}const H={};function ea(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function I(a,b,d){return u(function*(){var c=ea(a,b,d.F);if(H[c]!=null)return H[c];d.B&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield G(a,d.l,({v:g,result:h})=>{b||(b=g.headers.get("Content-Type")||"");return h.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.o||""}return H[c]=e})};const J={R:"application/font-woff",S:"application/font-woff",O:"application/font-truetype",C:"application/vnd.ms-fontobject",J:"image/png",H:"image/jpeg",G:"image/jpeg",D:"image/gif",N:"image/tiff",M:"image/svg+xml",P:"image/webp"};function K(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function fa(a){return u(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):C(b)})}function ha(a,b){return u(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return C(d)}d=a.poster;d=yield I(d,J[K(d).toLowerCase()]||"",b);return C(d)})}
+function ia(a,b){return u(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield L(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ja(a,b){return u(function*(){return D(a,HTMLCanvasElement)?fa(a):D(a,HTMLVideoElement)?ha(a,b):D(a,HTMLIFrameElement)?ia(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function ka(a,b,d){return u(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(D(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||D(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>L(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function la(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):z(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);D(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function ma(a,b){D(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function na(a,b){return u(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield L(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function L(a,b,d){return u(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ja(c,b)).then(c=>ka(a,c,b)).then(c=>{D(c,Element)&&(la(a,c,b),E(a,c,":before",b),E(a,c,":after",b),D(a,HTMLTextAreaElement)&&(c.textContent=a.value),D(a,HTMLInputElement)&&c.setAttribute("value",a.value),ma(a,c));return c}).then(c=>na(c,b)):null})};const M=/url\((['"]?)([^'"]+?)\1\)/g,oa=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,pa=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function qa(a){var b=[];a.replace(M,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!F(d))}
+function ra(a,b,d,c){return u(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield I(e,J[K(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function sa(a,{K:b}){return b?a.replace(pa,d=>{for(;;){let [c,,e]=oa.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
+function N(a,b,d){return u(function*(){if(a.search(M)===-1)return a;var c=sa(a,d);return qa(c).reduce((e,f)=>e.then(g=>ra(g,f,b,d)),Promise.resolve(c))})};function O(a,b,d){return u(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield N(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function ta(a,b){return u(function*(){(yield O("background",a,b))||(yield O("background-image",a,b));(yield O("mask",a,b))||(yield O("-webkit-mask",a,b))||(yield O("mask-image",a,b))||(yield O("-webkit-mask-image",a,b))})}
+function ua(a,b){return u(function*(){var d=D(a,HTMLImageElement);if(d&&!F(a.src)||D(a,SVGImageElement)&&!F(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield I(c,J[K(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.h?(...h)=>{try{f(b.h(...h))}catch(l){g(l)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function va(a,b){return u(function*(){var d=w(a.childNodes).map(c=>P(c,b));yield Promise.all(d).then(()=>a)})}function P(a,b){return u(function*(){D(a,Element)&&(yield ta(a,b),yield ua(a,b),yield va(a,b))})};const Q={};function R(a){return u(function*(){var b=Q[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return Q[a]=b})}function S(a,b){return u(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>u(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return G(g,b.l,({result:h})=>{d=d.replace(f,`url(${h})`);return[f,h]})}));return Promise.all(e).then(()=>d)})}
+function T(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function wa(a,b){return u(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let h=g+1;f=R(f.href).then(l=>S(l,b)).then(l=>T(l).forEach(p=>{try{e.insertRule(p,p.startsWith("@import")?h+=1:e.cssRules.length)}catch(x){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(h=>h.href==null)||document.styleSheets[0];e.href!=null&&c.push(R(e.href).then(h=>S(h,b)).then(h=>T(h).forEach(l=>{g.insertRule(l,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function xa(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(M)!==-1)}function ya(a,b){return u(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=yield wa(w(a.ownerDocument.styleSheets),b);return xa(d)})}
+function za(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function Aa(a,b){return u(function*(){var d=yield ya(a,b),c=za(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>N(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function Ba(a,b){return u(function*(){var d=b.m!=null?b.m:b.A?null:yield Aa(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function Ca(a,b={}){return u(function*(){var {width:d,height:c}=B(a,b),e=yield L(a,b,!0);yield Ba(e,b);yield P(e,b);v(e,b);return yield ca(e,d,c)})}
+function Da(a,b={}){return u(function*(){var {width:d,height:c}=B(a,b),e=yield Ca(a,b);e=yield C(e);var f=document.createElement("canvas"),g=f.getContext("2d"),h=b.I||window.devicePixelRatio||1,l=b.j||d,p=b.i||c;f.width=l*h;f.height=p*h;!b.L&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
+f.style.width=`${l}`;f.style.height=`${p}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function Ea(a,b={}){return u(function*(){return(yield Da(a,b)).toDataURL()})};const Fa=["gemini.google.com","corp.google.com","proxy.googlers.com"];function V(a){a=Number(a.replace(/px$/,""));return Number.isFinite(a)?a:0}function W(){return document.body.querySelectorAll('[class*="animate"]').length>0}function X(a,b){var d=document.createElement("canvas");d.width=a;d.height=b;return d.toDataURL("image/png")}const Y=X(1,1);
+function Z(a,b){return u(function*(){var d=Math.max(b?b.width:a.offsetWidth,1),c=Math.max(b?b.height:a.offsetHeight,1),e=HTMLCanvasElement.prototype.toDataURL;b&&(HTMLCanvasElement.prototype.toDataURL=function(f,g){var h;if(h=this.isConnected&&a.contains(this)){{let n=this.getBoundingClientRect();if(n.width===0||n.height===0)h=!1;else if(window.getComputedStyle(this).position==="fixed")h=n.bottom>0&&n.top<b.height&&n.right>0&&n.left<b.width;else{h=a.getBoundingClientRect();var l=n.top-h.top,p=n.left-
+h.left,x=n.right-h.left;h=n.bottom-h.top>b.scrollTop&&l<b.scrollTop+b.height&&x>b.scrollLeft&&p<b.scrollLeft+b.width}}h=!h}return h?"data:,":e.call(this,f,g)});try{let f=window.getComputedStyle(a),g=b?`${V(f.marginTop)-b.scrollTop}px`:void 0,h=b?`${V(f.marginLeft)-b.scrollLeft}px`:void 0,l=`${Math.max(a.offsetWidth,d)}px`,p,x=`${Math.max(a.offsetHeight,c+((p=b==null?void 0:b.scrollTop)!=null?p:0))}px`;return yield Ea(a,Object.assign({},{width:d,height:c,j:d,i:c},b?{style:{width:l,height:x,marginTop:g,
+marginLeft:h,marginBlockStart:g,marginInlineStart:h}}:{},{A:!0,filter:n=>{if(n.tagName==="IMG"){let U=n.getAttribute("src");if(!U||U.trim()===""||n.style.display==="none")return!1}return!0},o:Y,h:()=>Y}))}catch(f){return X(d,c)}finally{HTMLCanvasElement.prototype.toDataURL=e}})}
+function Ga(){return u(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ha(a){return u(function*(){var b={width:window.innerWidth||document.documentElement.clientWidth||document.body.offsetWidth,height:window.innerHeight||document.documentElement.clientHeight||document.body.offsetHeight,scrollTop:window.scrollY||document.documentElement.scrollTop||document.body.scrollTop||0,scrollLeft:window.scrollX||document.documentElement.scrollLeft||document.body.scrollLeft||0},d=document.body;if(W()){let c=yield Ga();d=c;document.body.appendChild(c)}b=yield Z(d,b);W()&&
+document.body.removeChild(d);window.parent.postMessage({type:"SEND_SCREENSHOT",image:b,topOffset:0},a.origin)})}function Ia(a){return u(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}window.addEventListener("message",a=>u(function*(){if(Fa.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ha(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ia(a)))}}));
+})();</script><script data-bard-client-injected="true">(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script data-bard-client-injected="true">
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}" data-bard-client-injected="true">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function A(b,d){function e(){}e.prototype=d.prototype;b.i=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.h=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.extensions="";var l=0,t=null,r=null,q=[],F=new TextEncoder,
+G=new TextDecoder;c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*
+16|0;return(f==="x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;
+(g=t)==null||g.postMessage(a)}};Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script data-bard-client-injected="true">((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+  modelInformation.deprecatedImageTransformModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image","imageTransformModelName":"gemini-3-pro-image","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image","gemini-3.1-flash-image-preview"],"deprecatedImageTransformModelNames":["gemini-3-pro-image-preview-11-2025"]})</script><script data-bard-client-injected="true">(function() {
+  const OVERLAY_SELECTOR =
+    'dialog[open], [role="dialog"], [role="alertdialog"], [role="menu"], [role="listbox"], [role="combobox"]';
+
+  function isVisibleOverlay(element) {
+    if (element.closest('[hidden], [aria-hidden="true"], [inert]')) {
+      return false;
+    }
+    if (window.getComputedStyle(element).visibility === 'hidden') {
+      return false;
+    }
+    for (let cur = element; cur; cur = cur.parentElement) {
+      if (window.getComputedStyle(cur).display === 'none') {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function hasOpenOverlay() {
+    const candidates = document.querySelectorAll(OVERLAY_SELECTOR);
+    for (let i = 0; i < candidates.length; i++) {
+      if (isVisibleOverlay(candidates[i])) {
+        return true;
+      }
+    }
+    try {
+      if (document.querySelector('[popover]:popover-open')) {
+        return true;
+      }
+    } catch (e) {
+      // Ignore engines that do not support :popover-open.
+    }
+    return false;
+  }
+
+  function isNonEmptySearchInput(target) {
+    return (
+      Boolean(target) &&
+      target.tagName === 'INPUT' &&
+      typeof target.type === 'string' &&
+      target.type.toLowerCase() === 'search' &&
+      typeof target.value === 'string' &&
+      target.value.length > 0
+    );
+  }
+
+  function shouldIgnoreEscape(event) {
+    return (
+      event.key !== 'Escape' ||
+      event.altKey ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.isComposing ||
+      event.repeat ||
+      event.keyCode === 229 ||
+      isNonEmptySearchInput(event.target)
+    );
+  }
+
+  let shouldIgnoreCaptureState = false;
+
+  window.addEventListener(
+    'keydown',
+    function(event) {
+      if (event.key === 'Escape') {
+        shouldIgnoreCaptureState =
+          hasOpenOverlay() || isNonEmptySearchInput(event.target);
+      }
+    },
+    {capture: true},
+  );
+
+  window.addEventListener('keydown', function(event) {
+    if (
+      shouldIgnoreEscape(event) ||
+      event.defaultPrevented ||
+      shouldIgnoreCaptureState
+    ) {
+      return;
+    }
+    const wasBlockedOnCapture = shouldIgnoreCaptureState;
+    queueMicrotask(function() {
+      if (event.defaultPrevented || wasBlockedOnCapture) {
+        return;
+      }
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({'type': 'escapeKey'}, '*');
+      }
+    });
+  });
+})();</script><script data-bard-client-injected="true">(function() {
+  function normalizeSlug(str) {
+    try {
+      return str
+        .trim()
+        .toLowerCase()
+        .replace(/[^p{L}p{N}s_-]/gu, '')
+        .replace(/s+/g, '-');
+    } catch (e) {
+      return str
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9s_-]/g, '')
+        .replace(/s+/g, '-');
+    }
+  }
+
+  function findTargetElement(hash) {
+    if (!hash || hash === '#') {
+      return null;
+    }
+    const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
+    let decodedId = rawId;
+    try {
+      decodedId = decodeURIComponent(rawId);
+    } catch (e) {
+      // Ignore URI malformed errors.
+    }
+
+    // 1. Direct ID match (raw and decoded).
+    let target = document.getElementById(rawId) || document.getElementById(decodedId);
+    if (target) {
+      return target;
+    }
+
+    // 2. Name attribute match (<a name="...">).
+    try {
+      if (typeof CSS !== 'undefined' && CSS.escape) {
+        target =
+          document.querySelector('[name="' + CSS.escape(rawId) + '"]') ||
+          document.querySelector('[name="' + CSS.escape(decodedId) + '"]');
+      } else {
+        const namedElements = document.getElementsByName(rawId);
+        if (namedElements && namedElements.length > 0) {
+          return namedElements[0];
+        }
+      }
+    } catch (e) {
+      // Ignore querySelector syntax errors.
+    }
+    if (target) {
+      return target;
+    }
+
+    // 3. Match heading text by slug (for Markdown TOCs where headings lack explicit IDs).
+    const targetSlug = normalizeSlug(decodedId);
+    if (targetSlug) {
+      for (const heading of document.querySelectorAll('h1, h2, h3, h4, h5, h6')) {
+        if (normalizeSlug(heading.textContent || '') === targetSlug) {
+          return heading;
+        }
+      }
+    }
+
+    return null;
+  }
+
+  document.addEventListener('click', function(event) {
+    const target = event.target;
+    const anchor = target && typeof target.closest === 'function' ? target.closest('a') : null;
+    if (!anchor) {
+      return;
+    }
+
+    const href = anchor.getAttribute('href');
+    if (
+      !href ||
+      href.trim().toLowerCase().startsWith('javascript:') ||
+      anchor.hasAttribute('download')
+    ) {
+      return;
+    }
+
+    // Check if the link is an in-page hash / anchor link.
+    if (href.startsWith('#')) {
+      event.preventDefault();
+      const targetElement = findTargetElement(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+      return;
+    }
+
+    // Check if the URL has the same origin/pathname but with a hash.
+    try {
+      const url = new URL(anchor.href, window.location.href);
+      if (
+        url.hash &&
+        url.origin === window.location.origin &&
+        url.pathname === window.location.pathname
+      ) {
+        event.preventDefault();
+        const targetElement = findTargetElement(url.hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+        return;
+      }
+    } catch (e) {
+      // Fall through if URL parsing fails.
+    }
+
+    // For all external or full navigation links, prevent iframe-level navigation
+    // (which breaks in AGSA WebView or sandboxed iframes) and ensure they open
+    // safely in a new tab/window.
+    if (anchor.target !== '_blank') {
+      event.preventDefault();
+      window.open(anchor.href, '_blank', 'noopener,noreferrer');
+    }
+  }, {capture: true});
+})();</script><script data-bard-client-injected="true">(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script data-bard-client-injected="true">(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Þakkargjörðar Pub Quiz 2026 🦃</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            plum: {
+              950: '#1c0b0e',
+              900: '#2c1318',
+              800: '#3f1c23',
+              700: '#542630',
+            },
+            cranberry: {
+              600: '#a82834',
+              700: '#881d27',
+              800: '#69141c',
+            },
+            amberwarm: {
+              300: '#fcd34d',
+              400: '#f59e0b',
+              500: '#d97706',
+              600: '#b45309',
+            },
+            cream: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #2c1318;
+      background-image: 
+        radial-gradient(circle at 12% 15%, rgba(217, 119, 6, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 88% 82%, rgba(168, 40, 52, 0.28) 0%, transparent 50%),
+        radial-gradient(circle at 50% 45%, #2c1318 0%, #1c0b0e 100%);
+      color: #fef3c7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(6deg); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.95) translateY(8px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .animate-float {
+      animation: floatSlow 5.5s ease-in-out infinite;
+    }
+
+    .animate-pop {
+      animation: popIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .glass-card {
+      background: rgba(63, 28, 35, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(245, 158, 11, 0.26);
+      box-shadow: 0 22px 48px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-option {
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-option:active:not(:disabled) {
+      transform: scale(0.985);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1c0b0e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #542630;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d97706;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 60;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Plus Jakarta Sans, system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-16{bottom:4rem}.bottom-28{bottom:7rem}.bottom-5{bottom:1.25rem}.left-1\/2{left:50%}.left-\[13\%\]{left:13%}.left-\[7\%\]{left:7%}.right-\[10\%\]{right:10%}.right-\[9\%\]{right:9%}.top-0{top:0px}.top-14{top:3.5rem}.top-36{top:9rem}.-right-8{right:-2rem}.-top-8{top:-2rem}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-4{margin-top:1rem;margin-bottom:1rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mb-7{margin-bottom:1.75rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.max-h-\[92vh\]{max-height:92vh}.max-h-\[94vh\]{max-height:94vh}.min-h-\[232px\]{min-height:232px}.min-h-\[calc\(100vh-72px\)\]{min-height:calc(100vh - 72px)}.w-full{width:100%}.min-w-0{min-width:0px}.min-w-\[232px\]{min-width:232px}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.list-inside{list-style-position:inside}.list-decimal{list-style-type:decimal}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-xl{border-radius:0.75rem}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amberwarm-400\/15{border-color:rgb(245 158 11 / 0.15)}.border-amberwarm-400\/20{border-color:rgb(245 158 11 / 0.2)}.border-amberwarm-400\/25{border-color:rgb(245 158 11 / 0.25)}.border-amberwarm-400\/40{border-color:rgb(245 158 11 / 0.4)}.border-amberwarm-400\/45{border-color:rgb(245 158 11 / 0.45)}.border-amberwarm-400\/50{border-color:rgb(245 158 11 / 0.5)}.border-amberwarm-400\/55{border-color:rgb(245 158 11 / 0.55)}.border-amberwarm-400\/60{border-color:rgb(245 158 11 / 0.6)}.border-emerald-400\/40{border-color:rgb(52 211 153 / 0.4)}.border-amberwarm-400\/30{border-color:rgb(245 158 11 / 0.3)}.border-amberwarm-400\/35{border-color:rgb(245 158 11 / 0.35)}.bg-amberwarm-400\/20{background-color:rgb(245 158 11 / 0.2)}.bg-amberwarm-500{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.bg-black\/75{background-color:rgb(0 0 0 / 0.75)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-black\/85{background-color:rgb(0 0 0 / 0.85)}.bg-cranberry-600{--tw-bg-opacity:1;background-color:rgb(168 40 52 / var(--tw-bg-opacity, 1))}.bg-cranberry-800\/80{background-color:rgb(105 20 28 / 0.8)}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-emerald-700\/80{background-color:rgb(4 120 87 / 0.8)}.bg-plum-700{--tw-bg-opacity:1;background-color:rgb(84 38 48 / var(--tw-bg-opacity, 1))}.bg-plum-800{--tw-bg-opacity:1;background-color:rgb(63 28 35 / var(--tw-bg-opacity, 1))}.bg-plum-900{--tw-bg-opacity:1;background-color:rgb(44 19 24 / var(--tw-bg-opacity, 1))}.bg-plum-950{--tw-bg-opacity:1;background-color:rgb(28 11 14 / var(--tw-bg-opacity, 1))}.bg-plum-950\/80{background-color:rgb(28 11 14 / 0.8)}.bg-plum-950\/85{background-color:rgb(28 11 14 / 0.85)}.bg-plum-950\/90{background-color:rgb(28 11 14 / 0.9)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-amberwarm-400\/15{background-color:rgb(245 158 11 / 0.15)}.bg-plum-950\/65{background-color:rgb(28 11 14 / 0.65)}.bg-transparent{background-color:transparent}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-amberwarm-400{--tw-gradient-from:#f59e0b var(--tw-gradient-from-position);--tw-gradient-to:rgb(245 158 11 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-amberwarm-500\/25{--tw-gradient-from:rgb(217 119 6 / 0.25) var(--tw-gradient-from-position);--tw-gradient-to:rgb(217 119 6 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-amberwarm-300{--tw-gradient-from:#fcd34d var(--tw-gradient-from-position);--tw-gradient-to:rgb(252 211 77 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-amberwarm-400{--tw-gradient-to:rgb(245 158 11 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #f59e0b var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-amberwarm-500{--tw-gradient-to:rgb(217 119 6 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #d97706 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-amberwarm-500{--tw-gradient-to:#d97706 var(--tw-gradient-to-position)}.to-cranberry-800\/30{--tw-gradient-to:rgb(105 20 28 / 0.3) var(--tw-gradient-to-position)}.to-cranberry-600{--tw-gradient-to:#a82834 var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-3{padding-bottom:0.75rem}.pb-4{padding-bottom:1rem}.pr-1{padding-right:0.25rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Fraunces, Georgia, serif}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.font-sans{font-family:Plus Jakarta Sans, system-ui, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-9xl{font-size:8rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-amberwarm-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amberwarm-400{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-cream-100{--tw-text-opacity:1;color:rgb(254 243 199 / var(--tw-text-opacity, 1))}.text-cream-100\/55{color:rgb(254 243 199 / 0.55)}.text-cream-100\/60{color:rgb(254 243 199 / 0.6)}.text-cream-100\/70{color:rgb(254 243 199 / 0.7)}.text-cream-100\/80{color:rgb(254 243 199 / 0.8)}.text-cream-100\/90{color:rgb(254 243 199 / 0.9)}.text-cream-50{--tw-text-opacity:1;color:rgb(255 251 235 / var(--tw-text-opacity, 1))}.text-plum-950{--tw-text-opacity:1;color:rgb(28 11 14 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-cream-100\/85{color:rgb(254 243 199 / 0.85)}.text-transparent{color:transparent}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-cream-100\/35::placeholder{color:rgb(254 243 199 / 0.35)}.placeholder-cream-100\/40::placeholder{color:rgb(254 243 199 / 0.4)}.opacity-20{opacity:0.2}.opacity-10{opacity:0.1}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.selection\:bg-amberwarm-500 *::selection{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.selection\:text-plum-950 *::selection{--tw-text-opacity:1;color:rgb(28 11 14 / var(--tw-text-opacity, 1))}.selection\:bg-amberwarm-500::selection{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.selection\:text-plum-950::selection{--tw-text-opacity:1;color:rgb(28 11 14 / var(--tw-text-opacity, 1))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-amberwarm-400:hover{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.hover\:bg-amberwarm-400\/30:hover{background-color:rgb(245 158 11 / 0.3)}.hover\:bg-cranberry-700:hover{--tw-bg-opacity:1;background-color:rgb(136 29 39 / var(--tw-bg-opacity, 1))}.hover\:bg-cranberry-800\/70:hover{background-color:rgb(105 20 28 / 0.7)}.hover\:bg-emerald-500:hover{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.hover\:bg-plum-700:hover{--tw-bg-opacity:1;background-color:rgb(84 38 48 / var(--tw-bg-opacity, 1))}.hover\:bg-plum-800:hover{--tw-bg-opacity:1;background-color:rgb(63 28 35 / var(--tw-bg-opacity, 1))}.hover\:bg-plum-800\/50:hover{background-color:rgb(63 28 35 / 0.5)}.hover\:from-amberwarm-300:hover{--tw-gradient-from:#fcd34d var(--tw-gradient-from-position);--tw-gradient-to:rgb(252 211 77 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-amberwarm-400:hover{--tw-gradient-to:#f59e0b var(--tw-gradient-to-position)}.hover\:to-cranberry-700:hover{--tw-gradient-to:#881d27 var(--tw-gradient-to-position)}.hover\:text-cream-100:hover{--tw-text-opacity:1;color:rgb(254 243 199 / var(--tw-text-opacity, 1))}.focus\:border-amberwarm-400:focus{--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-\[0\.99\]:active{--tw-scale-x:0.99;--tw-scale-y:0.99;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:mb-9{margin-bottom:2.25rem}.sm\:mt-4{margin-top:1rem}.sm\:block{display:block}.sm\:inline{display:inline}.sm\:w-auto{width:auto}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:gap-3{gap:0.75rem}.sm\:gap-4{gap:1rem}.sm\:p-4{padding:1rem}.sm\:p-7{padding:1.75rem}.sm\:p-8{padding:2rem}.sm\:p-10{padding:2.5rem}.sm\:p-6{padding:1.5rem}.sm\:px-3{padding-left:0.75rem;padding-right:0.75rem}.sm\:py-10{padding-top:2.5rem;padding-bottom:2.5rem}.sm\:py-2{padding-top:0.5rem;padding-bottom:0.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}}@media (min-width: 768px){.md\:inline{display:inline}.md\:text-6xl{font-size:3.75rem;line-height:1}}</style></head>
+<body class="font-sans antialiased selection:bg-amberwarm-500 selection:text-plum-950">
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Subtle Floating Autumn Leaves & Turkey Background -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden opacity-20 z-0" aria-hidden="true">
+    <div class="absolute top-14 left-[7%] text-4xl animate-float" style="animation-delay: 0s;">🍂</div>
+    <div class="absolute top-36 right-[10%] text-3xl animate-float" style="animation-delay: 1.4s;">🍁</div>
+    <div class="absolute bottom-28 left-[13%] text-4xl animate-float" style="animation-delay: 2.6s;">🦃</div>
+    <div class="absolute bottom-16 right-[9%] text-3xl animate-float" style="animation-delay: 0.9s;">🍂</div>
+  </div>
+
+  <!-- Top Navigation Header -->
+  <header class="relative z-20 border-b border-amberwarm-400/20 bg-plum-950/85 backdrop-blur-md sticky top-0">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+      <button id="header-home-btn" onclick="confirmGoHome()" class="flex items-center gap-2.5 text-left group focus:outline-none">
+        <span class="text-2xl sm:text-3xl group-hover:scale-110 transition-transform">🦃</span>
+        <div>
+          <h1 class="font-display font-bold text-base sm:text-xl text-cream-50 leading-tight tracking-tight">
+            Þakkargjörðar <span class="text-amberwarm-400">Pub Quiz</span>
+          </h1>
+          <p class="text-[11px] sm:text-xs text-cream-100/60 hidden sm:block">Fjölskyldukeppnin 2026</p>
+        </div>
+      </button>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Host-only controls wrapper (hidden automatically on player phones) -->
+        <div id="host-header-controls" class="flex items-center gap-2 sm:gap-3">
+          <!-- QR Code Button -->
+          <button onclick="openQrModal()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amberwarm-400/20 hover:bg-amberwarm-400/30 border border-amberwarm-400/45 text-amberwarm-300 text-xs sm:text-sm font-bold transition" title="Sýna QR-kóða fyrir símana">
+            <span>📱</span>
+            <span>QR-kóði</span>
+          </button>
+
+          <!-- Scoreboard Toggle (Visible in Host Mode) -->
+          <button id="header-scoreboard-btn" onclick="openScoreboardModal()" class="hidden items-center gap-1.5 px-3 py-2 rounded-xl bg-amberwarm-400/20 hover:bg-amberwarm-400/30 border border-amberwarm-400/40 text-amberwarm-300 text-xs sm:text-sm font-bold transition">
+            <span>🏆</span>
+            <span>Stigatafla</span>
+          </button>
+
+          <!-- Edit Questions Button -->
+          <button onclick="openEditorModal()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-plum-800 hover:bg-plum-700 border border-amberwarm-400/25 text-cream-100 text-xs sm:text-sm font-semibold transition" title="Breyta spurningum eða búa til deilihlekk">
+            <span>✏️</span>
+            <span class="hidden sm:inline">Breyta spurningum</span>
+          </button>
+
+          <!-- Download Standalone HTML File for Instant Deployment (Netlify Drop / Tiiny.host) -->
+          <button onclick="downloadStandaloneHtml()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-700/80 hover:bg-emerald-600 border border-emerald-400/40 text-white text-xs sm:text-sm font-bold transition" title="Sækja fullbúna HTML-skrá til að setja á vefinn (t.d. Netlify Drop)">
+            <span>⬇️</span>
+            <span class="hidden md:inline">Sækja HTML</span>
+          </button>
+        </div>
+
+        <!-- Sound Mute/Unmute Toggle -->
+        <button id="sound-toggle-btn" onclick="toggleSound()" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-plum-800 hover:bg-plum-700 border border-amberwarm-400/20 text-cream-100 text-sm transition" title="Hljóðbrellur af/á">
+          <span id="sound-icon">🔊</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="app-root" class="relative z-10 max-w-5xl mx-auto px-4 py-6 sm:py-10 min-h-[calc(100vh-72px)] flex flex-col justify-center">
+        <div class="animate-pop max-w-4xl mx-auto w-full">
+          <!-- Hero Header -->
+          <div class="text-center mb-7 sm:mb-9">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 text-xs sm:text-sm font-bold mb-4">
+              <span>📺</span>
+              <span>Sjónvarpsskjár kynnis • 20 spurningar í 4 flokkum</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 tracking-tight leading-tight">
+              Gleðilega <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">Þakkargjörð!</span>
+            </h2>
+            <p class="mt-3 sm:mt-4 text-cream-100/85 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+              Varpaðu þessum skjá upp í sjónvarpið fyrir fjölskylduna. Gestirnir opna hlekkinn í sínum síma til að skrá nafn og svara jafnóðum!
+            </p>
+          </div>
+
+          <!-- Primary Start Game Card for Host / TV -->
+          <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-amberwarm-400/40 text-center relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 text-9xl opacity-10 pointer-events-none">🦃</div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button onclick="selectHostMode()" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-amberwarm-400 via-amberwarm-500 to-cranberry-600 hover:from-amberwarm-300 hover:to-cranberry-700 text-white font-display font-extrabold text-2xl sm:text-3xl shadow-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.99] flex items-center justify-center gap-3">
+                <span>🚀</span>
+                <span>Byrja leik</span>
+              </button>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
+              <button onclick="openQrModal()" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-plum-950/90 hover:bg-plum-800 border border-amberwarm-400/45 text-amberwarm-300 text-sm font-bold transition">
+                <span>📱</span>
+                <span>QR-kóði fyrir símana</span>
+              </button>
+              <button onclick="copyShareLinkDirect()" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-plum-950/90 hover:bg-plum-800 border border-amberwarm-400/30 text-cream-100 text-sm font-bold transition">
+                <span>🔗</span>
+                <span>Afrita hlekk fyrir gesti</span>
+              </button>
+              <button onclick="selectPlayerMode()" class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-2xl bg-transparent hover:bg-plum-800/50 text-cream-100/60 hover:text-cream-100 text-xs font-semibold transition" title="Prófa hvernig síminn lítur út hjá spilurum">
+                <span>👀 Prófa símaviðmót</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories Overview -->
+          <div class="mt-6 glass-card rounded-3xl p-5 sm:p-6">
+            <div class="flex items-center justify-between pb-3 border-b border-amberwarm-400/15">
+              <div>
+                <h4 class="font-display font-bold text-lg text-cream-50">Flokkar kvöldsins</h4>
+                <p class="text-xs text-cream-100/70">5 spurningar í hverjum flokki • Samtals 20 spurningar</p>
+              </div>
+              <button onclick="openEditorModal()" class="text-xs sm:text-sm font-bold text-amberwarm-300 hover:text-amberwarm-200 transition">
+                ✏️ Breyta spurningum
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+              
+                <div class="p-3.5 rounded-2xl bg-plum-950/65 border border-amberwarm-400/15">
+                  <div class="text-2xl mb-1.5">🦃</div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amberwarm-400">Flokkur 1</div>
+                  <div class="font-bold text-sm text-cream-50 mt-0.5 leading-snug">Þakkargjörð &amp; matur</div>
+                </div>
+              
+                <div class="p-3.5 rounded-2xl bg-plum-950/65 border border-amberwarm-400/15">
+                  <div class="text-2xl mb-1.5">🌍</div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amberwarm-400">Flokkur 2</div>
+                  <div class="font-bold text-sm text-cream-50 mt-0.5 leading-snug">Árið 2026</div>
+                </div>
+              
+                <div class="p-3.5 rounded-2xl bg-plum-950/65 border border-amberwarm-400/15">
+                  <div class="text-2xl mb-1.5">🎬</div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amberwarm-400">Flokkur 3</div>
+                  <div class="font-bold text-sm text-cream-50 mt-0.5 leading-snug">Tónlist &amp; kvikmyndir</div>
+                </div>
+              
+                <div class="p-3.5 rounded-2xl bg-plum-950/65 border border-amberwarm-400/15">
+                  <div class="text-2xl mb-1.5">🏠</div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amberwarm-400">Flokkur 4</div>
+                  <div class="font-bold text-sm text-cream-50 mt-0.5 leading-snug">Fjölskyldan &amp; húmor</div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </main>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- Toast Notification Banner -->
+  <div id="toast-banner" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2 px-5 py-3 rounded-2xl bg-plum-800 border border-amberwarm-400/60 text-cream-50 shadow-2xl text-sm font-semibold animate-pop">
+    <span id="toast-icon">✨</span>
+    <span id="toast-text">Skilaboð</span>
+  </div>
+
+  <!-- QR Code Modal for Players -->
+  <div id="qr-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+    <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-7 text-center animate-pop max-h-[94vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-amberwarm-400/20">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">📱</span>
+          <h3 class="font-display text-xl font-bold text-cream-50">Skannaðu í símann!</h3>
+        </div>
+        <button onclick="closeQrModal()" class="p-2 rounded-xl bg-plum-800 hover:bg-plum-700 text-cream-100 transition">
+          ✕
+        </button>
+      </div>
+
+      <p class="text-cream-100/80 text-xs sm:text-sm mt-3 leading-relaxed">
+        Opnaðu myndavélina í símanum og beindu henni að QR-kóðanum hér að neðan til að taka þátt í leiknum.
+      </p>
+
+      <!-- Crisp White QR Code Container -->
+      <div class="my-4 mx-auto bg-white p-4 rounded-2xl shadow-2xl inline-flex items-center justify-center min-w-[232px] min-h-[232px]">
+        <div id="qr-code-target" class="flex items-center justify-center"></div>
+      </div>
+
+      <!-- Warning if running inside sandboxed preview URL (about:srcdoc) -->
+      <div id="qr-preview-warning" class="hidden mb-4 p-3.5 rounded-2xl bg-cranberry-800/80 border border-amberwarm-400/50 text-left text-xs text-cream-50 space-y-2">
+        <div class="font-extrabold text-amberwarm-300 flex items-center gap-1.5">
+          <span>⚠️</span> Þú ert í forskoðun (Preview)
+        </div>
+        <p class="leading-relaxed text-cream-100/90">
+          Til að fá alvöru vefslóð og QR-kóða fyrir símana:
+        </p>
+        <ol class="list-decimal list-inside space-y-1 text-cream-100/90">
+          <li>Smelltu á <strong>„⬇️ Sækja HTML“</strong> hér að neðan.</li>
+          <li>Dragðu skrána inn á <strong>app.netlify.com/drop</strong> eða <strong>tiiny.host</strong>.</li>
+          <li>Opnaðu nýju vefslóðina – þá virkar QR-kóðinn sjálfkrafa!</li>
+        </ol>
+        <button type="button" onclick="downloadStandaloneHtml()" class="mt-1 w-full py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs transition shadow">
+          ⬇️ Sækja HTML-skrá núna (með þínum spurningum)
+        </button>
+      </div>
+
+      <!-- Custom Base URL Override Input (for Deployed Links) -->
+      <div class="mb-4 p-3.5 rounded-2xl bg-plum-950/80 border border-amberwarm-400/20 text-left">
+        <label for="qr-custom-url-input" class="block text-[11px] font-extrabold uppercase tracking-wider text-amberwarm-300 mb-1.5">
+          Vefslóð spurningakeppninnar (fyrir símana):
+        </label>
+        <div class="flex gap-2">
+          <input id="qr-custom-url-input" type="url" placeholder="https://notandanafn.github.io/..." oninput="handleQrCustomUrlInput(this.value)" class="flex-1 min-w-0 px-3 py-2 rounded-xl bg-plum-900 border border-amberwarm-400/25 text-cream-50 placeholder-cream-100/35 text-xs focus:outline-none focus:border-amberwarm-400">
+          <button type="button" onclick="copyCurrentQrUrl()" class="px-3 py-2 rounded-xl bg-amberwarm-500 hover:bg-amberwarm-400 text-plum-950 font-extrabold text-xs whitespace-nowrap transition" title="Afrita slóð">
+            📋 Afrita
+          </button>
+        </div>
+        <div id="qr-encoded-url-preview" class="mt-2 text-[10px] text-cream-100/55 truncate font-mono"></div>
+      </div>
+
+      <button onclick="closeQrModal()" class="w-full py-3 rounded-2xl bg-plum-800 hover:bg-plum-700 text-cream-50 font-bold text-sm transition">
+        Loka glugga
+      </button>
+    </div>
+  </div>
+
+  <!-- Custom Confirmation Dialog -->
+  <div id="confirm-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-7 animate-pop">
+      <div class="text-3xl mb-3">🍂</div>
+      <h3 id="confirm-title" class="font-display text-xl font-bold text-cream-50 mb-2">Fara á upphafsskjá?</h3>
+      <p id="confirm-message" class="text-cream-100/80 text-sm mb-6 leading-relaxed">
+        Ef þú ferð til baka núna gæti núverandi staða í spurningakeppninni glatast.
+      </p>
+      <div class="flex gap-3 justify-end">
+        <button onclick="closeConfirmModal()" class="px-4 py-2.5 rounded-xl bg-plum-800 hover:bg-plum-700 text-cream-100 text-sm font-semibold transition">
+          Hætta við
+        </button>
+        <button id="confirm-yes-btn" class="px-5 py-2.5 rounded-xl bg-cranberry-600 hover:bg-cranberry-700 text-white text-sm font-bold transition shadow-lg">
+          Já, halda áfram
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scoreboard & Winner Podium Modal (Host / TV Screen) -->
+  <div id="scoreboard-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="glass-card rounded-3xl max-w-2xl w-full p-6 sm:p-8 max-h-[92vh] flex flex-col animate-pop">
+      <div class="flex items-center justify-between pb-4 border-b border-amberwarm-400/20">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🏆</span>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-cream-50">Stigatafla fjölskyldunnar</h2>
+            <p class="text-xs text-cream-100/70">Skráðu inn nöfn keppenda eða liða og uppfærðu stigin</p>
+          </div>
+        </div>
+        <button onclick="closeScoreboardModal()" class="p-2 rounded-xl bg-plum-800 hover:bg-plum-700 text-cream-100 transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- Optional Winner Podium Banner -->
+      <div id="winner-podium-banner" class="hidden mt-4 p-5 rounded-2xl bg-gradient-to-b from-amberwarm-500/25 to-cranberry-800/30 border border-amberwarm-400/55 text-center animate-pop">
+        <div class="text-xs font-extrabold uppercase tracking-widest text-amberwarm-300 mb-3">🎉 Verðlaunapallur kvöldsins 🎉</div>
+        <div id="winner-podium-content" class="flex items-end justify-center gap-2 sm:gap-4"></div>
+      </div>
+
+      <!-- Add New Team/Player Form -->
+      <form onsubmit="addScoreboardTeam(event)" class="mt-4 flex gap-2">
+        <input id="new-team-input" type="text" placeholder="Nafn spilara eða liðs (t.d. Jón &amp; Gunna)..." class="flex-1 px-4 py-3 rounded-xl bg-plum-950/90 border border-amberwarm-400/25 text-cream-50 placeholder-cream-100/40 text-sm focus:outline-none focus:border-amberwarm-400" required="">
+        <button type="submit" class="px-5 py-3 rounded-xl bg-amberwarm-500 hover:bg-amberwarm-400 text-plum-950 font-extrabold text-sm transition whitespace-nowrap shadow-lg">
+          + Bæta við
+        </button>
+      </form>
+
+      <!-- Teams List -->
+      <div id="scoreboard-list" class="mt-5 flex-1 overflow-y-auto space-y-2.5 pr-1">
+        <!-- Populated via JS -->
+      </div>
+
+      <div class="mt-5 pt-4 border-t border-amberwarm-400/20 flex flex-wrap justify-between items-center gap-3 text-xs text-cream-100/70">
+        <span>Hámarksstig: <strong class="text-amberwarm-300" id="max-possible-score-label">20</strong> stig</span>
+        <div class="flex items-center gap-2">
+          <button onclick="declareWinnerCelebration()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amberwarm-400 to-amberwarm-500 hover:from-amberwarm-300 hover:to-amberwarm-400 text-plum-950 font-extrabold text-xs sm:text-sm transition shadow-lg">
+            👑 Krýna sigurvegara!
+          </button>
+          <button onclick="closeScoreboardModal()" class="px-4 py-2.5 rounded-xl bg-plum-700 hover:bg-plum-600 text-cream-50 font-semibold text-xs sm:text-sm transition">
+            Loka
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question Editor & Share Link Modal -->
+  <div id="editor-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-sm">
+    <div class="glass-card rounded-3xl max-w-4xl w-full p-5 sm:p-7 max-h-[92vh] flex flex-col animate-pop">
+      <div class="flex items-start sm:items-center justify-between gap-4 pb-4 border-b border-amberwarm-400/20">
+        <div>
+          <h2 class="font-display text-xl sm:text-2xl font-bold text-cream-50 flex items-center gap-2">
+            <span>✏️</span> Sérsníða spurningar &amp; deila
+          </h2>
+          <p class="text-xs sm:text-sm text-cream-100/80 mt-0.5">
+            Sérsníddu <strong class="text-amberwarm-300">Flokk 4: Fjölskyldan &amp; húmor</strong> (eða hvaða spurningu sem er) og afritaðu hlekkinn fyrir símana!
+          </p>
+        </div>
+        <button onclick="closeEditorModal()" class="p-2 rounded-xl bg-plum-800 hover:bg-plum-700 text-cream-100 transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- Category Tabs inside Editor -->
+      <div id="editor-tabs" class="flex gap-2 overflow-x-auto py-3 border-b border-amberwarm-400/15">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Questions Form Area -->
+      <div id="editor-questions-container" class="flex-1 overflow-y-auto py-4 space-y-5 pr-1">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Footer Actions: Reset, Copy Share Link, Save -->
+      <div class="pt-4 border-t border-amberwarm-400/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <button onclick="resetQuestionsToDefault()" class="px-4 py-2.5 rounded-xl bg-plum-950 hover:bg-cranberry-800/70 border border-amberwarm-400/20 text-cream-100/80 text-xs sm:text-sm font-medium transition">
+          ↺ Endurstilla
+        </button>
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <button onclick="copyCustomShareLink()" class="px-4 py-2.5 rounded-xl bg-amberwarm-400/20 hover:bg-amberwarm-400/30 border border-amberwarm-400/50 text-amberwarm-300 text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2">
+            <span>🔗</span> Afrita hlekk með mínum breytingum
+          </button>
+          <button onclick="saveEditorChanges()" class="px-6 py-2.5 rounded-xl bg-amberwarm-500 hover:bg-amberwarm-400 text-plum-950 text-xs sm:text-sm font-extrabold transition shadow-lg">
+            💾 Vista og loka
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. DEFAULT QUIZ DATA (20 Questions in Natural Icelandic across 4 Categories)
+    // =========================================================================
+    const DEFAULT_CATEGORIES = [
+  {
+    "id": 0,
+    "title": "Þakkargjörð & matur",
+    "icon": "🦃",
+    "subtitle": "Hátíðin, kalkúnninn, graskersbakan og hefðirnar",
+    "questions": [
+      {
+        "q": "Hvaða dag er Þakkargjörðarhátíðin (Thanksgiving) haldin hátíðleg í Bandaríkjunum?",
+        "options": [
+          "Fjórða fimmtudag í nóvember",
+          "Síðasta laugardag í nóvember",
+          "Þriðja sunnudag í nóvember",
+          "Alltaf þann 25. nóvember"
+        ],
+        "correct": 0,
+        "fact": "Abraham Lincoln lýsti því yfir árið 1863 að hátíðin skyldi haldin í nóvember, og árið 1941 var hún fest á fjórða fimmtudag mánaðarins."
+      },
+      {
+        "q": "Hvað kallast rauði skinnsepin sem hangir niður yfir gogginn á kalkúni?",
+        "options": [
+          "Snood",
+          "Wattle",
+          "Gobbler",
+          "Caruncle"
+        ],
+        "correct": 0,
+        "fact": "Sepinn yfir gogginum kallast 'Snood' og verður skærrauður þegar kalkúnninn er spenntur eða reynir að heilla maka!"
+      },
+      {
+        "q": "Hvaða klassíska eftirréttarbaka er ómissandi á Þakkargjörðarborðinu í Norður-Ameríku?",
+        "options": [
+          "Graskersbaka (Pumpkin Pie)",
+          "Sítrónumarengsbaka",
+          "Bláberjabaka með rjóma",
+          "Rabarbarabaka"
+        ],
+        "correct": 0,
+        "fact": "Um 50 milljónir graskersbaka eru borðaðar í Bandaríkjunum um hverja Þakkargjörðarhelgi!"
+      },
+      {
+        "q": "Hvaða rauðu ber eru notuð í hina hefðbundnu súrsætu sósu sem borin er fram með kalkúninum?",
+        "options": [
+          "Trönuber (Cranberries)",
+          "Rifsber",
+          "Krækiber",
+          "Hindber"
+        ],
+        "correct": 0,
+        "fact": "Fersk trönuber skoppa eins og gúmmíboltar ef þau eru þroskuð – bændur nota 'skoppuprófið' til að meta gæði þeirra!"
+      },
+      {
+        "q": "Hvaða forseti Bandaríkjanna hóf þá opinberu árlegu hefð að „náða“ einn kalkún í Hvíta húsinu?",
+        "options": [
+          "George H.W. Bush (1989)",
+          "Abraham Lincoln (1863)",
+          "John F. Kennedy (1963)",
+          "Barack Obama (2009)"
+        ],
+        "correct": 0,
+        "fact": "George H.W. Bush gerði 'kalkúnanáðunina' að opinberri árlegri hefð í Rósagarði Hvíta hússins árið 1989."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Árið 2026",
+    "icon": "🌍",
+    "subtitle": "Stóratburðir, íþróttir og menning ársins 2026",
+    "questions": [
+      {
+        "q": "Hvar fóru Vetrarólympíuleikarnir 2026 (Milano Cortina) fram í febrúar á þessu ári?",
+        "options": [
+          "Á Ítalíu",
+          "Í Frakklandi",
+          "Í Noregi",
+          "Í Kanada"
+        ],
+        "correct": 0,
+        "fact": "Leikarnir voru haldnir í Mílanó og Cortina d'Ampezzo á Ítalíu dagana 6.–22. febrúar 2026."
+      },
+      {
+        "q": "Hvaða þrjú lönd héldu saman Heimsmeistaramótið í fótbolta (FIFA World Cup) sumarið 2026?",
+        "options": [
+          "Bandaríkin, Kanada og Mexíkó",
+          "Spánn, Portúgal og Marokkó",
+          "Bretland og Írland",
+          "Brasilía og Argentína"
+        ],
+        "correct": 0,
+        "fact": "HM 2026 var það fyrsta í sögunni með 48 þátttökuþjóðum og fór fram í 16 borgum í Norður-Ameríku."
+      },
+      {
+        "q": "Hvað heitir mannaða geimferðaráætlun NASA sem sendir geimfara á braut um tunglið á ný árið 2026?",
+        "options": [
+          "Artemis II",
+          "Apollo 18",
+          "Orion X",
+          "Odyssey IV"
+        ],
+        "correct": 0,
+        "fact": "Artemis II er fyrsta mannaða ferðin í áætluninni og markar endurkomu mannfólks í nágrenni tunglsins eftir meira en hálfa öld."
+      },
+      {
+        "q": "Hvar fór Eurovision söngvakeppnin fram í maí árið 2026?",
+        "options": [
+          "Í Vínarborg í Austurríki",
+          "Í Stokkhólmi í Svíþjóð",
+          "Í Basel í Sviss",
+          "Í Berlín í Þýskalandi"
+        ],
+        "correct": 0,
+        "fact": "Eftir sigur JJ fyrir Austurríki með lagið 'Wasted Love' árið 2025 fór Eurovision 2026 fram í Wiener Stadthalle í Vínarborg!"
+      },
+      {
+        "q": "Samkvæmt kínverska tímatalinu er árið 2026 ár hvaða dýrs?",
+        "options": [
+          "Eldhestsins (Ár hestsins)",
+          "Drekans",
+          "Tígursins",
+          "Kanínunnar"
+        ],
+        "correct": 0,
+        "fact": "Ár Eldhestsins (Fire Horse) hófst 17. febrúar 2026 og táknar orku, kraft og framfarir."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Tónlist & kvikmyndir",
+    "icon": "🎬",
+    "subtitle": "Fjölskyldumyndir, hátíðarklassík og tónlist",
+    "questions": [
+      {
+        "q": "Í hvaða frægu gamanþáttaröð festi Joey Tribbiani höfuðið á sér inni í risastórum kalkúni á Þakkargjörðardag?",
+        "options": [
+          "Friends (Vinir)",
+          "Seinfeld",
+          "How I Met Your Mother",
+          "The Office"
+        ],
+        "correct": 0,
+        "fact": "Í þættinum 'The One With All The Thanksgivings' setti Joey kalkún á höfuðið til að hræða Chandler – en Monica toppaði það með sólgleraugum og fez-hatti!"
+      },
+      {
+        "q": "Í hinni klassísku gamanmynd 'Planes, Trains and Automobiles' (1987) reyna persónur Steve Martin og John Candy að komast heim í tæka tíð fyrir hvaða hátíð?",
+        "options": [
+          "Þakkargjörðarhátíðina",
+          "Jólin",
+          "Áramótin",
+          "Þjóðhátíðardag Bandaríkjanna"
+        ],
+        "correct": 0,
+        "fact": "Myndin í leikstjórn John Hughes er talin ein allra besta Þakkargjörðarmynd kvikmyndasögunnar."
+      },
+      {
+        "q": "Hvaða íslenska söngkona vann Grammy-verðlaun fyrir plötuna 'Bewitched' og er þekkt fyrir djassskotna tónlist?",
+        "options": [
+          "Laufey Lín Jónsdóttir",
+          "Björk Guðmundsdóttir",
+          "Emilíana Torrini",
+          "Bríet"
+        ],
+        "correct": 0,
+        "fact": "Laufey vann Grammy-verðlaunin fyrir bestu hefðbundnu popp-söngplötuna árið 2024 og hefur heillað heiminn upp úr skónum."
+      },
+      {
+        "q": "Hvaða hljómsveit gerði lagið „Bohemian Rhapsody“ ódauðlegt árið 1975?",
+        "options": [
+          "Queen",
+          "The Beatles",
+          "Led Zeppelin",
+          "Pink Floyd"
+        ],
+        "correct": 0,
+        "fact": "Lagið er tæpar 6 mínútur að lengd og inniheldur engan viðlagskafla – samt varð það eitt vinsælasta lag allra tíma."
+      },
+      {
+        "q": "Hvaða íslenski leikari talar fyrir snjókallinn Ólaf í íslensku talsetningunni á Disney-myndinni Frozen?",
+        "options": [
+          "Valur Freyr Einarsson",
+          "Laddi (Þórhallur Sigurðsson)",
+          "Hilmir Snær Guðnason",
+          "Gísli Örn Garðarsson"
+        ],
+        "correct": 0,
+        "fact": "Valur Freyr Einarsson fór á kostum sem snjókallinn Ólafur á íslensku, á meðan Josh Gad talaði fyrir hann á ensku."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Fjölskyldan & húmor",
+    "icon": "🏠",
+    "subtitle": "Sérsníddu okkur í 'Breyta spurningum' ef þú vilt!",
+    "questions": [
+      {
+        "q": "[Sérsníða] Hver í fjölskyldunni er líklegastur til að sofna yfir sjónvarpinu eftir kalkúninn?",
+        "options": [
+          "Sá sem fékk sér þrisvar sinnum á diskinn",
+          "Kokkurinn sem stóð í eldhúsinu í allan dag",
+          "Sá sem segir „ég er bara rétt að hvíla augun“",
+          "Allir við borðið í einu!"
+        ],
+        "correct": 2,
+        "fact": "Ábending til kynnis: Smelltu á '✏️ Breyta spurningum' efst á skjánum til að setja inn nöfn fjölskyldumeðlima í svarmöguleikana!"
+      },
+      {
+        "q": "[Sérsníða] Hvað hefur alltaf verið ómissandi uppáhalds meðlætið á þessu heimili?",
+        "options": [
+          "Sætar kartöflur með sykurpúðum",
+          "Fyllingin (stuffing) og brúna sósan",
+          "Trönuberjasósan og waldorf-salatið",
+          "Allt saman á einum risastórum diski!"
+        ],
+        "correct": 3,
+        "fact": "Það er óskráð regla á Þakkargjörð að diskurinn sé svo fullur að meðlætið renni saman!"
+      },
+      {
+        "q": "[Sérsníða] Hver í þessari fjölskyldu er með mesta keppnisskapið í spurningakeppnum?",
+        "options": [
+          "Sá sem heldur keppnina í kvöld",
+          "Sá sem kvartar yfir því að spurningarnar séu ósanngjarnar",
+          "Sá sem situr hljóður en veit öll svörin",
+          "Það kemur í ljós á stigatöflunni á eftir!"
+        ],
+        "correct": 3,
+        "fact": "Keppnisskap er merki um góða fjölskyldustemningu – svo lengi sem allir brosa í lokin!"
+      },
+      {
+        "q": "Hvað er mikilvægasta reglan í þessari spurningakeppni í kvöld?",
+        "options": [
+          "Enginn má nota Google eða Gemini undir borðinu!",
+          "Kynnirinn hefur alltaf rétt fyrir sér",
+          "Bannað að kvarta undan stigagjöf",
+          "Allt ofantalið gildir!"
+        ],
+        "correct": 3,
+        "fact": "Sérstaklega regla númer 2: Kynnirinn hefur alltaf rétt fyrir sér!"
+      },
+      {
+        "q": "Fyrir hvað erum við þakklátust á þessu laugardagskvöldi?",
+        "options": [
+          "Að vera saman komin, góðan mat og skemmtilegan félagsskap",
+          "Að það séu til afgangar í kalkúnasamloku á morgun",
+          "Að enginn hafi brennt kalkúninn",
+          "Allt ofantalið – Gleðilega Þakkargjörð!"
+        ],
+        "correct": 3,
+        "fact": "Takk fyrir samveruna og til hamingju með að klára spurningakeppnina!"
+      }
+    ]
+  }
+];
+
+    // =========================================================================
+    // 2. APPLICATION STATE & STORAGE
+    // =========================================================================
+    let categories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+
+    let state = {
+      view: 'landing', // 'landing' | 'player-setup' | 'player-quiz' | 'player-results' | 'host-quiz'
+      isLockedPlayerSession: false, // True when opened via #play on a guest's phone
+      soundEnabled: true,
+      // Player state
+      playerName: '',
+      hideAnswersUntilHost: false, // Toggle for players who want to wait for host to reveal
+      currentCatIndex: 0,
+      currentQIndex: 0,
+      playerAnswers: [], // array of { catIndex, qIndex, catTitle, questionText, selectedOption, selectedText, correctText, isCorrect }
+      selectedOptionTemp: null,
+      answerLocked: false,
+      playerAnswerRevealed: false,
+      // Host state
+      hostCategoryIntro: false, // Shows dramatic category intro splash card before Q1 of a category
+      hostAnswerRevealed: false,
+      timerSeconds: 30,
+      timerRunning: false,
+      timerInterval: null,
+      // Scoreboard state (Host)
+      teams: [
+        { id: 1, name: "Lið Kalkúnn", score: 0 },
+        { id: 2, name: "Graskersbökurnar", score: 0 }
+      ],
+      winnerDeclared: false,
+      // Editor state
+      editorTab: 3
+    };
+
+    // Load custom questions from URL hash or localStorage if available
+    function loadCustomQuestionsFromUrlOrStorage() {
+      try {
+        const hash = window.location.hash || '';
+        const qMatch = hash.match(/[#&](q|quiz)=([^&]+)/);
+        if (qMatch) {
+          const encoded = qMatch[2];
+          const jsonStr = decodeURIComponent(escape(atob(encoded)));
+          const parsed = JSON.parse(jsonStr);
+
+          // Support compact delta format (q=)
+          if (parsed && parsed.d && Array.isArray(parsed.d)) {
+            parsed.d.forEach(item => {
+              if (item.t !== undefined && categories[item.c]) {
+                categories[item.c].title = item.t;
+              } else if (categories[item.c] && categories[item.c].questions[item.i]) {
+                categories[item.c].questions[item.i] = {
+                  q: item.q,
+                  options: item.o,
+                  correct: item.a,
+                  fact: item.f || ''
+                };
+              }
+            });
+            showToast('Sérsniðnar spurningar hlaðnar inn úr hlekknum!', '🎉');
+            return;
+          }
+
+          // Support legacy full array format (quiz=)
+          if (Array.isArray(parsed) && parsed.length === 4) {
+            categories = parsed;
+            showToast('Sérsniðnar spurningar hlaðnar inn úr hlekknum!', '🎉');
+            return;
+          }
+        }
+        const saved = localStorage.getItem('thanksgiving_quiz_2026_v2');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length === 4) {
+            categories = parsed;
+          }
+        }
+      } catch (e) {
+        console.warn('Gat ekki hlaðið sérsniðnum spurningum:', e);
+      }
+    }
+
+    // Build compact hash for players (#play or #play&q=...) so phones open directly into Player Mode
+    function buildPlayerShareHash() {
+      const diffs = [];
+      categories.forEach((cat, cIdx) => {
+        const defCat = DEFAULT_CATEGORIES[cIdx];
+        if (cat.title !== defCat.title) {
+          diffs.push({ c: cIdx, t: cat.title });
+        }
+        cat.questions.forEach((qObj, qIdx) => {
+          const defQ = defCat.questions[qIdx];
+          const isModified =
+            qObj.q !== defQ.q ||
+            qObj.correct !== defQ.correct ||
+            (qObj.fact || '') !== (defQ.fact || '') ||
+            JSON.stringify(qObj.options) !== JSON.stringify(defQ.options);
+
+          if (isModified) {
+            diffs.push({
+              c: cIdx,
+              i: qIdx,
+              q: qObj.q,
+              o: qObj.options,
+              a: qObj.correct,
+              f: qObj.fact || ''
+            });
+          }
+        });
+      });
+
+      if (diffs.length === 0) return '#play';
+      const jsonStr = JSON.stringify({ d: diffs });
+      return '#play&q=' + btoa(unescape(encodeURIComponent(jsonStr)));
+    }
+
+    function getShareableQuizUrl(overrideBaseUrl = null) {
+      const hash = buildPlayerShareHash();
+      let baseUrl = overrideBaseUrl;
+
+      if (!baseUrl) {
+        try {
+          const savedShareUrl = localStorage.getItem('thanksgiving_quiz_share_base_url');
+          if (savedShareUrl && /^https?:\/\//i.test(savedShareUrl)) {
+            baseUrl = savedShareUrl.split('#')[0];
+          }
+        } catch (e) {}
+      }
+
+      if (!baseUrl) {
+        const href = window.location.href || '';
+        if (/^https?:\/\//i.test(href) && !href.includes('srcdoc') && !href.includes('usercontent.goog')) {
+          baseUrl = href.split('#')[0];
+        } else {
+          baseUrl = '';
+        }
+      }
+
+      return baseUrl ? baseUrl + hash : '';
+    }
+
+    function isCurrentEnvironmentSandboxedPreview() {
+      const href = window.location.href || '';
+      return !/^https?:\/\//i.test(href) || href.includes('srcdoc') || href.includes('usercontent.goog');
+    }
+
+    function loadScoreboardFromStorage() {
+      try {
+        const savedTeams = localStorage.getItem('thanksgiving_quiz_scoreboard_v2');
+        if (savedTeams) {
+          state.teams = JSON.parse(savedTeams);
+        }
+      } catch (e) {}
+    }
+
+    function saveScoreboardToStorage() {
+      try {
+        localStorage.setItem('thanksgiving_quiz_scoreboard_v2', JSON.stringify(state.teams));
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // 3. WEB AUDIO API SOUND EFFECTS
+    // =========================================================================
+    let audioCtx = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSound(type) {
+      if (!state.soundEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+
+        if (type === 'click') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(680, now + 0.06);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.06);
+        } else if (type === 'correct') {
+          const notes = [523.25, 659.25, 783.99, 1046.50];
+          notes.forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+            gain.gain.setValueAtTime(0.14, now + idx * 0.07);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.35);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + idx * 0.07);
+            osc.stop(now + idx * 0.07 + 0.35);
+          });
+        } else if (type === 'wrong') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(190, now);
+          osc.frequency.linearRampToValueAtTime(135, now + 0.32);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.35);
+        } else if (type === 'tick') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(880, now);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.04);
+        } else if (type === 'chime') {
+          // Gentle warm bell chime when timer finishes
+          [659.25, 523.25].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.18);
+            gain.gain.setValueAtTime(0.16, now + i * 0.18);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.18 + 0.7);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.18);
+            osc.stop(now + i * 0.18 + 0.7);
+          });
+        } else if (type === 'fanfare') {
+          const chord = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+          chord.forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + i * 0.09);
+            gain.gain.setValueAtTime(0.15, now + i * 0.09);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.8);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.09);
+            osc.stop(now + i * 0.09 + 0.8);
+          });
+        }
+      } catch (e) {}
+    }
+
+    function toggleSound() {
+      state.soundEnabled = !state.soundEnabled;
+      document.getElementById('sound-icon').textContent = state.soundEnabled ? '🔊' : '🔇';
+      if (state.soundEnabled) playSound('click');
+      showToast(state.soundEnabled ? 'Hljóðbrellur kveiktar' : 'Hljóðbrellur slökktar', state.soundEnabled ? '🔊' : '🔇');
+    }
+
+    // =========================================================================
+    // 4. CONFETTI CELEBRATION ANIMATION
+    // =========================================================================
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const colors = ['#f59e0b', '#d97706', '#a82834', '#fef3c7', '#fb923c', '#fcd34d'];
+      const pieces = Array.from({ length: 130 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        w: Math.random() * 10 + 6,
+        h: Math.random() * 6 + 4,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        vx: (Math.random() - 0.5) * 3.2,
+        vy: Math.random() * 4 + 2.5,
+        rot: Math.random() * 360,
+        vRot: (Math.random() - 0.5) * 8
+      }));
+
+      let frames = 0;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.vRot;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rot * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          ctx.restore();
+        });
+        frames++;
+        if (frames < 210) {
+          requestAnimationFrame(draw);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+      draw();
+    }
+
+    // =========================================================================
+    // 5. NAVIGATION & HELPERS
+    // =========================================================================
+    function showToast(msg, icon = '✨') {
+      const banner = document.getElementById('toast-banner');
+      document.getElementById('toast-text').textContent = msg;
+      document.getElementById('toast-icon').textContent = icon;
+      banner.classList.remove('hidden');
+      banner.classList.add('flex');
+      clearTimeout(window._toastTimeout);
+      window._toastTimeout = setTimeout(() => {
+        banner.classList.add('hidden');
+        banner.classList.remove('flex');
+      }, 3200);
+    }
+
+    function confirmGoHome() {
+      if (state.view === 'landing') return;
+      if (state.isLockedPlayerSession && state.view === 'player-setup') return;
+
+      const modal = document.getElementById('confirm-modal');
+      document.getElementById('confirm-title').textContent = state.isLockedPlayerSession
+        ? 'Byrja upp á nýtt?'
+        : 'Fara aftur á upphafsskjá?';
+      document.getElementById('confirm-message').textContent = state.isLockedPlayerSession
+        ? 'Viltu örugglega byrja spurningakeppnina upp á nýtt frá fyrstu spurningu?'
+        : 'Viltu örugglega hætta í núverandi umferð og fara aftur á valmyndina?';
+      document.getElementById('confirm-yes-btn').onclick = () => {
+        closeConfirmModal();
+        stopHostTimer();
+        state.view = state.isLockedPlayerSession ? 'player-setup' : 'landing';
+        render();
+      };
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeConfirmModal() {
+      const modal = document.getElementById('confirm-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function getTotalQuestionsCount() {
+      return categories.reduce((sum, cat) => sum + cat.questions.length, 0);
+    }
+
+    function getFlatQuestionIndex(catIdx, qIdx) {
+      let idx = 0;
+      for (let i = 0; i < catIdx; i++) {
+        idx += categories[i].questions.length;
+      }
+      return idx + qIdx;
+    }
+
+    function getCurrentPlayerStreak() {
+      let streak = 0;
+      for (let i = state.playerAnswers.length - 1; i >= 0; i--) {
+        if (state.playerAnswers[i].isCorrect) {
+          streak++;
+        } else {
+          break;
+        }
+      }
+      return streak;
+    }
+
+    function copyShareLinkDirect() {
+      const url = getShareableQuizUrl();
+      copyTextToClipboard(url, 'Hlekkur á spurningaleikinn afritaður! Sendu hann í fjölskylduspjallið.');
+    }
+
+    // =========================================================================
+    // 5B. QR CODE MODAL & RELIABLE GENERATOR
+    // =========================================================================
+    let activeQrUrl = '';
+
+    function openQrModal() {
+      playSound('click');
+      const modal = document.getElementById('qr-modal');
+      const warningBox = document.getElementById('qr-preview-warning');
+      const urlInput = document.getElementById('qr-custom-url-input');
+
+      let savedBase = '';
+      try {
+        savedBase = localStorage.getItem('thanksgiving_quiz_share_base_url') || '';
+      } catch (e) {}
+
+      const isSandboxed = isCurrentEnvironmentSandboxedPreview();
+      if (isSandboxed && !savedBase) {
+        warningBox.classList.remove('hidden');
+      } else {
+        warningBox.classList.add('hidden');
+      }
+
+      const initialUrl = getShareableQuizUrl(savedBase || null);
+      urlInput.value = savedBase || (isSandboxed ? '' : initialUrl);
+      renderQrCodeForUrl(initialUrl);
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeQrModal() {
+      const modal = document.getElementById('qr-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleQrCustomUrlInput(rawVal) {
+      const trimmed = rawVal.trim();
+      const warningBox = document.getElementById('qr-preview-warning');
+
+      if (/^https?:\/\//i.test(trimmed)) {
+        const cleanBase = trimmed.split('#')[0];
+        try {
+          localStorage.setItem('thanksgiving_quiz_share_base_url', cleanBase);
+        } catch (e) {}
+        if (warningBox) warningBox.classList.add('hidden');
+        renderQrCodeForUrl(getShareableQuizUrl(cleanBase));
+      } else if (trimmed === '') {
+        try {
+          localStorage.removeItem('thanksgiving_quiz_share_base_url');
+        } catch (e) {}
+        if (warningBox && isCurrentEnvironmentSandboxedPreview()) {
+          warningBox.classList.remove('hidden');
+        }
+        renderQrCodeForUrl(getShareableQuizUrl(null));
+      }
+    }
+
+    function renderQrCodeForUrl(url) {
+      activeQrUrl = url;
+      const target = document.getElementById('qr-code-target');
+      const previewText = document.getElementById('qr-encoded-url-preview');
+      if (!target) return;
+
+      if (!url) {
+        if (previewText) {
+          previewText.textContent = 'Límdu deilihlekkinn (Share) hér að ofan til að búa til QR-kóðann.';
+        }
+        target.innerHTML = `
+          <div class="w-[210px] h-[210px] flex flex-col items-center justify-center text-plum-950 p-4 text-center">
+            <span class="text-4xl mb-2">🔗</span>
+            <span class="text-xs font-extrabold">Límdu deilihlekk hér að neðan til að birta QR-kóða fyrir símana</span>
+          </div>
+        `;
+        return;
+      }
+
+      if (previewText) {
+        previewText.textContent = 'Kóðuð slóð fyrir síma: ' + url;
+      }
+
+      target.innerHTML = '';
+
+      // Primary: Proven QRCode.js library (renders crisp SVG/Canvas locally)
+      if (typeof QRCode !== 'undefined') {
+        try {
+          new QRCode(target, {
+            text: url,
+            width: 210,
+            height: 210,
+            colorDark: '#1c0b0e',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+          });
+          const img = target.querySelector('img');
+          if (img) {
+            img.style.display = 'block';
+            img.style.margin = '0 auto';
+          }
+          return;
+        } catch (err) {
+          console.warn('QRCode.js villa, nota varamynd:', err);
+        }
+      }
+
+      // Guaranteed Fallback: Reliable QR Server image API
+      const fallbackImg = document.createElement('img');
+      fallbackImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=4&color=1c0b0e&bgcolor=ffffff&data=' + encodeURIComponent(url);
+      fallbackImg.alt = 'QR-kóði fyrir spurningaleikinn';
+      fallbackImg.width = 210;
+      fallbackImg.height = 210;
+      fallbackImg.className = 'rounded-lg block mx-auto';
+      target.appendChild(fallbackImg);
+    }
+
+    function copyCurrentQrUrl() {
+      const urlToCopy = activeQrUrl || getShareableQuizUrl();
+      copyTextToClipboard(urlToCopy, 'Hlekkur afritaður á klippiborðið!');
+    }
+
+    function copyTextToClipboard(text, successMsg) {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = text;
+      tempInput.style.position = 'fixed';
+      tempInput.style.opacity = '0';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        playSound('correct');
+        showToast(successMsg, '📋');
+      } catch (err) {
+        showToast('Gat ekki afritað sjálfkrafa – afritaðu slóðina úr vafranum.', '⚠️');
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    // Download a self-contained HTML file with any customized questions baked directly in!
+    function downloadStandaloneHtml() {
+      playSound('click');
+      try {
+        // Clone current document HTML and bake current categories into DEFAULT_CATEGORIES
+        let docHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        const serializedCategories = JSON.stringify(categories, null, 2);
+        docHtml = docHtml.replace(
+          /const DEFAULT_CATEGORIES = \[[\s\S]*?\n    \];/,
+          `const DEFAULT_CATEGORIES = ${serializedCategories};`
+        );
+
+        const blob = new Blob([docHtml], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'thakkargjardar-pub-quiz-2026.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Skráin thakkargjardar-pub-quiz-2026.html sótt! Dragðu hana á Netlify Drop.', '⬇️');
+      } catch (err) {
+        console.error(err);
+        showToast('Villa við að sækja skrá.', '⚠️');
+      }
+    }
+
+    // =========================================================================
+    // 6. VIEW RENDERERS
+    // =========================================================================
+    function render() {
+      const root = document.getElementById('app-root');
+      const sbBtn = document.getElementById('header-scoreboard-btn');
+      const hostControls = document.getElementById('host-header-controls');
+
+      // Keep guest phones clean and distraction-free
+      if (hostControls) {
+        if (state.isLockedPlayerSession) {
+          hostControls.classList.add('hidden');
+        } else {
+          hostControls.classList.remove('hidden');
+        }
+      }
+
+      if (state.view === 'host-quiz') {
+        sbBtn.classList.remove('hidden');
+        sbBtn.classList.add('flex');
+      } else {
+        sbBtn.classList.add('hidden');
+        sbBtn.classList.remove('flex');
+      }
+
+      switch (state.view) {
+        case 'landing':
+          root.innerHTML = renderLandingView();
+          break;
+        case 'player-setup':
+          root.innerHTML = renderPlayerSetupView();
+          break;
+        case 'player-quiz':
+          root.innerHTML = renderPlayerQuizView();
+          break;
+        case 'player-results':
+          root.innerHTML = renderPlayerResultsView();
+          break;
+        case 'host-quiz':
+          root.innerHTML = renderHostQuizView();
+          break;
+      }
+    }
+
+    // --- VIEW 1: LANDING SCREEN (Host / TV Screen Focus) ---
+    function renderLandingView() {
+      return `
+        <div class="animate-pop max-w-4xl mx-auto w-full">
+          <!-- Hero Header -->
+          <div class="text-center mb-7 sm:mb-9">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 text-xs sm:text-sm font-bold mb-4">
+              <span>📺</span>
+              <span>Sjónvarpsskjár kynnis • 20 spurningar í 4 flokkum</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 tracking-tight leading-tight">
+              Gleðilega <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">Þakkargjörð!</span>
+            </h2>
+            <p class="mt-3 sm:mt-4 text-cream-100/85 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+              Varpaðu þessum skjá upp í sjónvarpið fyrir fjölskylduna. Gestirnir opna hlekkinn í sínum síma til að skrá nafn og svara jafnóðum!
+            </p>
+          </div>
+
+          <!-- Primary Start Game Card for Host / TV -->
+          <div class="glass-card rounded-3xl p-6 sm:p-10 border-2 border-amberwarm-400/40 text-center relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 text-9xl opacity-10 pointer-events-none">🦃</div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                onclick="selectHostMode()"
+                class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-amberwarm-400 via-amberwarm-500 to-cranberry-600 hover:from-amberwarm-300 hover:to-cranberry-700 text-white font-display font-extrabold text-2xl sm:text-3xl shadow-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.99] flex items-center justify-center gap-3"
+              >
+                <span>🚀</span>
+                <span>Byrja leik</span>
+              </button>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
+              <button
+                onclick="openQrModal()"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-plum-950/90 hover:bg-plum-800 border border-amberwarm-400/45 text-amberwarm-300 text-sm font-bold transition"
+              >
+                <span>📱</span>
+                <span>QR-kóði fyrir símana</span>
+              </button>
+              <button
+                onclick="copyShareLinkDirect()"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-plum-950/90 hover:bg-plum-800 border border-amberwarm-400/30 text-cream-100 text-sm font-bold transition"
+              >
+                <span>🔗</span>
+                <span>Afrita hlekk fyrir gesti</span>
+              </button>
+              <button
+                onclick="selectPlayerMode()"
+                class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-2xl bg-transparent hover:bg-plum-800/50 text-cream-100/60 hover:text-cream-100 text-xs font-semibold transition"
+                title="Prófa hvernig síminn lítur út hjá spilurum"
+              >
+                <span>👀 Prófa símaviðmót</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories Overview -->
+          <div class="mt-6 glass-card rounded-3xl p-5 sm:p-6">
+            <div class="flex items-center justify-between pb-3 border-b border-amberwarm-400/15">
+              <div>
+                <h4 class="font-display font-bold text-lg text-cream-50">Flokkar kvöldsins</h4>
+                <p class="text-xs text-cream-100/70">5 spurningar í hverjum flokki • Samtals 20 spurningar</p>
+              </div>
+              <button onclick="openEditorModal()" class="text-xs sm:text-sm font-bold text-amberwarm-300 hover:text-amberwarm-200 transition">
+                ✏️ Breyta spurningum
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+              ${categories.map((cat, idx) => `
+                <div class="p-3.5 rounded-2xl bg-plum-950/65 border border-amberwarm-400/15">
+                  <div class="text-2xl mb-1.5">${cat.icon}</div>
+                  <div class="text-[11px] font-extrabold uppercase tracking-wider text-amberwarm-400">Flokkur ${idx + 1}</div>
+                  <div class="font-bold text-sm text-cream-50 mt-0.5 leading-snug">${escapeHtml(cat.title)}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // --- VIEW 2: PLAYER SETUP (Name Entry & Reveal Mode Preference) ---
+    function selectPlayerMode() {
+      playSound('click');
+      state.view = 'player-setup';
+      render();
+      setTimeout(() => {
+        const input = document.getElementById('player-name-input');
+        if (input) input.focus();
+      }, 50);
+    }
+
+    function renderPlayerSetupView() {
+      return `
+        <div class="animate-pop max-w-md mx-auto w-full">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 text-center">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-amberwarm-500 to-cranberry-600 flex items-center justify-center text-3xl shadow-lg mb-4">
+              🦃
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-cream-50">Velkomin í leikinn!</h2>
+            <p class="text-cream-100/80 text-sm mt-2 leading-relaxed">
+              Skráðu nafnið þitt (eða nafn á liðinu þínu) hér að neðan til að byrja.
+            </p>
+
+            <form onsubmit="startPlayerQuiz(event)" class="mt-6 text-left">
+              <label for="player-name-input" class="block text-xs font-extrabold uppercase tracking-wider text-amberwarm-300 mb-2">
+                Nafn spilara eða liðs
+              </label>
+              <input
+                id="player-name-input"
+                type="text"
+                maxlength="28"
+                value="${escapeHtml(state.playerName)}"
+                placeholder="T.d. Jónína, Sigrún & Jón..."
+                class="w-full px-4 py-3.5 rounded-2xl bg-plum-950/90 border-2 border-amberwarm-400/25 focus:border-amberwarm-400 text-cream-50 placeholder-cream-100/35 text-base font-medium focus:outline-none transition"
+                required
+              />
+
+              <!-- Optional Toggle: Hide immediate reveal until host announces -->
+              <label class="mt-4 p-3.5 rounded-2xl bg-plum-950/70 border border-amberwarm-400/20 flex items-start gap-3 cursor-pointer hover:border-amberwarm-400/40 transition">
+                <input
+                  type="checkbox"
+                  ${state.hideAnswersUntilHost ? 'checked' : ''}
+                  onchange="state.hideAnswersUntilHost = this.checked"
+                  class="mt-1 w-4 h-4 accent-amberwarm-500 rounded cursor-pointer"
+                />
+                <div class="text-xs leading-relaxed">
+                  <div class="font-bold text-cream-50">Fela svar þar til kynnir segir til</div>
+                  <div class="text-cream-100/65 mt-0.5">Ef hakað er við sérð þú ekki hvort svarið var rétt fyrr en þú ýtir á „Sýna rétt svar“ á símanum.</div>
+                </div>
+              </label>
+
+              <div class="mt-6 flex gap-3">
+                ${!state.isLockedPlayerSession ? `
+                  <button type="button" onclick="state.view='landing'; render();" class="px-4 py-3.5 rounded-2xl bg-plum-800 hover:bg-plum-700 text-cream-100 font-semibold text-sm transition">
+                    Til baka
+                  </button>
+                ` : ''}
+                <button type="submit" class="flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amberwarm-500 to-cranberry-600 hover:from-amberwarm-400 hover:to-cranberry-700 text-white font-extrabold text-base shadow-lg transition">
+                  Hefja keppni! 🚀
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      `;
+    }
+
+    function startPlayerQuiz(e) {
+      e.preventDefault();
+      const input = document.getElementById('player-name-input');
+      const name = input ? input.value.trim() : '';
+      if (!name) return;
+      playSound('click');
+      state.playerName = name;
+      state.currentCatIndex = 0;
+      state.currentQIndex = 0;
+      state.playerAnswers = [];
+      state.selectedOptionTemp = null;
+      state.answerLocked = false;
+      state.playerAnswerRevealed = false;
+      state.view = 'player-quiz';
+      render();
+    }
+
+    // --- VIEW 3: PLAYER QUIZ INTERFACE (Phone Screen) ---
+    function renderPlayerQuizView() {
+      const cat = categories[state.currentCatIndex];
+      const question = cat.questions[state.currentQIndex];
+      const flatIndex = getFlatQuestionIndex(state.currentCatIndex, state.currentQIndex);
+      const totalQuestions = getTotalQuestionsCount();
+      const currentScore = state.playerAnswers.filter(a => a.isCorrect).length;
+      const streak = getCurrentPlayerStreak();
+      const letters = ['A', 'B', 'C', 'D'];
+
+      const isLastQuestionOverall =
+        state.currentCatIndex === categories.length - 1 &&
+        state.currentQIndex === cat.questions.length - 1;
+
+      const showResultColors = state.answerLocked && state.playerAnswerRevealed;
+
+      return `
+        <div class="animate-pop max-w-xl mx-auto w-full">
+          <!-- Top Player Status Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3 px-1">
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-full bg-plum-800 border border-amberwarm-400/25 text-xs font-bold text-cream-50">
+                👤 ${escapeHtml(state.playerName)}
+              </span>
+              <span class="text-xs font-bold text-cream-100/75">
+                Spurning ${flatIndex + 1} / ${totalQuestions}
+              </span>
+            </div>
+            <div class="flex items-center gap-2">
+              ${streak >= 2 && !state.hideAnswersUntilHost ? `
+                <span class="px-2.5 py-1 rounded-full bg-cranberry-700/80 border border-amberwarm-400/40 text-amberwarm-300 text-xs font-extrabold" title="Röð rétt svara">
+                  🔥 ${streak} í röð!
+                </span>
+              ` : ''}
+              <div class="px-3.5 py-1 rounded-full bg-amberwarm-400/20 border border-amberwarm-400/45 text-amberwarm-300 text-xs sm:text-sm font-extrabold">
+                ⭐ ${state.hideAnswersUntilHost && !state.playerAnswerRevealed && state.answerLocked ? '?' : currentScore} stig
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="w-full h-2 bg-plum-950 rounded-full overflow-hidden mb-5 border border-amberwarm-400/15">
+            <div class="h-full bg-gradient-to-r from-amberwarm-400 to-cranberry-600 transition-all duration-500" style="width: ${((flatIndex + (state.answerLocked ? 1 : 0)) / totalQuestions) * 100}%"></div>
+          </div>
+
+          <!-- Question Card -->
+          <div class="glass-card rounded-3xl p-5 sm:p-7">
+            <!-- Category Pill & Reveal Mode Toggle -->
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-cranberry-700/60 border border-cranberry-600/60 text-cream-50 text-xs font-bold">
+                <span>${cat.icon}</span>
+                <span>Flokkur ${state.currentCatIndex + 1}: ${escapeHtml(cat.title)} (${state.currentQIndex + 1}/${cat.questions.length})</span>
+              </div>
+
+              <button
+                type="button"
+                onclick="toggleHideAnswersPreference()"
+                class="text-[11px] px-2.5 py-1 rounded-lg bg-plum-950/70 hover:bg-plum-900 border border-amberwarm-400/20 text-cream-100/75 transition"
+                title="Breyta hvort svar birtist strax eða þegar kynnir segir til"
+              >
+                ${state.hideAnswersUntilHost ? '🙈 Falið þar til kynnir segir til' : '👁️ Sýna svar strax'}
+              </button>
+            </div>
+
+            <!-- Question Text -->
+            <h2 class="font-display text-xl sm:text-2xl font-bold text-cream-50 leading-snug mb-6">
+              ${escapeHtml(question.q)}
+            </h2>
+
+            <!-- Answer Options -->
+            <div class="space-y-3">
+              ${question.options.map((opt, idx) => {
+                let btnClasses = "bg-plum-950/80 hover:bg-plum-800 border-amberwarm-400/20 text-cream-50";
+                let badgeClasses = "bg-plum-800 text-amberwarm-300 border-amberwarm-400/25";
+                let statusIcon = "";
+
+                if (!state.answerLocked) {
+                  if (state.selectedOptionTemp === idx) {
+                    btnClasses = "bg-amberwarm-500/25 border-amberwarm-400 text-white ring-2 ring-amberwarm-400/40";
+                    badgeClasses = "bg-amberwarm-400 text-plum-950 border-amberwarm-400";
+                  }
+                } else if (!showResultColors) {
+                  // Locked in, waiting for reveal
+                  if (state.selectedOptionTemp === idx) {
+                    btnClasses = "bg-amberwarm-500/30 border-amberwarm-300 text-white ring-2 ring-amberwarm-300/40";
+                    badgeClasses = "bg-amberwarm-300 text-plum-950 border-amberwarm-300";
+                    statusIcon = "🔒";
+                  } else {
+                    btnClasses = "bg-plum-950/40 border-cream-100/10 text-cream-100/45 opacity-65";
+                  }
+                } else {
+                  // Answer revealed
+                  if (idx === question.correct) {
+                    btnClasses = "bg-emerald-900/65 border-emerald-400 text-emerald-50 ring-2 ring-emerald-400/40";
+                    badgeClasses = "bg-emerald-400 text-plum-950 border-emerald-300";
+                    statusIcon = "✅";
+                  } else if (idx === state.selectedOptionTemp && idx !== question.correct) {
+                    btnClasses = "bg-cranberry-800/75 border-red-400 text-red-100";
+                    badgeClasses = "bg-red-500 text-white border-red-400";
+                    statusIcon = "❌";
+                  } else {
+                    btnClasses = "bg-plum-950/40 border-cream-100/10 text-cream-100/45 opacity-65";
+                  }
+                }
+
+                return `
+                  <button
+                    type="button"
+                    ${state.answerLocked ? 'disabled' : ''}
+                    onclick="selectPlayerOption(${idx})"
+                    class="btn-option w-full text-left p-3.5 sm:p-4 rounded-2xl border-2 flex items-center gap-3.5 ${btnClasses}"
+                  >
+                    <span class="w-9 h-9 rounded-xl border flex-shrink-0 flex items-center justify-center font-extrabold text-sm ${badgeClasses}">
+                      ${letters[idx]}
+                    </span>
+                    <span class="flex-1 font-semibold text-sm sm:text-base leading-snug">
+                      ${escapeHtml(opt)}
+                    </span>
+                    ${statusIcon ? `<span class="text-lg flex-shrink-0">${statusIcon}</span>` : ''}
+                  </button>
+                `;
+              }).join('')}
+            </div>
+
+            <!-- Action Area: Lock In Answer OR Reveal OR Next Question -->
+            <div class="mt-6 pt-5 border-t border-amberwarm-400/20">
+              ${!state.answerLocked ? `
+                <button
+                  type="button"
+                  onclick="lockPlayerAnswer()"
+                  ${state.selectedOptionTemp === null ? 'disabled' : ''}
+                  class="w-full py-4 px-6 rounded-2xl font-extrabold text-base transition shadow-lg ${
+                    state.selectedOptionTemp === null
+                      ? 'bg-plum-800 text-cream-100/40 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-amberwarm-500 to-cranberry-600 hover:from-amberwarm-400 hover:to-cranberry-700 text-white'
+                  }"
+                >
+                  ${state.selectedOptionTemp === null ? 'Veldu svar hér að ofan' : 'Læsa svari 🔒'}
+                </button>
+              ` : !state.playerAnswerRevealed ? `
+                <div class="animate-pop space-y-3 text-center">
+                  <div class="p-4 rounded-2xl bg-plum-950/80 border border-amberwarm-400/35">
+                    <div class="font-bold text-amberwarm-300 text-sm">🔒 Svar læst!</div>
+                    <p class="text-xs text-cream-100/80 mt-1">
+                      Bíddu eftir að kynnirinn birti rétta svarið í sjónvarpinu, og ýttu svo á takkann hér að neðan.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="revealPlayerAnswerNow()"
+                    class="w-full py-3.5 px-6 rounded-2xl bg-amberwarm-400 hover:bg-amberwarm-300 text-plum-950 font-extrabold text-sm sm:text-base transition shadow-lg"
+                  >
+                    ✨ Sýna hvort ég hafði rétt fyrir mér
+                  </button>
+                </div>
+              ` : `
+                <div class="animate-pop space-y-4">
+                  <!-- Feedback Banner -->
+                  <div class="p-4 rounded-2xl ${
+                    state.selectedOptionTemp === question.correct
+                      ? 'bg-emerald-950/80 border border-emerald-500/45 text-emerald-100'
+                      : 'bg-cranberry-900/60 border border-red-400/45 text-cream-50'
+                  }">
+                    <div class="font-bold text-base flex items-center gap-2">
+                      ${state.selectedOptionTemp === question.correct
+                        ? '<span>🎉 Hárrétt! +1 stig</span>'
+                        : `<span>😅 Því miður rangt! Rétt svar var: ${escapeHtml(question.options[question.correct])}</span>`
+                      }
+                    </div>
+                    ${question.fact ? `<p class="text-xs sm:text-sm opacity-90 mt-1.5 leading-relaxed">${escapeHtml(question.fact)}</p>` : ''}
+                  </div>
+
+                  <!-- Sync Prompt & Next Button -->
+                  <div class="p-3.5 rounded-2xl bg-plum-950/75 border border-amberwarm-400/30 text-center">
+                    <p class="text-xs text-amberwarm-300 font-semibold mb-2.5">
+                      ⏳ Ýttu á „Næsta spurning“ þegar kynnirinn fer í næstu spurningu
+                    </p>
+                    <button
+                      type="button"
+                      onclick="advancePlayerQuestion()"
+                      class="w-full py-3.5 px-6 rounded-xl bg-amberwarm-400 hover:bg-amberwarm-300 text-plum-950 font-extrabold text-sm sm:text-base transition shadow-lg"
+                    >
+                      ${isLastQuestionOverall ? 'Sjá lokastöðu og titil 🏆' : 'Næsta spurning →'}
+                    </button>
+                  </div>
+                </div>
+              `}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleHideAnswersPreference() {
+      state.hideAnswersUntilHost = !state.hideAnswersUntilHost;
+      playSound('click');
+      if (!state.hideAnswersUntilHost && state.answerLocked && !state.playerAnswerRevealed) {
+        revealPlayerAnswerNow();
+      } else {
+        render();
+      }
+    }
+
+    function selectPlayerOption(idx) {
+      if (state.answerLocked) return;
+      playSound('click');
+      state.selectedOptionTemp = idx;
+      render();
+    }
+
+    function lockPlayerAnswer() {
+      if (state.selectedOptionTemp === null || state.answerLocked) return;
+      const cat = categories[state.currentCatIndex];
+      const question = cat.questions[state.currentQIndex];
+      const isCorrect = state.selectedOptionTemp === question.correct;
+
+      state.answerLocked = true;
+      state.playerAnswers.push({
+        catIndex: state.currentCatIndex,
+        qIndex: state.currentQIndex,
+        catTitle: cat.title,
+        questionText: question.q,
+        selectedText: question.options[state.selectedOptionTemp],
+        correctText: question.options[question.correct],
+        isCorrect
+      });
+
+      if (!state.hideAnswersUntilHost) {
+        state.playerAnswerRevealed = true;
+        playSound(isCorrect ? 'correct' : 'wrong');
+      } else {
+        state.playerAnswerRevealed = false;
+        playSound('click');
+      }
+      render();
+    }
+
+    function revealPlayerAnswerNow() {
+      if (!state.answerLocked || state.playerAnswerRevealed) return;
+      state.playerAnswerRevealed = true;
+      const lastAns = state.playerAnswers[state.playerAnswers.length - 1];
+      playSound(lastAns && lastAns.isCorrect ? 'correct' : 'wrong');
+      render();
+    }
+
+    function advancePlayerQuestion() {
+      playSound('click');
+      const cat = categories[state.currentCatIndex];
+      if (state.currentQIndex < cat.questions.length - 1) {
+        state.currentQIndex++;
+        state.selectedOptionTemp = null;
+        state.answerLocked = false;
+        state.playerAnswerRevealed = false;
+        render();
+      } else if (state.currentCatIndex < categories.length - 1) {
+        state.currentCatIndex++;
+        state.currentQIndex = 0;
+        state.selectedOptionTemp = null;
+        state.answerLocked = false;
+        state.playerAnswerRevealed = false;
+        render();
+      } else {
+        state.view = 'player-results';
+        playSound('fanfare');
+        launchConfetti();
+        render();
+      }
+    }
+
+    // --- VIEW 4: PLAYER RESULTS & SUMMARY SCREEN ---
+    function getPlayerRankTitle(score, total) {
+      const pct = score / total;
+      if (pct >= 0.9) return { title: "Kalkúnameistari fjölskyldunnar 👑", desc: "Ótrúleg frammistaða! Þú átt skilið stærsta bita af graskersbökunni." };
+      if (pct >= 0.7) return { title: "Þakkargjörðarsérfræðingur 🦃", desc: "Glæsilegur árangur! Þú ert með þetta allt á hreinu." };
+      if (pct >= 0.5) return { title: "Fyllingar-fagmanneskja 🥧", desc: "Mjög flottur árangur – vel yfir meðallagi!" };
+      return { title: "Trönuberja-töffari 🍂", desc: "Góð tilraun! Það er alltaf gaman að vera með." };
+    }
+
+    function renderPlayerResultsView() {
+      const total = getTotalQuestionsCount();
+      const score = state.playerAnswers.filter(a => a.isCorrect).length;
+      const accuracyPct = total > 0 ? Math.round((score / total) * 100) : 0;
+      const rank = getPlayerRankTitle(score, total);
+
+      const catSummaries = categories.map((cat, cIdx) => {
+        const catAnswers = state.playerAnswers.filter(a => a.catIndex === cIdx);
+        const catScore = catAnswers.filter(a => a.isCorrect).length;
+        return { ...cat, score: catScore, total: cat.questions.length };
+      });
+
+      return `
+        <div class="animate-pop max-w-2xl mx-auto w-full space-y-6">
+          <!-- Main Trophy Card -->
+          <div class="glass-card rounded-3xl p-6 sm:p-9 text-center relative overflow-hidden">
+            <div class="text-5xl sm:text-6xl mb-3">🏆</div>
+            <div class="inline-block px-3.5 py-1 rounded-full bg-amberwarm-400/20 border border-amberwarm-400/45 text-amberwarm-300 text-xs font-extrabold uppercase tracking-wider mb-2">
+              Lokaniðurstaða • ${escapeHtml(state.playerName)}
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-cream-50">
+              ${rank.title}
+            </h2>
+            <p class="text-cream-100/85 text-sm sm:text-base mt-2 max-w-md mx-auto">
+              ${rank.desc}
+            </p>
+
+            <!-- Big Score & Accuracy Display -->
+            <div class="my-6 inline-flex flex-wrap items-center justify-center gap-4 px-7 py-5 rounded-3xl bg-plum-950/85 border-2 border-amberwarm-400/50 shadow-inner">
+              <div class="flex items-baseline gap-2">
+                <span class="font-display text-5xl sm:text-6xl font-extrabold text-amberwarm-400">${score}</span>
+                <span class="text-xl sm:text-2xl font-bold text-cream-100/65">/ ${total} stig</span>
+              </div>
+              <div class="h-10 w-px bg-amberwarm-400/25 hidden sm:block"></div>
+              <div class="px-3.5 py-1.5 rounded-2xl bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 font-extrabold text-base sm:text-lg">
+                ${accuracyPct}% rétt
+              </div>
+            </div>
+
+            <p class="text-xs text-cream-100/75">
+              📢 Sýndu kynninum þennan skjá svo hann geti skráð stigin þín á stigatöfluna í sjónvarpinu!
+            </p>
+
+            <!-- Category Breakdown Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-6 text-left">
+              ${catSummaries.map(c => `
+                <div class="p-3 rounded-2xl bg-plum-950/70 border border-amberwarm-400/15">
+                  <div class="text-xl mb-1">${c.icon}</div>
+                  <div class="text-xs font-semibold text-cream-100/80 truncate">${escapeHtml(c.title)}</div>
+                  <div class="font-display font-bold text-base text-amberwarm-300 mt-0.5">${c.score} / ${c.total}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="mt-6 flex flex-wrap justify-center gap-3">
+              <button onclick="launchConfetti(); playSound('fanfare');" class="px-5 py-3 rounded-2xl bg-amberwarm-400/20 hover:bg-amberwarm-400/30 border border-amberwarm-400/45 text-amberwarm-300 text-sm font-bold transition">
+                🎊 Meira konfettí!
+              </button>
+              <button onclick="state.view = state.isLockedPlayerSession ? 'player-setup' : 'landing'; render();" class="px-5 py-3 rounded-2xl bg-plum-800 hover:bg-plum-700 text-cream-50 text-sm font-semibold transition">
+                ${state.isLockedPlayerSession ? '↺ Spila aftur' : 'Aftur á upphafsskjá'}
+              </button>
+            </div>
+          </div>
+
+          <!-- Detailed Answer Breakdown -->
+          <div class="glass-card rounded-3xl p-5 sm:p-7">
+            <h3 class="font-display text-xl font-bold text-cream-50 mb-4 flex items-center gap-2">
+              <span>📋</span> Yfirlit yfir öll svörin þín
+            </h3>
+            <div class="space-y-3">
+              ${state.playerAnswers.map((ans, idx) => `
+                <div class="p-3.5 rounded-2xl bg-plum-950/70 border ${ans.isCorrect ? 'border-emerald-500/35' : 'border-red-500/35'} flex items-start gap-3">
+                  <span class="text-lg mt-0.5">${ans.isCorrect ? '✅' : '❌'}</span>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-[11px] font-bold uppercase tracking-wider text-cream-100/55">
+                      ${idx + 1}. ${escapeHtml(ans.catTitle)}
+                    </div>
+                    <div class="text-sm font-semibold text-cream-50 mt-0.5">${escapeHtml(ans.questionText)}</div>
+                    <div class="text-xs mt-1.5 flex flex-wrap gap-x-4 gap-y-1">
+                      <span class="${ans.isCorrect ? 'text-emerald-300' : 'text-red-300'}">
+                        Þitt svar: <strong>${escapeHtml(ans.selectedText)}</strong>
+                      </span>
+                      ${!ans.isCorrect ? `<span class="text-emerald-300">Rétt svar: <strong>${escapeHtml(ans.correctText)}</strong></span>` : ''}
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // --- VIEW 5: HOST / TV PRESENTATION MODE ---
+    function selectHostMode() {
+      playSound('click');
+      state.currentCatIndex = 0;
+      state.currentQIndex = 0;
+      state.hostCategoryIntro = true;
+      state.hostAnswerRevealed = false;
+      resetHostTimer();
+      state.view = 'host-quiz';
+      render();
+    }
+
+    function dismissHostCategoryIntro() {
+      playSound('click');
+      state.hostCategoryIntro = false;
+      resetHostTimer();
+      render();
+    }
+
+    function renderHostQuizView() {
+      const cat = categories[state.currentCatIndex];
+      const question = cat.questions[state.currentQIndex];
+      const flatIndex = getFlatQuestionIndex(state.currentCatIndex, state.currentQIndex);
+      const totalQuestions = getTotalQuestionsCount();
+      const letters = ['A', 'B', 'C', 'D'];
+
+      const isFirstQuestion = state.currentCatIndex === 0 && state.currentQIndex === 0;
+      const isLastQuestion =
+        state.currentCatIndex === categories.length - 1 &&
+        state.currentQIndex === cat.questions.length - 1;
+
+      if (state.hostCategoryIntro) {
+        return `
+          <div class="animate-pop max-w-4xl mx-auto w-full">
+            <!-- Category Quick-Jump Bar -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
+              ${categories.map((c, idx) => `
+                <button
+                  onclick="hostJumpToCategory(${idx})"
+                  class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-1.5 ${
+                    idx === state.currentCatIndex
+                      ? 'bg-gradient-to-r from-amberwarm-500 to-cranberry-600 text-white shadow-lg'
+                      : 'bg-plum-800/90 hover:bg-plum-700 text-cream-100/80 border border-amberwarm-400/15'
+                  }"
+                >
+                  <span>${c.icon}</span>
+                  <span>${idx + 1}. ${escapeHtml(c.title)}</span>
+                </button>
+              `).join('')}
+            </div>
+
+            <!-- Dramatic Category Splash Card -->
+            <div class="glass-card rounded-3xl p-8 sm:p-14 text-center border-2 border-amberwarm-400/45 relative overflow-hidden">
+              <div class="text-6xl sm:text-8xl mb-5 animate-float inline-block">${cat.icon}</div>
+              <div class="inline-block px-4 py-1.5 rounded-full bg-amberwarm-400/20 border border-amberwarm-400/40 text-amberwarm-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest mb-3">
+                Flokkur ${state.currentCatIndex + 1} af ${categories.length}
+              </div>
+              <h2 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 mb-4">
+                ${escapeHtml(cat.title)}
+              </h2>
+              <p class="text-cream-100/80 text-base sm:text-xl max-w-xl mx-auto mb-8 leading-relaxed">
+                ${escapeHtml(cat.subtitle)} • <strong class="text-amberwarm-300">${cat.questions.length} spurningar</strong>
+              </p>
+
+              <button
+                onclick="dismissHostCategoryIntro()"
+                class="px-9 py-4 rounded-2xl bg-gradient-to-r from-amberwarm-400 via-amberwarm-500 to-cranberry-600 hover:from-amberwarm-300 hover:to-cranberry-700 text-white font-display font-extrabold text-xl sm:text-2xl shadow-2xl transition hover:scale-[1.02]"
+              >
+                Birta spurningu ${flatIndex + 1} →
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="animate-pop max-w-5xl mx-auto w-full">
+          <!-- Category Quick-Jump Bar & Timer for Host -->
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+            <div class="flex flex-wrap gap-2">
+              ${categories.map((c, idx) => `
+                <button
+                  onclick="hostJumpToCategory(${idx})"
+                  class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-1.5 ${
+                    idx === state.currentCatIndex
+                      ? 'bg-gradient-to-r from-amberwarm-500 to-cranberry-600 text-white shadow-lg'
+                      : 'bg-plum-800/90 hover:bg-plum-700 text-cream-100/80 border border-amberwarm-400/15'
+                  }"
+                >
+                  <span>${c.icon}</span>
+                  <span>${idx + 1}. ${escapeHtml(c.title)}</span>
+                </button>
+              `).join('')}
+            </div>
+
+            <!-- Built-in 30s Visual Countdown Timer Widget -->
+            <div class="flex items-center gap-2 bg-plum-950/90 border border-amberwarm-400/35 px-3.5 py-1.5 rounded-2xl shadow-md">
+              <span class="text-sm">⏱️</span>
+              <span id="host-timer-display" class="font-display font-extrabold text-lg sm:text-xl tabular-nums ${
+                state.timerSeconds <= 5 ? 'text-red-400 animate-pulse' : 'text-amberwarm-300'
+              }">
+                0:${state.timerSeconds.toString().padStart(2, '0')}
+              </span>
+              <button
+                onclick="toggleHostTimer()"
+                class="px-2.5 py-1 rounded-lg bg-amberwarm-400/20 hover:bg-amberwarm-400/35 text-amberwarm-300 text-xs font-extrabold transition"
+              >
+                ${state.timerRunning ? 'Pása' : 'Ræsa'}
+              </button>
+              <button
+                onclick="resetHostTimer()"
+                class="px-2 py-1 rounded-lg bg-plum-800 hover:bg-plum-700 text-cream-100/80 text-xs transition"
+                title="Endurstilla klukku í 30 sek"
+              >
+                ↺
+              </button>
+            </div>
+          </div>
+
+          <!-- Main TV Presentation Card -->
+          <div class="glass-card rounded-3xl p-6 sm:p-10">
+            <!-- Header Meta -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-amberwarm-400/20">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl sm:text-3xl">${cat.icon}</span>
+                <div>
+                  <div class="text-xs font-extrabold uppercase tracking-wider text-amberwarm-300">
+                    Flokkur ${state.currentCatIndex + 1}: ${escapeHtml(cat.title)}
+                  </div>
+                  <div class="text-xs text-cream-100/65">${escapeHtml(cat.subtitle)}</div>
+                </div>
+              </div>
+              <div class="px-4 py-1.5 rounded-full bg-plum-950/85 border border-amberwarm-400/25 text-sm font-extrabold text-cream-50">
+                Spurning ${flatIndex + 1} af ${totalQuestions}
+              </div>
+            </div>
+
+            <!-- Large TV Question Text -->
+            <h2 class="font-display text-2xl sm:text-4xl font-bold text-cream-50 leading-snug my-6 sm:my-8">
+              ${escapeHtml(question.q)}
+            </h2>
+
+            <!-- 2x2 Grid of Options for Widescreen TV -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
+              ${question.options.map((opt, idx) => {
+                let cardStyle = "bg-plum-950/80 border-amberwarm-400/20 text-cream-50";
+                let letterStyle = "bg-plum-800 text-amberwarm-300 border-amberwarm-400/25";
+                let checkBadge = "";
+
+                if (state.hostAnswerRevealed) {
+                  if (idx === question.correct) {
+                    cardStyle = "bg-emerald-900/75 border-emerald-400 text-white ring-4 ring-emerald-400/35 scale-[1.01]";
+                    letterStyle = "bg-emerald-400 text-plum-950 border-emerald-300";
+                    checkBadge = `<span class="px-3 py-1 rounded-full bg-emerald-400 text-plum-950 text-xs font-extrabold uppercase">Rétt svar ✓</span>`;
+                  } else {
+                    cardStyle = "bg-plum-950/35 border-cream-100/10 text-cream-100/40 opacity-60";
+                  }
+                }
+
+                return `
+                  <div class="p-4 sm:p-5 rounded-2xl border-2 flex items-center gap-4 transition-all duration-300 ${cardStyle}">
+                    <span class="w-11 h-11 rounded-xl border flex-shrink-0 flex items-center justify-center font-display font-extrabold text-lg ${letterStyle}">
+                      ${letters[idx]}
+                    </span>
+                    <span class="flex-1 font-bold text-base sm:text-xl leading-snug">
+                      ${escapeHtml(opt)}
+                    </span>
+                    ${checkBadge}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+
+            <!-- Revealed Fun Fact Box -->
+            ${state.hostAnswerRevealed && question.fact ? `
+              <div class="mt-6 p-5 rounded-2xl bg-amberwarm-400/15 border border-amberwarm-400/45 text-cream-50 animate-pop flex items-start gap-3.5">
+                <span class="text-2xl">💡</span>
+                <div>
+                  <div class="text-xs font-extrabold uppercase tracking-wider text-amberwarm-300 mb-1">Fróðleiksmoli</div>
+                  <p class="text-sm sm:text-base text-cream-50 leading-relaxed">${escapeHtml(question.fact)}</p>
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Host Controls Footer -->
+            <div class="mt-8 pt-6 border-t border-amberwarm-400/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+              <button
+                onclick="hostPrevQuestion()"
+                ${isFirstQuestion ? 'disabled' : ''}
+                class="px-5 py-3.5 rounded-2xl font-bold text-sm transition ${
+                  isFirstQuestion
+                    ? 'bg-plum-950/50 text-cream-100/25 cursor-not-allowed'
+                    : 'bg-plum-800 hover:bg-plum-700 text-cream-50'
+                }"
+              >
+                ← Fyrri spurning
+              </button>
+
+              <div class="flex flex-col sm:flex-row gap-3">
+                <button
+                  onclick="toggleHostReveal()"
+                  class="px-6 py-3.5 rounded-2xl font-extrabold text-sm sm:text-base transition shadow-lg ${
+                    state.hostAnswerRevealed
+                      ? 'bg-plum-700 hover:bg-plum-600 text-cream-50'
+                      : 'bg-gradient-to-r from-amberwarm-400 to-amberwarm-500 hover:from-amberwarm-300 hover:to-amberwarm-400 text-plum-950'
+                  }"
+                >
+                  ${state.hostAnswerRevealed ? '🙈 Fela svar aftur' : '✨ Sýna rétt svar'}
+                </button>
+
+                ${!isLastQuestion ? `
+                  <button
+                    onclick="hostNextQuestion()"
+                    class="px-6 py-3.5 rounded-2xl bg-cranberry-600 hover:bg-cranberry-700 text-white font-extrabold text-sm sm:text-base transition shadow-lg"
+                  >
+                    Næsta spurning →
+                  </button>
+                ` : `
+                  <button
+                    onclick="openScoreboardModal(); declareWinnerCelebration();"
+                    class="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm sm:text-base transition shadow-lg"
+                  >
+                    🏆 Opna lokastigatöflu!
+                  </button>
+                `}
+              </div>
+            </div>
+
+            <!-- Subtle Keyboard Shortcut Hint for Host -->
+            <div class="mt-4 text-center text-[11px] text-cream-100/45 hidden sm:block">
+              Flýtilyklar á lyklaborði: <kbd class="px-1.5 py-0.5 rounded bg-plum-950 border border-amberwarm-400/20 text-cream-100/70">Bilslá</kbd> ræsir/pásar klukku • <kbd class="px-1.5 py-0.5 rounded bg-plum-950 border border-amberwarm-400/20 text-cream-100/70">Enter</kbd> sýnir svar • <kbd class="px-1.5 py-0.5 rounded bg-plum-950 border border-amberwarm-400/20 text-cream-100/70">← / →</kbd> flettir spurningum
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleHostReveal() {
+      state.hostAnswerRevealed = !state.hostAnswerRevealed;
+      if (state.hostAnswerRevealed) {
+        stopHostTimer();
+        playSound('correct');
+      } else {
+        playSound('click');
+      }
+      render();
+    }
+
+    function hostNextQuestion() {
+      playSound('click');
+      const cat = categories[state.currentCatIndex];
+      if (state.currentQIndex < cat.questions.length - 1) {
+        state.currentQIndex++;
+        state.hostCategoryIntro = false;
+      } else if (state.currentCatIndex < categories.length - 1) {
+        state.currentCatIndex++;
+        state.currentQIndex = 0;
+        state.hostCategoryIntro = true;
+      }
+      state.hostAnswerRevealed = false;
+      resetHostTimer();
+      render();
+    }
+
+    function hostPrevQuestion() {
+      playSound('click');
+      if (state.hostCategoryIntro && state.currentCatIndex > 0) {
+        state.hostCategoryIntro = false;
+        state.currentCatIndex--;
+        state.currentQIndex = categories[state.currentCatIndex].questions.length - 1;
+      } else if (state.currentQIndex > 0) {
+        state.currentQIndex--;
+        state.hostCategoryIntro = false;
+      } else if (state.currentCatIndex > 0) {
+        state.currentCatIndex--;
+        state.currentQIndex = categories[state.currentCatIndex].questions.length - 1;
+        state.hostCategoryIntro = false;
+      }
+      state.hostAnswerRevealed = false;
+      resetHostTimer();
+      render();
+    }
+
+    function hostJumpToCategory(catIdx) {
+      playSound('click');
+      state.currentCatIndex = catIdx;
+      state.currentQIndex = 0;
+      state.hostCategoryIntro = true;
+      state.hostAnswerRevealed = false;
+      resetHostTimer();
+      render();
+    }
+
+    function hostPrevQuestion() {
+      playSound('click');
+      if (state.currentQIndex > 0) {
+        state.currentQIndex--;
+      } else if (state.currentCatIndex > 0) {
+        state.currentCatIndex--;
+        state.currentQIndex = categories[state.currentCatIndex].questions.length - 1;
+      }
+      state.hostAnswerRevealed = false;
+      resetHostTimer();
+      render();
+    }
+
+    function hostJumpToCategory(catIdx) {
+      playSound('click');
+      state.currentCatIndex = catIdx;
+      state.currentQIndex = 0;
+      state.hostAnswerRevealed = false;
+      resetHostTimer();
+      render();
+    }
+
+    // Host Timer Logic
+    function toggleHostTimer() {
+      if (state.timerRunning) {
+        stopHostTimer();
+        render();
+      } else {
+        if (state.timerSeconds <= 0) state.timerSeconds = 30;
+        state.timerRunning = true;
+        playSound('click');
+        state.timerInterval = setInterval(() => {
+          state.timerSeconds--;
+          if (state.timerSeconds <= 5 && state.timerSeconds > 0) {
+            playSound('tick');
+          }
+          if (state.timerSeconds <= 0) {
+            state.timerSeconds = 0;
+            stopHostTimer();
+            playSound('chime');
+            showToast('Tíminn er liðinn! ⏰', '⏰');
+          }
+          const display = document.getElementById('host-timer-display');
+          if (display) {
+            display.textContent = `0:${state.timerSeconds.toString().padStart(2, '0')}`;
+            if (state.timerSeconds <= 5) {
+              display.classList.remove('text-amberwarm-300');
+              display.classList.add('text-red-400', 'animate-pulse');
+            }
+          }
+        }, 1000);
+        render();
+      }
+    }
+
+    function stopHostTimer() {
+      state.timerRunning = false;
+      if (state.timerInterval) {
+        clearInterval(state.timerInterval);
+        state.timerInterval = null;
+      }
+    }
+
+    function resetHostTimer() {
+      stopHostTimer();
+      state.timerSeconds = 30;
+    }
+
+    // =========================================================================
+    // 7. SCOREBOARD & PODIUM MODAL LOGIC
+    // =========================================================================
+    function openScoreboardModal() {
+      playSound('click');
+      document.getElementById('max-possible-score-label').textContent = getTotalQuestionsCount();
+      renderScoreboardList();
+      const modal = document.getElementById('scoreboard-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeScoreboardModal() {
+      const modal = document.getElementById('scoreboard-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function addScoreboardTeam(e) {
+      e.preventDefault();
+      const input = document.getElementById('new-team-input');
+      const name = input.value.trim();
+      if (!name) return;
+      playSound('click');
+      state.teams.push({
+        id: Date.now(),
+        name,
+        score: 0
+      });
+      input.value = '';
+      saveScoreboardToStorage();
+      renderScoreboardList();
+    }
+
+    function updateTeamScore(id, delta) {
+      const team = state.teams.find(t => t.id === id);
+      if (!team) return;
+      team.score = Math.max(0, team.score + delta);
+      playSound(delta > 0 ? 'correct' : 'click');
+      saveScoreboardToStorage();
+      renderScoreboardList();
+    }
+
+    function setTeamScoreDirect(id, value) {
+      const team = state.teams.find(t => t.id === id);
+      if (!team) return;
+      const parsed = parseInt(value, 10);
+      team.score = isNaN(parsed) ? 0 : Math.max(0, parsed);
+      saveScoreboardToStorage();
+      renderScoreboardList();
+    }
+
+    function removeScoreboardTeam(id) {
+      playSound('click');
+      state.teams = state.teams.filter(t => t.id !== id);
+      saveScoreboardToStorage();
+      renderScoreboardList();
+    }
+
+    function declareWinnerCelebration() {
+      if (state.teams.length === 0) {
+        showToast('Bættu við keppendum á stigatöfluna fyrst!', '🏆');
+        return;
+      }
+      const sorted = [...state.teams].sort((a, b) => b.score - a.score);
+      const banner = document.getElementById('winner-podium-banner');
+      const content = document.getElementById('winner-podium-content');
+
+      if (banner && content) {
+        const first = sorted[0];
+        const second = sorted[1] || null;
+        const third = sorted[2] || null;
+
+        content.innerHTML = `
+          ${second ? `
+            <div class="flex-1 max-w-[140px] bg-plum-950/85 border border-slate-300/40 rounded-t-2xl p-2.5 pt-3">
+              <div class="text-xl mb-0.5">🥈</div>
+              <div class="font-bold text-xs sm:text-sm text-cream-50 truncate">${escapeHtml(second.name)}</div>
+              <div class="text-xs font-extrabold text-slate-300 mt-0.5">${second.score} stig</div>
+            </div>
+          ` : ''}
+          <div class="flex-1 max-w-[170px] bg-gradient-to-b from-amberwarm-400/30 to-plum-950/95 border-2 border-amberwarm-400 rounded-t-2xl p-3 pt-4 shadow-xl">
+            <div class="text-3xl mb-1">👑</div>
+            <div class="font-display font-extrabold text-sm sm:text-lg text-cream-50 truncate">${escapeHtml(first.name)}</div>
+            <div class="text-xs sm:text-sm font-extrabold text-amberwarm-300 mt-0.5">${first.score} stig</div>
+          </div>
+          ${third ? `
+            <div class="flex-1 max-w-[130px] bg-plum-950/85 border border-amber-700/50 rounded-t-2xl p-2 pt-2.5">
+              <div class="text-lg mb-0.5">🥉</div>
+              <div class="font-bold text-xs text-cream-50 truncate">${escapeHtml(third.name)}</div>
+              <div class="text-[11px] font-extrabold text-amber-500 mt-0.5">${third.score} stig</div>
+            </div>
+          ` : ''}
+        `;
+        banner.classList.remove('hidden');
+      }
+
+      playSound('fanfare');
+      launchConfetti();
+    }
+
+    function renderScoreboardList() {
+      const container = document.getElementById('scoreboard-list');
+      if (state.teams.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-cream-100/55 text-sm">
+            Engin lið skráð ennþá. Bættu við keppendum hér að ofan!
+          </div>
+        `;
+        return;
+      }
+
+      const sorted = [...state.teams].sort((a, b) => b.score - a.score);
+      const medals = ['🥇', '🥈', '🥉'];
+
+      container.innerHTML = sorted.map((team, index) => `
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-plum-950/80 border ${index === 0 && team.score > 0 ? 'border-amberwarm-400/70 bg-amberwarm-500/10' : 'border-amberwarm-400/15'} flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="text-xl w-7 text-center font-bold text-cream-100/75">
+              ${index < 3 && team.score > 0 ? medals[index] : `${index + 1}.`}
+            </span>
+            <span class="font-bold text-base sm:text-lg text-cream-50 truncate">${escapeHtml(team.name)}</span>
+          </div>
+
+          <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+            <button onclick="updateTeamScore(${team.id}, -1)" class="w-9 h-9 rounded-xl bg-plum-800 hover:bg-cranberry-700 text-cream-50 font-bold transition">
+              -1
+            </button>
+            <input
+              type="number"
+              value="${team.score}"
+              onchange="setTeamScoreDirect(${team.id}, this.value)"
+              class="w-14 text-center py-1.5 rounded-xl bg-plum-900 border border-amberwarm-400/35 text-amberwarm-300 font-display font-extrabold text-lg focus:outline-none"
+            />
+            <button onclick="updateTeamScore(${team.id}, 1)" class="w-9 h-9 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold transition">
+              +1
+            </button>
+            <button onclick="removeScoreboardTeam(${team.id})" class="ml-1 p-2 rounded-xl text-cream-100/40 hover:text-red-400 hover:bg-plum-800 transition" title="Eyða keppanda">
+              🗑️
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================================
+    // 8. QUESTION EDITOR & SHAREABLE URL GENERATOR
+    // =========================================================================
+    let draftCategories = [];
+
+    function openEditorModal() {
+      playSound('click');
+      draftCategories = JSON.parse(JSON.stringify(categories));
+      state.editorTab = 3; // Default directly to Flokkur 4 (Fjölskyldan & húmor)
+      renderEditorModal();
+      const modal = document.getElementById('editor-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeEditorModal() {
+      const modal = document.getElementById('editor-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function switchEditorTab(idx) {
+      playSound('click');
+      state.editorTab = idx;
+      renderEditorModal();
+    }
+
+    function renderEditorModal() {
+      const tabsContainer = document.getElementById('editor-tabs');
+      tabsContainer.innerHTML = draftCategories.map((cat, idx) => `
+        <button
+          type="button"
+          onclick="switchEditorTab(${idx})"
+          class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-1.5 ${
+            idx === state.editorTab
+              ? 'bg-amberwarm-500 text-plum-950 shadow'
+              : 'bg-plum-950 hover:bg-plum-800 text-cream-100/80'
+          }"
+        >
+          <span>${cat.icon}</span>
+          <span>${escapeHtml(cat.title)}</span>
+        </button>
+      `).join('');
+
+      const activeCat = draftCategories[state.editorTab];
+      const qContainer = document.getElementById('editor-questions-container');
+
+      qContainer.innerHTML = `
+        ${state.editorTab === 3 ? `
+          <div class="p-3.5 rounded-2xl bg-amberwarm-400/15 border border-amberwarm-400/40 text-xs text-cream-50 flex items-center gap-2.5">
+            <span class="text-lg">💡</span>
+            <span><strong>Ábending:</strong> Hér getur þú sett inn nöfn fjölskyldumeðlima eða skemmtilegar innanhúss-spurningar, og ýtt svo á <strong>„Afrita hlekk með mínum breytingum“</strong> hér að neðan!</span>
+          </div>
+        ` : ''}
+
+        <div class="p-3.5 rounded-2xl bg-plum-950/70 border border-amberwarm-400/20 flex flex-col sm:flex-row sm:items-center gap-3">
+          <label class="text-xs font-extrabold uppercase tracking-wider text-amberwarm-300 whitespace-nowrap">Heiti flokks:</label>
+          <input
+            type="text"
+            value="${escapeHtml(activeCat.title)}"
+            oninput="draftCategories[${state.editorTab}].title = this.value"
+            class="flex-1 px-3.5 py-2 rounded-xl bg-plum-900 border border-amberwarm-400/25 text-cream-50 text-sm font-bold focus:outline-none focus:border-amberwarm-400"
+          />
+        </div>
+
+        ${activeCat.questions.map((qObj, qIdx) => `
+          <div class="p-4 sm:p-5 rounded-2xl bg-plum-950/80 border border-amberwarm-400/20 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-amberwarm-400">Spurning ${qIdx + 1}</span>
+              <span class="text-[11px] text-cream-100/55">Hakaðu við rétta svarið</span>
+            </div>
+
+            <textarea
+              rows="2"
+              oninput="draftCategories[${state.editorTab}].questions[${qIdx}].q = this.value"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-plum-900 border border-amberwarm-400/25 text-cream-50 text-sm font-medium focus:outline-none focus:border-amberwarm-400"
+            >${escapeHtml(qObj.q)}</textarea>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              ${qObj.options.map((opt, oIdx) => `
+                <div class="flex items-center gap-2 bg-plum-900/90 p-2 rounded-xl border ${qObj.correct === oIdx ? 'border-emerald-400/80' : 'border-amberwarm-400/15'}">
+                  <input
+                    type="radio"
+                    name="correct-${state.editorTab}-${qIdx}"
+                    ${qObj.correct === oIdx ? 'checked' : ''}
+                    onchange="draftCategories[${state.editorTab}].questions[${qIdx}].correct = ${oIdx}; renderEditorModal();"
+                    class="w-4 h-4 accent-emerald-500 cursor-pointer"
+                    title="Merkja sem rétt svar"
+                  />
+                  <input
+                    type="text"
+                    value="${escapeHtml(opt)}"
+                    oninput="draftCategories[${state.editorTab}].questions[${qIdx}].options[${oIdx}] = this.value"
+                    class="flex-1 bg-transparent text-cream-50 text-xs sm:text-sm focus:outline-none"
+                  />
+                </div>
+              `).join('')}
+            </div>
+
+            <div>
+              <input
+                type="text"
+                value="${escapeHtml(qObj.fact || '')}"
+                placeholder="Stuttur fróðleiksmoli eða skýring (valfrjálst)..."
+                oninput="draftCategories[${state.editorTab}].questions[${qIdx}].fact = this.value"
+                class="w-full px-3 py-2 rounded-xl bg-plum-900/70 border border-amberwarm-400/15 text-cream-100/85 text-xs focus:outline-none focus:border-amberwarm-400"
+              />
+            </div>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    function saveEditorChanges() {
+      categories = JSON.parse(JSON.stringify(draftCategories));
+      try {
+        localStorage.setItem('thanksgiving_quiz_2026_v2', JSON.stringify(categories));
+      } catch (e) {}
+      playSound('correct');
+      showToast('Breytingar á spurningum vistaðar!', '💾');
+      closeEditorModal();
+      render();
+    }
+
+    function copyCustomShareLink() {
+      categories = JSON.parse(JSON.stringify(draftCategories));
+      try {
+        localStorage.setItem('thanksgiving_quiz_2026_v2', JSON.stringify(categories));
+        const shareUrl = getShareableQuizUrl();
+        if (!shareUrl) {
+          closeEditorModal();
+          openQrModal();
+          showToast('Límdu deilihlekkinn (Share) hér til að búa til spilarahlekk!', '🔗');
+          return;
+        }
+        copyTextToClipboard(shareUrl, 'Sérsniðinn spilarahlekkur afritaður! Símar opna leikinn beint.');
+      } catch (e) {
+        copyShareLinkDirect();
+      }
+    }
+
+    function resetQuestionsToDefault() {
+      draftCategories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+      categories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+      localStorage.removeItem('thanksgiving_quiz_2026_v2');
+      if (window.location.hash.includes('q=') || window.location.hash.includes('quiz=')) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+      playSound('click');
+      renderEditorModal();
+      showToast('Spurningar endurstilltar í upprunalegt horf.', '↺');
+    }
+
+    function escapeHtml(str) {
+      if (typeof str !== 'string') return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // =========================================================================
+    // 9. INITIALIZE APP
+    // =========================================================================
+    // 9. INITIALIZE APP & HOST KEYBOARD SHORTCUTS
+    // =========================================================================
+    window.addEventListener('keydown', (e) => {
+      if (state.view !== 'host-quiz') return;
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+
+      const anyModalOpen = ['qr-modal', 'confirm-modal', 'scoreboard-modal', 'editor-modal'].some(id => {
+        const el = document.getElementById(id);
+        return el && !el.classList.contains('hidden');
+      });
+      if (anyModalOpen) return;
+
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (state.hostCategoryIntro) {
+          dismissHostCategoryIntro();
+        } else {
+          toggleHostTimer();
+        }
+      } else if (e.code === 'Enter') {
+        e.preventDefault();
+        if (state.hostCategoryIntro) {
+          dismissHostCategoryIntro();
+        } else {
+          toggleHostReveal();
+        }
+      } else if (e.code === 'ArrowRight') {
+        e.preventDefault();
+        if (state.hostCategoryIntro) {
+          dismissHostCategoryIntro();
+        } else {
+          hostNextQuestion();
+        }
+      } else if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        hostPrevQuestion();
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadCustomQuestionsFromUrlOrStorage();
+      loadScoreboardFromStorage();
+
+      // If opened via player share link / QR code (#play), lock directly into clean phone mode!
+      const hash = window.location.hash || '';
+      if (hash.startsWith('#play')) {
+        state.isLockedPlayerSession = true;
+        state.view = 'player-setup';
+      }
+
+      render();
+    });
+  </script>
+
+</body></html>
