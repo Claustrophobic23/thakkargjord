@@ -769,12 +769,19 @@
       timerSeconds: 30,
       timerRunning: false,
       timerInterval: null,
-      // Scoreboard state
+      timerDeadlineAt: null,
+      revealUntilAt: null,
+      autoAdvanceInterval: null,
+      avatar: '🦃',
+      finalStandings: [],
       teams: [],
       seenReactionIds: new Set(),
       // Editor state
       editorTab: 3
     };
+
+    const PLAYER_AVATARS = ['🦃','🍂','🥧','🌽','🍁','🍗','🏈','🏟️','🧀','🥔','🔴','⚽','👹','🏆','🦅','🐺','🐻','🐬','🐧','🐯','🦊','🦬','🦌','🐿️','🍎','🥕','🍠','🍇','🏉','🎯'];
+    function getAssignedAvatar(id) { const key=String(id||'guest'); let hash=0; for(let i=0;i<key.length;i++) hash=((hash*31)+key.charCodeAt(i))>>>0; return PLAYER_AVATARS[hash%PLAYER_AVATARS.length]; }
 
     function generateRoomCode() {
       const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -1081,6 +1088,7 @@
           if (playersObj && typeof playersObj === 'object') {
             Object.values(playersObj).forEach(p => handlePlayerMessageOnHost(p));
           }
+          checkHostAutoProgress();
           // Also poll live reactions from phones
           const reactRes = await fetch(`${FIREBASE_DB_URL}/rooms/${encodeURIComponent(state.roomId)}/reactions.json`);
           if (reactRes.ok) {
@@ -1114,7 +1122,10 @@
         revealed: state.hostAnswerRevealed,
         questionShownAt: state.questionShownAt,
         categories: categories,
-        updatedAt: Date.now()
+        updatedAt: Date.now(),
+        timerDeadlineAt: state.timerDeadlineAt,
+        revealUntilAt: state.revealUntilAt,
+        finalStandings: state.finalStandings || []
       };
     }
 
@@ -1155,6 +1166,7 @@
       const incomingScore = Number(playerData.score) || 0;
       const incomingAnsweredCount = Number(playerData.answeredCount) || 0;
       const incomingLastAnsweredQ = playerData.lastAnsweredQ ?? -1;
+      const incomingAvatar = playerData.avatar || getAssignedAvatar(playerId || playerName);
 
       const existingIdx = state.teams.findIndex(
         t => (playerId && t.playerId === playerId) || t.name.toLowerCase() === playerName.toLowerCase()
@@ -1167,6 +1179,7 @@
         const team = state.teams[existingIdx];
         changed =
           team.name !== playerName ||
+          team.avatar !== incomingAvatar ||
           team.score !== incomingScore ||
           team.answeredCount !== incomingAnsweredCount ||
           team.lastAnsweredQ !== incomingLastAnsweredQ ||
@@ -1175,6 +1188,7 @@
 
         if (changed) {
           team.name = playerName;
+          team.avatar = incomingAvatar;
           team.score = incomingScore;
           team.answeredCount = incomingAnsweredCount;
           team.lastAnsweredQ = incomingLastAnsweredQ;
@@ -1186,6 +1200,7 @@
           id: Date.now() + Math.floor(Math.random() * 1000),
           playerId,
           name: playerName,
+          avatar: incomingAvatar,
           score: incomingScore,
           answeredCount: incomingAnsweredCount,
           lastAnsweredQ: incomingLastAnsweredQ,
@@ -1248,6 +1263,7 @@
       const payload = {
         id: state.playerId,
         name: state.playerName,
+        avatar: state.avatar || getAssignedAvatar(state.playerId),
         score,
         answeredCount: state.playerAnswers.length,
         lastAnsweredQ: lastFlatQ,
@@ -1290,6 +1306,9 @@
       }
 
       state.roomStatus = hostPayload.status;
+      state.timerDeadlineAt = hostPayload.timerDeadlineAt || null;
+      state.revealUntilAt = hostPayload.revealUntilAt || null;
+      state.finalStandings = Array.isArray(hostPayload.finalStandings) ? hostPayload.finalStandings : state.finalStandings;
 
       // If player hasn't entered their name yet, just store latest host state
       if (!state.playerName || state.view === 'player-setup') {
@@ -1408,6 +1427,9 @@
           break;
         case 'host-quiz':
           root.innerHTML = renderHostQuizView();
+          break;
+        case 'host-results':
+          root.innerHTML = renderFinalStandingsView();
           break;
         case 'player-setup':
           root.innerHTML = renderPlayerSetupView();
@@ -1635,11 +1657,13 @@
       playSound('fanfare');
       state.currentCatIndex = 0;
       state.currentQIndex = 0;
-      state.hostCategoryIntro = true;
+      state.hostCategoryIntro = false;
       state.hostAnswerRevealed = false;
       state.questionShownAt = Date.now();
       state.roomStatus = 'playing';
+      state.finalStandings = [];
       resetHostTimer();
+      startHostAutoTimer();
       state.view = 'host-quiz';
       broadcastHostStateToAllPlayers();
       render();
@@ -1913,73 +1937,58 @@
     }
 
     function toggleHostReveal() {
-      state.hostAnswerRevealed = !state.hostAnswerRevealed;
-      if (state.hostAnswerRevealed) {
-        stopHostTimer();
-        playSound('correct');
-      } else {
-        playSound('click');
-      }
-      broadcastHostStateToAllPlayers();
-      render();
+      if (!state.hostAnswerRevealed) revealHostAnswer();
     }
 
     function finishQuizAndShowPodium() {
       stopHostTimer();
-      state.roomStatus = 'finished';
+      if(state.autoAdvanceInterval)clearInterval(state.autoAdvanceInterval);
+      state.autoAdvanceInterval=null;
+      state.roomStatus='finished';
+      state.hostAnswerRevealed=true;
+      state.finalStandings=[...state.teams].sort((a,b)=>(b.score||0)-(a.score||0));
+      state.view='host-results';
       broadcastHostStateToAllPlayers();
-      openScoreboardModal();
-      declareWinnerCelebration();
+      playSound('fanfare');render();launchConfetti();
     }
 
-    function toggleHostTimer() {
-      if (state.timerRunning) {
-        stopHostTimer();
-      } else {
-        if (state.timerSeconds <= 0) state.timerSeconds = 30;
-        state.timerRunning = true;
-        state.timerInterval = setInterval(() => {
-          if (state.timerSeconds > 0) {
-            state.timerSeconds--;
-            if (state.timerSeconds <= 5 && state.timerSeconds > 0) playSound('tick');
-            if (state.timerSeconds === 0) {
-              stopHostTimer();
-              playSound('chime');
-            }
-            render();
-          }
-        }, 1000);
-      }
-      render();
-    }
-
-    function stopHostTimer() {
-      state.timerRunning = false;
-      clearInterval(state.timerInterval);
-      state.timerInterval = null;
-    }
-
-    function resetHostTimer() {
-      stopHostTimer();
-      state.timerSeconds = 30;
-    }
-
-    function hostNextQuestion() {
-      playSound('click');
-      const cat = categories[state.currentCatIndex];
-      if (state.currentQIndex < cat.questions.length - 1) {
-        state.currentQIndex++;
-        state.hostCategoryIntro = false;
-      } else if (state.currentCatIndex < categories.length - 1) {
-        state.currentCatIndex++;
-        state.currentQIndex = 0;
-        state.hostCategoryIntro = true;
-      }
-      state.hostAnswerRevealed = false;
-      state.questionShownAt = Date.now();
-      resetHostTimer();
+    function toggleHostTimer() { if(state.timerRunning) stopHostTimer(); else startHostAutoTimer(); render(); }
+    function startHostAutoTimer() {
+      if(state.roomStatus!=='playing'||state.hostCategoryIntro||state.hostAnswerRevealed)return;
+      stopHostTimer(); state.timerSeconds=30; state.timerDeadlineAt=Date.now()+30000; state.timerRunning=true;
+      state.timerInterval=setInterval(()=>{
+        const remaining=Math.max(0,Math.ceil((state.timerDeadlineAt-Date.now())/1000));
+        if(remaining!==state.timerSeconds){state.timerSeconds=remaining;if(remaining<=5&&remaining>0)playSound('tick');render();}
+        if(remaining<=0)revealHostAnswer();
+      },200);
       broadcastHostStateToAllPlayers();
-      render();
+    }
+    function stopHostTimer(){state.timerRunning=false;clearInterval(state.timerInterval);state.timerInterval=null;state.timerDeadlineAt=null;}
+    function resetHostTimer(){stopHostTimer();state.timerSeconds=30;state.revealUntilAt=null;}
+    function revealHostAnswer(){
+      if(state.hostAnswerRevealed||state.roomStatus!=='playing')return;
+      stopHostTimer();state.hostAnswerRevealed=true;state.revealUntilAt=Date.now()+5000;playSound('correct');
+      broadcastHostStateToAllPlayers();render();
+      if(state.autoAdvanceInterval)clearInterval(state.autoAdvanceInterval);
+      state.autoAdvanceInterval=setInterval(()=>{
+        if(state.roomStatus!=='playing'||!state.hostAnswerRevealed){clearInterval(state.autoAdvanceInterval);state.autoAdvanceInterval=null;return;}
+        if(Date.now()>=state.revealUntilAt){clearInterval(state.autoAdvanceInterval);state.autoAdvanceInterval=null;hostNextQuestion(true);}
+      },200);
+    }
+    function checkHostAutoProgress(){
+      if(state.view!=='host-quiz'||state.roomStatus!=='playing'||state.hostCategoryIntro||state.hostAnswerRevealed)return;
+      const flat=getFlatQuestionIndex(state.currentCatIndex,state.currentQIndex);
+      if(state.teams.length>0&&state.teams.filter(t=>(t.lastAnsweredQ??-1)>=flat).length>=state.teams.length)revealHostAnswer();
+    }
+    function hostNextQuestion(automatic=false){
+      if(!automatic)playSound('click');
+      if(state.autoAdvanceInterval)clearInterval(state.autoAdvanceInterval);state.autoAdvanceInterval=null;
+      const cat=categories[state.currentCatIndex];
+      if(state.currentQIndex<cat.questions.length-1)state.currentQIndex++;
+      else if(state.currentCatIndex<categories.length-1){state.currentCatIndex++;state.currentQIndex=0;}
+      else{finishQuizAndShowPodium();return;}
+      state.hostCategoryIntro=false;state.hostAnswerRevealed=false;state.questionShownAt=Date.now();state.revealUntilAt=null;
+      resetHostTimer();broadcastHostStateToAllPlayers();startHostAutoTimer();render();
     }
 
     function hostPrevQuestion() {
@@ -2063,6 +2072,7 @@
         state.playerId = 'p_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 6);
       }
       state.playerName = name;
+      state.avatar = getAssignedAvatar(state.playerId);
       state.playerAnswers = [];
       state.selectedOptionTemp = null;
       state.answerLocked = false;
@@ -2407,6 +2417,7 @@
           roomId: state.roomId,
           playerId: state.playerId,
           playerName: state.playerName,
+          avatar: state.avatar || getAssignedAvatar(state.playerId),
           playerAnswers: state.playerAnswers,
           savedAt: Date.now()
         };
@@ -2423,6 +2434,7 @@
         if (parsed && parsed.playerName && Date.now() - (parsed.savedAt || 0) < 6 * 60 * 60 * 1000) {
           state.playerId = parsed.playerId || state.playerId;
           state.playerName = parsed.playerName;
+          state.avatar = parsed.avatar || getAssignedAvatar(state.playerId);
           state.playerAnswers = Array.isArray(parsed.playerAnswers) ? parsed.playerAnswers : [];
           return true;
         }
