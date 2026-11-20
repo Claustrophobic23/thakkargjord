@@ -1616,7 +1616,7 @@
                       ${joinedTeams.map(t => `
                         <div class="animate-pop p-3.5 rounded-2xl bg-gradient-to-br from-plum-800 to-plum-950 border border-amberwarm-400/40 flex items-center justify-between gap-2 shadow-md">
                           <div class="flex items-center gap-2 min-w-0">
-                            <span class="text-lg">🦃</span>
+                            <span class="text-2xl">${escapeHtml(t.avatar || getAssignedAvatar(t.playerId || t.name))}</span>
                             <span class="font-bold text-sm sm:text-base text-cream-50 truncate">${escapeHtml(t.name)}</span>
                           </div>
                           <button onclick="removeScoreboardTeam(${t.id})" class="text-cream-100/35 hover:text-red-400 text-xs" title="Fjarlægja">✕</button>
@@ -1915,6 +1915,7 @@
                   return `
                     <div class="p-3 rounded-2xl bg-plum-950/80 border ${hasAnsweredCurrent ? 'border-emerald-400/45' : 'border-amberwarm-400/15'} flex items-center justify-between gap-2">
                       <div class="flex items-center gap-2.5 min-w-0">
+                        <span class="text-2xl">${escapeHtml(t.avatar || getAssignedAvatar(t.playerId || t.name))}</span>
                         <span class="font-display font-extrabold text-sm w-6 text-center text-amberwarm-300">${medal}</span>
                         <div class="min-w-0">
                           <div class="font-bold text-sm text-cream-50 truncate">${escapeHtml(t.name)}</div>
@@ -2150,6 +2151,7 @@
       const flatIndex = getFlatQuestionIndex(state.currentCatIndex, state.currentQIndex);
       const totalQuestions = getTotalQuestionsCount();
       const currentScore = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? 1000 : 0)), 0);
+      const playerTimerRemaining = state.timerDeadlineAt ? Math.max(0, Math.ceil((state.timerDeadlineAt - Date.now()) / 1000)) : 30;
       const currentAnsObj = state.playerAnswers.find(a => a.catIndex === state.currentCatIndex && a.qIndex === state.currentQIndex);
       const letters = ['A', 'B', 'C', 'D'];
 
@@ -2181,7 +2183,7 @@
           <div class="flex flex-wrap items-center justify-between gap-2 mb-3 px-1">
             <div class="flex items-center gap-2">
               <span class="px-3 py-1 rounded-full bg-plum-800 border border-amberwarm-400/25 text-xs font-bold text-cream-50">
-                👤 ${escapeHtml(state.playerName)}
+                ${escapeHtml(state.avatar || getAssignedAvatar(state.playerId))} ${escapeHtml(state.playerName)}
               </span>
               <span class="text-xs font-bold text-cream-100/75">
                 Spurning ${flatIndex + 1} / ${totalQuestions}
@@ -2192,6 +2194,7 @@
             </div>
           </div>
 
+          <div class="flex justify-between mb-2 text-xs font-extrabold text-amberwarm-300"><span>⏱️ Tími eftir</span><span>${state.playerAnswerRevealed ? 'Svar birt' : playerTimerRemaining + ' sek.'}</span></div>
           <!-- Progress Bar -->
           <div class="w-full h-2 bg-plum-950 rounded-full overflow-hidden mb-5 border border-amberwarm-400/15">
             <div class="h-full bg-gradient-to-r from-amberwarm-400 to-cranberry-600 transition-all duration-500" style="width: ${((flatIndex + 1) / totalQuestions) * 100}%"></div>
@@ -2451,6 +2454,23 @@
       return { title: "Trönuberja-töffari 🍂", desc: "Góð tilraun! Það er alltaf gaman að vera með." };
     }
 
+    function renderPodiumAndStandingsHtml(standings, currentPlayerId = '') {
+      const list = Array.isArray(standings) ? standings : [];
+      const medals = ['🥇','🥈','🥉'];
+      return `
+        <div class="mt-6"><h3 class="font-display text-xl font-extrabold text-amberwarm-300 mb-4">🏆 Lokastaðan</h3>
+          <div class="grid grid-cols-3 gap-2 items-end mb-5">
+            ${[1,0,2].map(idx => { const t=list[idx]; if(!t)return '<div></div>'; return `<div class="rounded-2xl p-3 text-center border ${idx===0?'bg-amberwarm-400/20 border-amberwarm-300 min-h-[150px]':'bg-plum-900/80 border-amberwarm-400/25 min-h-[125px]'} flex flex-col justify-end"><div class="text-3xl">${medals[idx]}</div><div class="text-2xl">${escapeHtml(t.avatar||getAssignedAvatar(t.playerId||t.name))}</div><div class="font-extrabold text-xs sm:text-sm text-cream-50 truncate">${escapeHtml(t.name)}</div><div class="font-display font-extrabold text-amberwarm-300">${(t.score||0).toLocaleString('is-IS')}</div></div>`; }).join('')}
+          </div>
+          <div class="space-y-2 text-left">${list.slice(3).map((t,i)=>`<div class="flex items-center gap-3 p-2.5 rounded-xl bg-plum-950/70 border border-amberwarm-400/15"><span class="w-7 text-center font-bold text-cream-100/60">${i+4}.</span><span class="text-xl">${escapeHtml(t.avatar||getAssignedAvatar(t.playerId||t.name))}</span><span class="flex-1 min-w-0 truncate text-sm font-bold text-cream-50">${escapeHtml(t.name)}</span><span class="font-extrabold text-amberwarm-300">${(t.score||0).toLocaleString('is-IS')}</span>${t.playerId===currentPlayerId?'<span class="text-xs text-emerald-300">Þú</span>':''}</div>`).join('')}</div>
+        </div>`;
+    }
+
+    function renderFinalStandingsView() {
+      const standings=state.finalStandings||[]; const winner=standings[0];
+      return `<div class="animate-pop max-w-5xl mx-auto w-full text-center"><div class="glass-card rounded-3xl p-7 sm:p-10 border-2 border-amberwarm-400/55"><div class="text-6xl sm:text-7xl mb-3">🏆👑🏆</div><div class="text-xs uppercase tracking-widest font-extrabold text-amberwarm-300">Þakkargjörðarmeistarar 2026</div><h2 class="font-display text-3xl sm:text-5xl font-extrabold text-cream-50 mt-2">${winner?escapeHtml(winner.name):'Takk fyrir þátttökuna!'}</h2><p class="text-amberwarm-300 font-bold mt-2">${winner?(winner.score||0).toLocaleString('is-IS')+' stig':''}</p>${renderPodiumAndStandingsHtml(standings)}<div class="mt-6"><button onclick="launchConfetti();playSound('fanfare')" class="px-5 py-3 rounded-xl bg-amberwarm-400/20 border border-amberwarm-400/40 text-amberwarm-300 font-bold">🎊 Fagna aftur</button></div></div></div>`;
+    }
+
     function renderPlayerResultsView() {
       const total = getTotalQuestionsCount();
       const correctCount = state.playerAnswers.filter(a => a.isCorrect).length;
@@ -2483,6 +2503,7 @@
               </div>
             </div>
 
+            ${renderPodiumAndStandingsHtml(state.finalStandings || [], state.playerId)}
             <div class="mt-4 flex flex-wrap justify-center gap-3">
               <button onclick="launchConfetti(); playSound('fanfare');" class="px-5 py-3 rounded-2xl bg-amberwarm-400/20 hover:bg-amberwarm-400/30 border border-amberwarm-400/45 text-amberwarm-300 text-sm font-bold transition">
                 🎊 Meira konfettí!
