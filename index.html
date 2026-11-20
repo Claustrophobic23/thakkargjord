@@ -2333,11 +2333,16 @@
       playSound('click');
       state.selectedOptionTemp = idx;
       render();
-      // After choosing an option, bring the enabled lock-answer button into view.
-      requestAnimationFrame(() => {
+      // Scroll the page itself on mobile after the answer button has been rendered.
+      // scrollIntoView alone can fail when the viewport/body has just been reflowed.
+      const scrollToLockButton = () => {
         const lockArea = document.getElementById('answer-lock-area');
-        if (lockArea) lockArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
+        if (!lockArea) return;
+        const targetTop = lockArea.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: Math.max(0, targetTop - window.innerHeight + lockArea.offsetHeight + 24), behavior: 'smooth' });
+      };
+      requestAnimationFrame(() => requestAnimationFrame(scrollToLockButton));
+      setTimeout(scrollToLockButton, 120);
     }
 
     function lockPlayerAnswer() {
