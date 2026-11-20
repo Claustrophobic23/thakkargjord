@@ -1125,7 +1125,8 @@
         updatedAt: Date.now(),
         timerDeadlineAt: state.timerDeadlineAt,
         revealUntilAt: state.revealUntilAt,
-        finalStandings: state.finalStandings || []
+        finalStandings: state.finalStandings || [],
+        playerAvatars: Object.fromEntries(state.teams.filter(t=>t.playerId).map(t=>[t.playerId,t.avatar]))
       };
     }
 
@@ -1166,11 +1167,12 @@
       const incomingScore = Number(playerData.score) || 0;
       const incomingAnsweredCount = Number(playerData.answeredCount) || 0;
       const incomingLastAnsweredQ = playerData.lastAnsweredQ ?? -1;
-      const incomingAvatar = playerData.avatar || getAssignedAvatar(playerId || playerName);
-
       const existingIdx = state.teams.findIndex(
         t => (playerId && t.playerId === playerId) || t.name.toLowerCase() === playerName.toLowerCase()
       );
+      const incomingAvatar = existingIdx >= 0
+        ? (state.teams[existingIdx].avatar || playerData.avatar || getAssignedAvatar(playerId || playerName))
+        : (PLAYER_AVATARS.find(icon => !state.teams.some(t => t.avatar === icon)) || getAssignedAvatar(playerId || playerName));
 
       const isNewJoin = existingIdx === -1;
       let changed = isNewJoin;
@@ -1209,9 +1211,12 @@
         });
       }
 
-      if (isNewJoin && state.view === 'host-lobby') {
-        playSound('correct');
-        showToast(`${playerName} gekk í leikinn!`, '🎉');
+      if (isNewJoin) {
+        if (state.view === 'host-lobby') {
+          playSound('correct');
+          showToast(`${playerName} gekk í leikinn!`, '🎉');
+        }
+        broadcastHostStateToAllPlayers();
       }
 
       // Firebase is polled frequently. Only re-render when the player's data changes.
@@ -1309,6 +1314,7 @@
       state.timerDeadlineAt = hostPayload.timerDeadlineAt || null;
       state.revealUntilAt = hostPayload.revealUntilAt || null;
       state.finalStandings = Array.isArray(hostPayload.finalStandings) ? hostPayload.finalStandings : state.finalStandings;
+      if (hostPayload.playerAvatars && state.playerId && hostPayload.playerAvatars[state.playerId]) state.avatar = hostPayload.playerAvatars[state.playerId];
 
       // If player hasn't entered their name yet, just store latest host state
       if (!state.playerName || state.view === 'player-setup') {
