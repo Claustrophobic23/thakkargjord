@@ -1985,7 +1985,8 @@
     function checkHostAutoProgress(){
       if(state.view!=='host-quiz'||state.roomStatus!=='playing'||state.hostCategoryIntro||state.hostAnswerRevealed)return;
       const flat=getFlatQuestionIndex(state.currentCatIndex,state.currentQIndex);
-      if(state.teams.length>0&&state.teams.filter(t=>(t.lastAnsweredQ??-1)>=flat).length>=state.teams.length)revealHostAnswer();
+      const activePlayers=state.teams.filter(t=>t.playerId);
+      if(activePlayers.length>0&&activePlayers.every(t=>(t.lastAnsweredQ??-1)>=flat))revealHostAnswer();
     }
     function hostNextQuestion(automatic=false){
       if(!automatic)playSound('click');
