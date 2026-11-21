@@ -3048,6 +3048,10 @@
       playSound('fanfare');render();launchConfetti();
     }
 
+    function getQuestionDurationSeconds() {
+      return activeQuestionSetId === 'visual' ? 45 : 30;
+    }
+
     function updateHostCountdownDisplay() {
       const display = document.getElementById('host-countdown-display');
       const value = document.getElementById('host-countdown-value');
@@ -3069,14 +3073,18 @@
       }
       const remaining = state.timerDeadlineAt
         ? Math.max(0, Math.ceil((state.timerDeadlineAt - Date.now()) / 1000))
-        : 30;
+        : getQuestionDurationSeconds();
       value.textContent = remaining + ' sek.';
     }
 
     function toggleHostTimer() { if(state.timerRunning) stopHostTimer(); else startHostAutoTimer(); render(); }
     function startHostAutoTimer() {
       if(state.roomStatus!=='playing'||state.hostCategoryIntro||state.hostAnswerRevealed)return;
-      stopHostTimer(); state.timerSeconds=30; state.timerDeadlineAt=Date.now()+30000; state.timerRunning=true;
+      stopHostTimer();
+      const durationSeconds=getQuestionDurationSeconds();
+      state.timerSeconds=durationSeconds;
+      state.timerDeadlineAt=Date.now()+durationSeconds*1000;
+      state.timerRunning=true;
       state.timerInterval=setInterval(()=>{
         const remaining=Math.max(0,Math.ceil((state.timerDeadlineAt-Date.now())/1000));
         if(remaining!==state.timerSeconds){
@@ -3091,7 +3099,7 @@
     function stopHostTimer(){state.timerRunning=false;clearInterval(state.timerInterval);state.timerInterval=null;state.timerDeadlineAt=null;}
     function resetHostTimer(){
       stopHostTimer();
-      state.timerSeconds=30;
+      state.timerSeconds=getQuestionDurationSeconds();
       state.revealUntilAt=null;
       updateHostCountdownDisplay();
     }
@@ -3281,7 +3289,7 @@
       const flatIndex = getFlatQuestionIndex(state.currentCatIndex, state.currentQIndex);
       const totalQuestions = getTotalQuestionsCount();
       const currentScore = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? 1000 : 0)), 0);
-      const playerTimerRemaining = state.timerDeadlineAt ? Math.max(0, Math.ceil((state.timerDeadlineAt - Date.now()) / 1000)) : 30;
+      const playerTimerRemaining = state.timerDeadlineAt ? Math.max(0, Math.ceil((state.timerDeadlineAt - Date.now()) / 1000)) : getQuestionDurationSeconds();
       const currentAnsObj = state.playerAnswers.find(a => a.catIndex === state.currentCatIndex && a.qIndex === state.currentQIndex);
       const letters = ['A', 'B', 'C', 'D'];
 
