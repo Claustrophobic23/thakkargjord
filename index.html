@@ -1821,11 +1821,17 @@
       }
 ];
 
+
+    // One question per uploaded plushie image; keep each original image unchanged.
+    // Shape: {id, q:"WHO'S THAT PLUSHIE?", options:[family names], correct:0-3, media:{type:"plushie",src:"assets/plushies/name.png",alt:"..."}}
+    const PLUSHIE_CATEGORIES = [{ id:"plushie-category", icon:"🧸", title:"Guess the Family Plushie!", subtitle:"Every family has its characters. Can you recognise yours?", questions:[] }];
+
     const QUESTION_SETS = {
       thanksgiving: { title: 'Thanksgiving & fjölskyldan', description: 'Hefðir, árið 2026, tónlist og fjölskylduspurningar', categories: DEFAULT_CATEGORIES },
       brands: { title: 'Lógó • Beauty Products • Tækni • Matur', description: 'Vörumerki, snyrtivörur, tækni og matarþekking', categories: BRAND_CATEGORIES },
       hard: { title: 'MJÖG ERFITT • Saga • Vísindi • Landafræði • Listir', description: 'Krefjandi spurningar fyrir harðkjarna fróðleiksunnendur', categories: HARD_CATEGORIES },
-      visual: { title: 'MYNDAGÁTUR • Sjónræn áskorun', description: 'Nærmyndir, falin smáatriði og sjónblekkingar', categories: VISUAL_CATEGORIES }
+      visual: { title: 'MYNDAGÁTUR • Sjónræn áskorun', description: 'Nærmyndir, falin smáatriði og sjónblekkingar', categories: VISUAL_CATEGORIES },
+      plushie: { title: 'Guess the Family Plushie!', description: 'Thanksgiving Family Arcade — þekkirðu þína eigin fjölskyldu?', categories: PLUSHIE_CATEGORIES }
     };
 
     let activeQuestionSetId = 'thanksgiving';
@@ -1837,12 +1843,12 @@
       activeQuestionSetId = QUESTION_SETS[setId] ? setId : 'thanksgiving';
       categories = JSON.parse(JSON.stringify(getQuestionSetDefaults(activeQuestionSetId)));
       try {
-        const storageKey = (activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId));
+        const storageKey = (activeQuestionSetId === 'plushie' ? 'thanksgiving_quiz_2026_v1_plushie' : (activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId)));
         let saved = localStorage.getItem(storageKey);
         if (!saved && activeQuestionSetId === 'thanksgiving') saved = localStorage.getItem('thanksgiving_quiz_2026_v2_thanksgiving') || localStorage.getItem('thanksgiving_quiz_2026_v2');
         if (saved) {
           const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length === 4) {
+          if (Array.isArray(parsed) && parsed.length === getQuestionSetDefaults(activeQuestionSetId).length) {
             categories = parsed;
             if (activeQuestionSetId === 'thanksgiving') {
               const defaultFamily = getQuestionSetDefaults('thanksgiving').find(cat => cat.id === 'cat4');
@@ -2025,7 +2031,7 @@
       exportDocument.querySelectorAll('script[data-bard-client-injected=\"true\"], script[ws-interception-config]').forEach(script => script.remove());
       const rawHtml = '<!DOCTYPE html>\n' + exportDocument.outerHTML;
       const serializedCategories = JSON.stringify(categories, null, 6);
-      const dataConstant = activeQuestionSetId === 'visual' ? 'VISUAL_CATEGORIES' : (activeQuestionSetId === 'hard' ? 'HARD_CATEGORIES' : (activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES'));
+      const dataConstant = activeQuestionSetId === 'plushie' ? 'PLUSHIE_CATEGORIES' : (activeQuestionSetId === 'visual' ? 'VISUAL_CATEGORIES' : (activeQuestionSetId === 'hard' ? 'HARD_CATEGORIES' : (activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES')));
       const dataPattern = new RegExp('const ' + dataConstant + ' = \\[\\s\\S]*?\\n\\];');
       let updatedHtml = rawHtml.replace(dataPattern, 'const ' + dataConstant + ' = ' + serializedCategories + ';');
       updatedHtml = updatedHtml.replace(
@@ -2424,7 +2430,7 @@
       if (!hostPayload) return;
 
       if (QUESTION_SETS[hostPayload.questionSetId]) activeQuestionSetId = hostPayload.questionSetId;
-      if (Array.isArray(hostPayload.categories) && hostPayload.categories.length === 4) {
+      if (Array.isArray(hostPayload.categories) && hostPayload.categories.length === getQuestionSetDefaults(activeQuestionSetId).length) {
         categories = hostPayload.categories;
       }
       if (hostPayload.questionShownAt) {
@@ -2582,7 +2588,7 @@
           <div class="text-center mb-8 sm:mb-10">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 text-xs sm:text-sm font-bold mb-4">
               <span>📺</span>
-              <span>Fjögur spurningasett í boði • 19–20 spurningar</span>
+              <span>Fimm spurningasett í boði</span>
             </div>
             <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 tracking-tight leading-tight">
               Spurningakeppni <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">kvöldsins!</span>
@@ -2633,6 +2639,14 @@
                 <p class="text-xs text-cream-100/70 mt-2 mb-4">Nærmyndir, faldir hlutir, hlutar úr stærri myndum og sjónblekkingar.</p>
                 <button onclick="selectAndOpenHostLobby('visual')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-extrabold text-sm shadow-lg">🔍 Velja myndagátusettið</button>
                 <button onclick="selectSetAndOpenEditor('visual')" class="mt-2 text-xs font-bold text-sky-300 hover:underline">✏️ Breyta spurningum</button>
+              </div>
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-purple-950 via-fuchsia-950 to-slate-950 border-2 border-cyan-300/60 flex flex-col text-left shadow-lg">
+                <div class="text-4xl mb-2">🧸🕹️</div>
+                <div class="text-[11px] uppercase tracking-wider font-extrabold text-cyan-200">Sett 5 • THANKSGIVING FAMILY ARCADE</div>
+                <h4 class="font-display text-xl sm:text-2xl font-extrabold text-pink-200 mt-1">GUESS THE FAMILY PLUSHIE!</h4>
+                <p class="text-xs text-cream-100/85 mt-2 mb-4">Every family has its characters. Can you recognise yours?</p>
+                <div class="text-[11px] text-cyan-200 font-extrabold uppercase tracking-widest mb-3">🧸 Bíður eftir myndunum þínum</div>
+                <button onclick="selectAndOpenHostLobby('plushie')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-fuchsia-600 via-purple-600 to-cyan-500 text-white font-extrabold text-sm shadow-lg">🕹️ Opna Family Arcade</button>
               </div>
             </div>
 
