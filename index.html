@@ -1657,6 +1657,7 @@
         }
 
         if (needsRender) render();
+        else updatePlayerCountdownDisplay();
       }
     }
 
@@ -2077,12 +2078,12 @@
 
                 <!-- Host Countdown Timer -->
                 <div class="flex items-center gap-2">
-                  <div class="px-3.5 py-1.5 rounded-xl font-display font-extrabold text-lg border ${
+                  <div id="host-countdown-display" class="px-3.5 py-1.5 rounded-xl font-display font-extrabold text-lg border ${
                     state.timerSeconds <= 5
-                      ? 'bg-red-500/25 border-red-400 text-red-200 animate-pulse'
+                      ? 'bg-red-500/25 border-red-400 text-red-200'
                       : 'bg-plum-950 border-amberwarm-400/35 text-amberwarm-300'
                   }">
-                    ⏱️ ${state.timerSeconds}s
+                    ⏱️ <span id="host-countdown-value">${state.timerSeconds}</span>s
                   </div>
                   <button onclick="toggleHostTimer()" class="px-3 py-1.5 rounded-xl bg-plum-800 hover:bg-plum-700 border border-amberwarm-400/25 text-xs font-bold text-cream-50 transition">
                     ${state.timerRunning ? '⏸ Pása' : '▶ Tími'}
@@ -2253,19 +2254,53 @@
       playSound('fanfare');render();launchConfetti();
     }
 
+    function updateHostCountdownDisplay() {
+      const display = document.getElementById('host-countdown-display');
+      const value = document.getElementById('host-countdown-value');
+      if (!display || !value) return;
+
+      value.textContent = String(state.timerSeconds);
+      display.className = 'px-3.5 py-1.5 rounded-xl font-display font-extrabold text-lg border ' +
+        (state.timerSeconds <= 5
+          ? 'bg-red-500/25 border-red-400 text-red-200'
+          : 'bg-plum-950 border-amberwarm-400/35 text-amberwarm-300');
+    }
+
+    function updatePlayerCountdownDisplay() {
+      const value = document.getElementById('player-countdown-value');
+      if (!value) return;
+      if (state.playerAnswerRevealed) {
+        value.textContent = 'Svar birt';
+        return;
+      }
+      const remaining = state.timerDeadlineAt
+        ? Math.max(0, Math.ceil((state.timerDeadlineAt - Date.now()) / 1000))
+        : 30;
+      value.textContent = remaining + ' sek.';
+    }
+
     function toggleHostTimer() { if(state.timerRunning) stopHostTimer(); else startHostAutoTimer(); render(); }
     function startHostAutoTimer() {
       if(state.roomStatus!=='playing'||state.hostCategoryIntro||state.hostAnswerRevealed)return;
       stopHostTimer(); state.timerSeconds=30; state.timerDeadlineAt=Date.now()+30000; state.timerRunning=true;
       state.timerInterval=setInterval(()=>{
         const remaining=Math.max(0,Math.ceil((state.timerDeadlineAt-Date.now())/1000));
-        if(remaining!==state.timerSeconds){state.timerSeconds=remaining;if(remaining<=5&&remaining>0)playSound('tick');render();}
+        if(remaining!==state.timerSeconds){
+          state.timerSeconds=remaining;
+          if(remaining<=5&&remaining>0)playSound('tick');
+          updateHostCountdownDisplay();
+        }
         if(remaining<=0)revealHostAnswer();
       },200);
       broadcastHostStateToAllPlayers();
     }
     function stopHostTimer(){state.timerRunning=false;clearInterval(state.timerInterval);state.timerInterval=null;state.timerDeadlineAt=null;}
-    function resetHostTimer(){stopHostTimer();state.timerSeconds=30;state.revealUntilAt=null;}
+    function resetHostTimer(){
+      stopHostTimer();
+      state.timerSeconds=30;
+      state.revealUntilAt=null;
+      updateHostCountdownDisplay();
+    }
     function revealHostAnswer(){
       if(state.hostAnswerRevealed||state.roomStatus!=='playing')return;
       stopHostTimer();state.hostAnswerRevealed=true;state.revealUntilAt=Date.now()+5000;playSound('correct');
@@ -2495,7 +2530,7 @@
             </div>
           </div>
 
-          <div class="flex justify-between mb-2 text-xs font-extrabold text-amberwarm-300"><span>⏱️ Tími eftir</span><span>${state.playerAnswerRevealed ? 'Svar birt' : playerTimerRemaining + ' sek.'}</span></div>
+          <div class="flex justify-between mb-2 text-xs font-extrabold text-amberwarm-300"><span>⏱️ Tími eftir</span><span id="player-countdown-value">${state.playerAnswerRevealed ? 'Svar birt' : playerTimerRemaining + ' sek.'}</span></div>
           <!-- Progress Bar -->
           <div class="w-full h-2 bg-plum-950 rounded-full overflow-hidden mb-5 border border-amberwarm-400/15">
             <div class="h-full bg-gradient-to-r from-amberwarm-400 to-cranberry-600 transition-all duration-500" style="width: ${((flatIndex + 1) / totalQuestions) * 100}%"></div>
