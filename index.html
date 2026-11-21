@@ -1729,10 +1729,10 @@
           <div class="text-center mb-8 sm:mb-10">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 text-xs sm:text-sm font-bold mb-4">
               <span>📺</span>
-              <span>Rauntíma Pub Quiz fyrir fjölskylduna • 20 spurningar</span>
+              <span>Rauntíma Pub Quiz • 20 spurningar í hvoru setti</span>
             </div>
             <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 tracking-tight leading-tight">
-              Gleðilega <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">Þakkargjörð!</span>
+              Spurningakeppni <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">kvöldsins!</span>
             </h2>
             <p class="mt-3.5 text-cream-100/85 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
               Opnaðu síðuna í sjónvarpinu, ýttu á <strong>Byrja leik</strong> og sýndu QR-kóðann – allir símar tengjast og uppfærast sjálfkrafa!
@@ -1741,21 +1741,31 @@
 
           <!-- Primary Start Card -->
           <div class="glass-card rounded-3xl p-7 sm:p-11 border-2 border-amberwarm-400/45 text-center relative overflow-hidden max-w-2xl mx-auto">
-            <div class="text-6xl sm:text-7xl mb-4 animate-float inline-block">🦃</div>
+            <div class="text-6xl sm:text-7xl mb-4 animate-float inline-block">🧠</div>
             <h3 class="font-display text-2xl sm:text-3xl font-bold text-cream-50 mb-2">
-              Tilbúin í spurningakeppni kvöldsins?
+              Veldu spurningasett
             </h3>
-            <p class="text-cream-100/80 text-sm sm:text-base mb-7 max-w-md mx-auto leading-relaxed">
-              1. Þú ýtir á Byrja leik og birtir QR-kóðann • 2. Liðin skanna og slá inn nafn • 3. Þú ræsir leikinn og allir símar fylgja sjónvarpinu í rauntíma!
+            <p class="text-cream-100/80 text-sm sm:text-base mb-6 max-w-xl mx-auto leading-relaxed">
+              Veldu hvaða keppni á að keyra. Þegar þú velur sett opnast herbergið og QR-kóðinn fyrir síma liðanna.
             </p>
-
-            <button
-              onclick="openHostLobby()"
-              class="w-full py-5 px-8 rounded-2xl bg-gradient-to-r from-amberwarm-400 via-amberwarm-500 to-cranberry-600 hover:from-amberwarm-300 hover:to-cranberry-700 text-white font-display font-extrabold text-2xl sm:text-3xl shadow-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.99] flex items-center justify-center gap-3"
-            >
-              <span>🚀</span>
-              <span>Byrja leik</span>
-            </button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+              <div class="p-5 rounded-2xl bg-plum-950/75 border border-amberwarm-400/35 flex flex-col">
+                <div class="text-3xl mb-2">🦃</div>
+                <div class="text-[11px] uppercase tracking-wider font-extrabold text-amberwarm-300">Sett 1 • 20 spurningar</div>
+                <h4 class="font-display text-lg sm:text-xl font-extrabold text-cream-50 mt-1">Thanksgiving & fjölskyldan</h4>
+                <p class="text-xs text-cream-100/70 mt-2 mb-4">Þakkargjörð, árið 2026, tónlist og kvikmyndir ásamt sérsniðnum fjölskylduspurningum.</p>
+                <button onclick="selectAndOpenHostLobby('thanksgiving')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amberwarm-400 to-cranberry-600 text-white font-extrabold text-sm shadow-lg">🚀 Velja þetta sett</button>
+                <button onclick="selectSetAndOpenEditor('thanksgiving')" class="mt-2 text-xs font-bold text-amberwarm-300 hover:underline">✏️ Breyta spurningum</button>
+              </div>
+              <div class="p-5 rounded-2xl bg-plum-950/75 border border-emerald-400/35 flex flex-col">
+                <div class="text-3xl mb-2">✨</div>
+                <div class="text-[11px] uppercase tracking-wider font-extrabold text-emerald-300">Sett 2 • 20 spurningar • Nýtt</div>
+                <h4 class="font-display text-lg sm:text-xl font-extrabold text-cream-50 mt-1">Lógó • Beauty Products • Tækni • Matur</h4>
+                <p class="text-xs text-cream-100/70 mt-2 mb-4">Fjórir fjölbreyttir flokkar um vörumerki, snyrtivörur, tækni og matarþekkingu.</p>
+                <button onclick="selectAndOpenHostLobby('brands')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-extrabold text-sm shadow-lg">🚀 Velja þetta sett</button>
+                <button onclick="selectSetAndOpenEditor('brands')" class="mt-2 text-xs font-bold text-emerald-300 hover:underline">✏️ Breyta spurningum</button>
+              </div>
+            </div>
 
             <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
               <button
@@ -1786,7 +1796,7 @@
           <div class="mt-7 glass-card rounded-3xl p-5 sm:p-6">
             <div class="flex items-center justify-between pb-3 border-b border-amberwarm-400/15">
               <div>
-                <h4 class="font-display font-bold text-lg text-cream-50">Flokkar kvöldsins</h4>
+                <h4 class="font-display font-bold text-lg text-cream-50">Flokkar í valda settinu</h4>
                 <p class="text-xs text-cream-100/70">5 spurningar í hverjum flokki • Samtals 20 spurningar</p>
               </div>
               <span class="text-xs font-bold text-amberwarm-300">4 flokkar</span>
@@ -1807,6 +1817,18 @@
     }
 
     // --- VIEW 1B: HOST LOBBY (Zero-Config QR Code + Incoming Teams + Launch Button) ---
+    function selectAndOpenHostLobby(setId) {
+      activateQuestionSet(setId);
+      state.currentCatIndex = 0;
+      state.currentQIndex = 0;
+      openHostLobby();
+    }
+
+    function selectSetAndOpenEditor(setId) {
+      activateQuestionSet(setId);
+      openEditorModal();
+    }
+
     function openHostLobby() {
       playSound('click');
       state.teams = [];
@@ -1834,6 +1856,9 @@
                 <p class="text-xs sm:text-sm text-cream-100/80 mt-1">
                   Opnaðu myndavélina í símanum og skannaðu QR-kóðann
                 </p>
+                <div class="mt-3 px-3 py-2 rounded-xl bg-plum-950/75 border border-amberwarm-400/20 text-xs font-bold text-amberwarm-300">
+                  Spurningasett: ${escapeHtml((QUESTION_SETS[activeQuestionSetId] || QUESTION_SETS.thanksgiving).title)}
+                </div>
               </div>
 
               <!-- Crisp White QR Code Box -->
@@ -2759,7 +2784,7 @@
 
     function renderFinalStandingsView() {
       const standings=state.finalStandings||[]; const winner=standings[0];
-      return `<div class="animate-pop max-w-5xl mx-auto w-full text-center"><div class="glass-card rounded-3xl p-7 sm:p-10 border-2 border-amberwarm-400/55"><div class="text-6xl sm:text-7xl mb-3">🏆👑🏆</div><div class="text-xs uppercase tracking-widest font-extrabold text-amberwarm-300">Þakkargjörðarmeistarar 2026</div><h2 class="font-display text-3xl sm:text-5xl font-extrabold text-cream-50 mt-2">${winner?escapeHtml(winner.name):'Takk fyrir þátttökuna!'}</h2><p class="text-amberwarm-300 font-bold mt-2">${winner?(winner.score||0).toLocaleString('is-IS')+' stig':''}</p>${renderPodiumAndStandingsHtml(standings)}<div class="mt-6"><button onclick="launchConfetti();playSound('fanfare')" class="px-5 py-3 rounded-xl bg-amberwarm-400/20 border border-amberwarm-400/40 text-amberwarm-300 font-bold">🎊 Fagna aftur</button></div></div></div>`;
+      return `<div class="animate-pop max-w-5xl mx-auto w-full text-center"><div class="glass-card rounded-3xl p-7 sm:p-10 border-2 border-amberwarm-400/55"><div class="text-6xl sm:text-7xl mb-3">🏆👑🏆</div><div class="text-xs uppercase tracking-widest font-extrabold text-amberwarm-300">${escapeHtml((QUESTION_SETS[activeQuestionSetId] || QUESTION_SETS.thanksgiving).title)} • Lokastaða</div><h2 class="font-display text-3xl sm:text-5xl font-extrabold text-cream-50 mt-2">${winner?escapeHtml(winner.name):'Takk fyrir þátttökuna!'}</h2><p class="text-amberwarm-300 font-bold mt-2">${winner?(winner.score||0).toLocaleString('is-IS')+' stig':''}</p>${renderPodiumAndStandingsHtml(standings)}<div class="mt-6"><button onclick="launchConfetti();playSound('fanfare')" class="px-5 py-3 rounded-xl bg-amberwarm-400/20 border border-amberwarm-400/40 text-amberwarm-300 font-bold">🎊 Fagna aftur</button></div></div></div>`;
     }
 
     function renderPlayerResultsView() {
