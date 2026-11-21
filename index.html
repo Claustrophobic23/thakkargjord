@@ -435,7 +435,7 @@
       </div>
 
       <div class="mt-5 pt-4 border-t border-amberwarm-400/20 flex flex-wrap justify-between items-center gap-3 text-xs text-cream-100/70">
-        <span>Hámarksstig: <strong class="text-amberwarm-300" id="max-possible-score-label">20.000</strong> stig (allt að 1.000 á spurningu)</span>
+        <span>Hámarksstig: <strong class="text-amberwarm-300" id="max-possible-score-label">20.000</strong> stig (<span id="score-points-label">allt að 1.000 á spurningu</span>)</span>
         <div class="flex items-center gap-2">
           <button onclick="declareWinnerCelebration()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amberwarm-400 to-amberwarm-500 hover:from-amberwarm-300 hover:to-amberwarm-400 text-plum-950 font-extrabold text-xs sm:text-sm transition shadow-lg">
             👑 Krýna sigurvegara!
@@ -2395,7 +2395,7 @@
 
     async function sendPlayerStateToHost() {
       if (!state.playerName) return;
-      const score = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? 1000 : 0)), 0);
+      const score = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? getPointsPerQuestion() : 0)), 0);
       const lastAns = state.playerAnswers[state.playerAnswers.length - 1];
       const lastFlatQ = lastAns ? getFlatQuestionIndex(lastAns.catIndex, lastAns.qIndex) : -1;
       const answersMap = {};
@@ -2521,6 +2521,7 @@
           const existingAns = state.playerAnswers.find(a => a.catIndex === newCat && a.qIndex === newQ);
           if (existingAns) {
             playSound(existingAns.isCorrect ? 'correct' : 'wrong');
+            if (activeQuestionSetId === 'plushie' && existingAns.isCorrect) launchConfetti();
           }
           needsRender = true;
         } else if (state.playerAnswerRevealed && !newRevealed) {
@@ -2830,8 +2831,8 @@
                   onclick="launchQuizForAllPlayers()"
                   class="w-full py-4 sm:py-5 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-display font-extrabold text-xl sm:text-2xl shadow-2xl transition-all hover:scale-[1.015] flex items-center justify-center gap-3"
                 >
-                  <span>🎬</span>
-                  <span>Allir klárir – Hefja keppni!</span>
+                  <span>${activeQuestionSetId === 'plushie' ? '🕹️' : '🎬'}</span>
+                  <span>${activeQuestionSetId === 'plushie' ? (getTotalQuestionsCount() ? "LET'S PLAY!" : "Bíður eftir plushie-myndum") : 'Allir klárir – Hefja keppni!'}</span>
                 </button>
               </div>
             </div>
@@ -2851,6 +2852,12 @@
     }
 
     function launchQuizForAllPlayers() {
+      if (activeQuestionSetId === 'plushie') {
+        const plushieQuestions = categories.flatMap(cat => cat.questions || []);
+        const ready = plushieQuestions.length > 0 && plushieQuestions.every(q => q && q.q === "WHO'S THAT PLUSHIE?" && Array.isArray(q.options) && q.options.length >= 2 && Number.isInteger(q.correct) && q.correct >= 0 && q.correct < q.options.length && q.media && q.media.type === 'plushie' && typeof q.media.src === 'string' && q.media.src.trim());
+        if (!ready) { showToast('Við þurfum plushie-myndirnar og nöfnin áður en hægt er að byrja!', '🧸'); return; }
+        categories.forEach(cat => { for (let j = cat.questions.length - 1; j > 0; j--) { const k = Math.floor(Math.random() * (j + 1)); [cat.questions[j], cat.questions[k]] = [cat.questions[k], cat.questions[j]]; } });
+      }
       playSound('fanfare');
       state.currentCatIndex = 0;
       state.currentQIndex = 0;
@@ -3228,6 +3235,9 @@
       playSound('fanfare');render();launchConfetti();
     }
 
+    function getPointsPerQuestion() { return activeQuestionSetId === 'plushie' ? 1 : 1000; }
+    function getMaxPossibleScore() { return getTotalQuestionsCount() * getPointsPerQuestion(); }
+
     function getQuestionDurationSeconds() {
       return activeQuestionSetId === 'visual' ? 45 : 30;
     }
@@ -3468,7 +3478,7 @@
       const question = cat.questions[state.currentQIndex];
       const flatIndex = getFlatQuestionIndex(state.currentCatIndex, state.currentQIndex);
       const totalQuestions = getTotalQuestionsCount();
-      const currentScore = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? 1000 : 0)), 0);
+      const currentScore = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? getPointsPerQuestion() : 0)), 0);
       const playerTimerRemaining = state.timerDeadlineAt ? Math.max(0, Math.ceil((state.timerDeadlineAt - Date.now()) / 1000)) : getQuestionDurationSeconds();
       const currentAnsObj = state.playerAnswers.find(a => a.catIndex === state.currentCatIndex && a.qIndex === state.currentQIndex);
       const letters = ['A', 'B', 'C', 'D'];
@@ -3600,10 +3610,10 @@
                 }">
                   <div class="font-bold text-base flex items-center gap-2">
                     ${state.selectedOptionTemp === question.correct
-                      ? `<span>🎉 Hárrétt! +${currentAnsObj ? currentAnsObj.pointsEarned : 1000} stig</span>`
+                      ? (activeQuestionSetId === 'plushie' ? `<span>🕹️ DING DING DING! Rétt brúða! +1 stig</span>` : `<span>🎉 Hárrétt! +${currentAnsObj ? currentAnsObj.pointsEarned : 1000} stig</span>`)
                       : state.selectedOptionTemp === null
                         ? `<span>⏰ Rétt svar var: ${escapeHtml(question.options[question.correct])}</span>`
-                        : `<span>😅 Því miður rangt! Rétt svar var: ${escapeHtml(question.options[question.correct])}</span>`
+                        : (activeQuestionSetId === 'plushie' ? `<span>😅 Klóvélin sleppti takinu! Þetta var ${escapeHtml(question.options[question.correct])}.</span>` : `<span>😅 Því miður rangt! Rétt svar var: ${escapeHtml(question.options[question.correct])}</span>`)
                     }
                   </div>
                   ${question.fact ? `<p class="text-xs sm:text-sm opacity-90 mt-1.5 leading-relaxed">${escapeHtml(question.fact)}</p>` : ''}
@@ -3667,7 +3677,7 @@
       // Kahoot-style speed points: 500 to 1,000 points based on elapsed seconds (up to 30s)
       const elapsedSec = Math.max(0, (Date.now() - (state.questionShownAt || Date.now())) / 1000);
       const speedRatio = Math.max(0, Math.min(1, 1 - elapsedSec / 30));
-      const pointsEarned = isCorrect ? Math.round(500 + 500 * speedRatio) : 0;
+      const pointsEarned = isCorrect ? (activeQuestionSetId === 'plushie' ? 1 : Math.round(500 + 500 * speedRatio)) : 0;
 
       state.answerLocked = true;
       state.playerAnswers.push({
@@ -3781,8 +3791,14 @@
     }
 
     function getPlayerRankTitle(score, total) {
-      const maxPts = total * 1000;
+      const maxPts = total * getPointsPerQuestion();
       const pct = maxPts > 0 ? score / maxPts : 0;
+      if (activeQuestionSetId === 'plushie') {
+        if (pct >= 0.85) return { title: 'Family Plushie Expert! 🧸', desc: 'Þú þekkir fjölskylduna alveg ótrúlega vel!' };
+        if (pct >= 0.65) return { title: 'Claw Machine Champion! 🕹️', desc: 'Flestir plushie-félagarnir voru þér auðþekktir.' };
+        if (pct >= 0.45) return { title: 'Plushie Detective 🔎', desc: 'Þú ert farin(n) að sjá hver er hver!' };
+        return { title: 'Arcade Rookie 💜', desc: 'Fjölskyldan náði að plata þig í nokkrar umferðir!' };
+      }
       if (activeQuestionSetId === 'visual') {
         if (pct >= 0.85) return { title: "Sjónrænn snillingur 🎬", desc: "Þú sérð smáatriðin sem aðrir missa af!" };
         if (pct >= 0.65) return { title: "Augnaglöggur keppandi 👀", desc: "Glæsilegur árangur í myndum, myndskeiðum og sjónblekkingum." };
@@ -3821,13 +3837,16 @@
 
     function renderFinalStandingsView() {
       const standings=state.finalStandings||[]; const winner=standings[0];
+      if (activeQuestionSetId === 'plushie') {
+        return `<div class="animate-pop max-w-5xl mx-auto w-full text-center plushie-arcade"><div class="plushie-arcade-opening rounded-3xl p-7 sm:p-10"><div class="text-6xl sm:text-7xl mb-3">🧸🕹️🏆</div><div class="text-xs uppercase tracking-widest text-cyan-200 font-extrabold">THANKSGIVING FAMILY ARCADE</div><h2 class="font-display text-3xl sm:text-5xl font-extrabold plushie-arcade-neon mt-3">HOW WELL DO YOU KNOW YOUR FAMILY?</h2><p class="text-cream-100/85 mt-3">${winner ? escapeHtml(winner.name) + ' — þú ert Family Plushie Expert!' : 'Takk fyrir að spila!'}</p><div class="text-amberwarm-300 font-extrabold text-xl mt-2">${winner ? (winner.score || 0) + ' stig' : 'Engin stig skráð'}</div>${renderPodiumAndStandingsHtml(standings)}<p class="text-pink-200 font-display text-xl sm:text-2xl mt-7">You're officially the Family Plushie Expert!</p><p class="text-cream-100/70 text-sm mt-2">Happy Thanksgiving — og munið að hver fjölskylda á sína karaktera! 🍂</p><div class="mt-6"><button onclick="launchConfetti();playSound('fanfare')" class="px-5 py-3 rounded-xl bg-fuchsia-600/60 border border-cyan-300/60 text-white font-bold">🎊 Celebrate again!</button></div></div></div>`;
+      }
       return `<div class="animate-pop max-w-5xl mx-auto w-full text-center"><div class="glass-card rounded-3xl p-7 sm:p-10 border-2 border-amberwarm-400/55"><div class="text-6xl sm:text-7xl mb-3">🏆👑🏆</div><div class="text-xs uppercase tracking-widest font-extrabold text-amberwarm-300">${escapeHtml((QUESTION_SETS[activeQuestionSetId] || QUESTION_SETS.thanksgiving).title)} • Lokastaða</div><h2 class="font-display text-3xl sm:text-5xl font-extrabold text-cream-50 mt-2">${winner?escapeHtml(winner.name):'Takk fyrir þátttökuna!'}</h2><p class="text-amberwarm-300 font-bold mt-2">${winner?(winner.score||0).toLocaleString('is-IS')+' stig':''}</p>${renderPodiumAndStandingsHtml(standings)}<div class="mt-6"><button onclick="launchConfetti();playSound('fanfare')" class="px-5 py-3 rounded-xl bg-amberwarm-400/20 border border-amberwarm-400/40 text-amberwarm-300 font-bold">🎊 Fagna aftur</button></div></div></div>`;
     }
 
     function renderPlayerResultsView() {
       const total = getTotalQuestionsCount();
       const correctCount = state.playerAnswers.filter(a => a.isCorrect).length;
-      const score = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? 1000 : 0)), 0);
+      const score = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? getPointsPerQuestion() : 0)), 0);
       const accuracyPct = total > 0 ? Math.round((correctCount / total) * 100) : 0;
       const rank = getPlayerRankTitle(score, total);
 
@@ -3962,7 +3981,9 @@
     function openScoreboardModal() {
       playSound('click');
       const maxLabel = document.getElementById('max-possible-score-label');
-      if (maxLabel) maxLabel.textContent = (getTotalQuestionsCount() * 1000).toLocaleString('is-IS');
+      if (maxLabel) maxLabel.textContent = getMaxPossibleScore().toLocaleString('is-IS');
+      const pointsLabel = document.getElementById('score-points-label');
+      if (pointsLabel) pointsLabel.textContent = activeQuestionSetId === 'plushie' ? '1 stig á rétta spurningu' : 'allt að 1.000 á spurningu';
       renderScoreboardList();
       const modal = document.getElementById('scoreboard-modal');
       modal.classList.remove('hidden');
@@ -3999,7 +4020,7 @@
     function adjustTeamScore(teamId, delta) {
       const team = state.teams.find(t => t.id === teamId);
       if (!team) return;
-      team.score = Math.max(0, (team.score || 0) + delta * 100);
+      team.score = Math.max(0, (team.score || 0) + delta * (activeQuestionSetId === 'plushie' ? 1 : 100));
       playSound('click');
       renderScoreboardList();
       if (state.view === 'host-quiz') render();
@@ -4200,7 +4221,7 @@
 
     function saveEditorChanges() {
       try {
-        localStorage.setItem((activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId)), JSON.stringify(categories));
+        localStorage.setItem((activeQuestionSetId === 'plushie' ? 'thanksgiving_quiz_2026_v1_plushie' : (activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId))), JSON.stringify(categories));
       } catch (e) {}
       closeEditorModal();
       playSound('correct');
@@ -4214,7 +4235,7 @@
     function resetQuestionsToDefault() {
       categories = JSON.parse(JSON.stringify(getQuestionSetDefaults(activeQuestionSetId)));
       try {
-        localStorage.removeItem((activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId)));
+        localStorage.removeItem((activeQuestionSetId === 'plushie' ? 'thanksgiving_quiz_2026_v1_plushie' : (activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId))));
         if (activeQuestionSetId === 'thanksgiving') { localStorage.removeItem('thanksgiving_quiz_2026_v2_thanksgiving'); localStorage.removeItem('thanksgiving_quiz_2026_v2'); }
       } catch (e) {}
       renderEditorTabs();
