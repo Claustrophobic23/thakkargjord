@@ -981,9 +981,265 @@
       }
 ];
 
+    const HARD_CATEGORIES = [
+      {
+            "id": "hard1",
+            "icon": "🏛️",
+            "title": "Saga & stórveldi",
+            "subtitle": "Sáttmálar, trúarbrögð og átök sem mótuðu heimssöguna",
+            "questions": [
+                  {
+                        "q": "Friðurinn í Vestfalíu árið 1648 batt enda á hvaða langvinnu átök í Evrópu?",
+                        "options": [
+                              "Þrjátíu ára stríðið",
+                              "Sjö ára stríðið",
+                              "Stríðið um spænska erfðaröð",
+                              "Rósastríðin"
+                        ],
+                        "correct": 0,
+                        "fact": "Friðurinn í Vestfalíu fól í sér tvo sáttmála sem voru undirritaðir í Münster og Osnabrück árið 1648 og batt enda á Þrjátíu ára stríðið."
+                  },
+                  {
+                        "q": "Hvaða franski konungur gaf út Edikt Nantes árið 1598, sem veitti frönskum mótmælendum ákveðin trúarleg réttindi?",
+                        "options": [
+                              "Loðvík XIII",
+                              "Hinrik IV",
+                              "Loðvík XIV",
+                              "Karl IX"
+                        ],
+                        "correct": 1,
+                        "fact": "Hinrik IV gaf út edikt Nantes árið 1598. Loðvík XIV afturkallaði það árið 1685 með Edikti Fontainebleau."
+                  },
+                  {
+                        "q": "Undir stjórn hvaða keisara var Corpus Juris Civilis, hið áhrifamikla safn rómverskra laga, tekið saman á 6. öld?",
+                        "options": [
+                              "Konstantínusar mikla",
+                              "Þeódósíusar II",
+                              "Jústíníusar I",
+                              "Herakleiosar"
+                        ],
+                        "correct": 2,
+                        "fact": "Jústíníus I lét taka lagasafnið saman á árunum 529–534. Það hafði mikil áhrif á þróun evrópskrar réttarhefðar."
+                  },
+                  {
+                        "q": "Hvaða tvö stórveldi mættust í orrustunni við Talas árið 751 í Mið-Asíu?",
+                        "options": [
+                              "Býsanska ríkið og Umayyada-kalífadæmið",
+                              "Tang-keisaraveldið og Abbasída-kalífadæmið",
+                              "Mongólska ríkið og Song-keisaraveldið",
+                              "Persaveldi Sassanída og Rómaveldi"
+                        ],
+                        "correct": 1,
+                        "fact": "Tang-herinn frá Kína barðist við her Abbasída. Orrustan markaði einn þekktasta beina hernaðarátök kínverska Tang-ríkisins og íslamska heimsins."
+                  },
+                  {
+                        "q": "Hvaða ár var Tordesillas-sáttmálinn undirritaður og skipti áhrifasvæðum Spánar og Portúgals í Nýja heiminum?",
+                        "options": [
+                              "1453",
+                              "1492",
+                              "1494",
+                              "1517"
+                        ],
+                        "correct": 2,
+                        "fact": "Sáttmálinn var undirritaður 7. júní 1494. Hann dró ímyndaða norður-suður línu vestan við Grænhöfðaeyjar til að skipta kröfum krúnanna."
+                  }
+            ]
+      },
+      {
+            "id": "hard2",
+            "icon": "⚛️",
+            "title": "Vísindi & eðlisfræði",
+            "subtitle": "Uppgötvanir, stjarneðlisfræði og efnafræði á háu stigi",
+            "questions": [
+                  {
+                        "q": "Hvaða eðlisfræðingur setti fyrst fram tilgátuna um tilvist neutrínósins árið 1930 til að skýra orkudreifingu í beta-geislavirkni?",
+                        "options": [
+                              "Enrico Fermi",
+                              "Niels Bohr",
+                              "Wolfgang Pauli",
+                              "Werner Heisenberg"
+                        ],
+                        "correct": 2,
+                        "fact": "Wolfgang Pauli lagði til óséða, rafhlaðna ögn árið 1930. Enrico Fermi þróaði síðar kenninguna og gaf ögninni nafnið neutrínó."
+                  },
+                  {
+                        "q": "Hvað nefnast massamörkin, um það bil 1,4 sólmassar, sem hvítur dvergur getur ekki farið yfir án þess að hrynja?",
+                        "options": [
+                              "Eddington-mörkin",
+                              "Chandrasekhar-mörkin",
+                              "Schwarzschild-radíus",
+                              "Roche-mörkin"
+                        ],
+                        "correct": 1,
+                        "fact": "Chandrasekhar-mörkin eru um 1,4 sinnum massi sólarinnar. Yfir þeim getur hvítur dvergur ekki haldið jafnvægi með þrýstingi rafeindagassins."
+                  },
+                  {
+                        "q": "Hvaða geislun greindu Arno Penzias og Robert Wilson árið 1965, uppgötvun sem skilaði þeim Nóbelsverðlaunum í eðlisfræði 1978?",
+                        "options": [
+                              "Kosmíska örbylgjubakgrunnsgeislunin",
+                              "Bakgrunnsgeislun frá sólvindinum",
+                              "Gamma-geislun frá Vetrarbrautinni",
+                              "Útvarpsmerki frá fyrstu tifstjörnu"
+                        ],
+                        "correct": 0,
+                        "fact": "Kosmíska örbylgjubakgrunnsgeislunin er leifargeislun frá unga alheiminum og ein mikilvægasta athugunarstoð Miklahvells-líkansins."
+                  },
+                  {
+                        "q": "Hvaða frumefni, með sætistöluna 43, var fyrst framleitt með tilbúnum hætti árið 1937?",
+                        "options": [
+                              "Rhenium",
+                              "Promethium",
+                              "Technetium",
+                              "Hafnium"
+                        ],
+                        "correct": 2,
+                        "fact": "Emilio Segrè og Carlo Perrier einangruðu technetium úr mólýbden-sýni sem hafði verið geislað í sýklótón. Það var fyrsta frumefnið sem var framleitt tilbúið."
+                  },
+                  {
+                        "q": "Hvaða tvö frumefni eru grunnefni Haber–Bosch-ferlisins við iðnaðarframleiðslu ammoníaks?",
+                        "options": [
+                              "Súrefni og vetni",
+                              "Köfnunarefni og vetni",
+                              "Kolefni og súrefni",
+                              "Köfnunarefni og súrefni"
+                        ],
+                        "correct": 1,
+                        "fact": "Ferlísið sameinar köfnunarefni úr lofti og vetni undir háum þrýstingi og hita til að mynda ammoníak. Fritz Haber þróaði efnahvarfið og Carl Bosch færði það yfir á iðnaðarskala."
+                  }
+            ]
+      },
+      {
+            "id": "hard3",
+            "icon": "🌍",
+            "title": "Landafræði & jörðin",
+            "subtitle": "Öfgafullar mælingar, landlukt ríki og óvenjuleg náttúrufyrirbæri",
+            "questions": [
+                  {
+                        "q": "Hvaða tvö fullvalda ríki eru tvílandlukt, það er umlukin eingöngu öðrum landluktum ríkjum?",
+                        "options": [
+                              "Mongólía og Nepal",
+                              "Liechtenstein og Úsbekistan",
+                              "Bólivía og Paragvæ",
+                              "Austurríki og Sviss"
+                        ],
+                        "correct": 1,
+                        "fact": "Liechtenstein er umlukið Austurríki og Sviss, en Úsbekistan er umlukið ríkjum sem öll eru sjálf landlukt."
+                  },
+                  {
+                        "q": "Hvaða hafsvæði er eina nafngreinda hafið sem á sér engin landamörk heldur afmarkast eingöngu af hafstraumum?",
+                        "options": [
+                              "Labradorhaf",
+                              "Sargassohaf",
+                              "Tasmanhaf",
+                              "Karahaf"
+                        ],
+                        "correct": 1,
+                        "fact": "Sargassohafið liggur í Norður-Atlantshafi. Golfstraumurinn og þrír aðrir straumar marka það af, og þar vex fljótandi þang af ættkvíslinni Sargassum."
+                  },
+                  {
+                        "q": "Hvaða fjallstindur er lengst frá miðju jarðar, þótt hann sé ekki hæsti tindur yfir sjávarmáli?",
+                        "options": [
+                              "Everest",
+                              "K2",
+                              "Chimborazo",
+                              "Kilimanjaro"
+                        ],
+                        "correct": 2,
+                        "fact": "Chimborazo í Ekvador er nærri miðbaug þar sem jörðin bungar út. Því er tindurinn fjær miðju jarðar en tindur Everest."
+                  },
+                  {
+                        "q": "Hver er höfuðborg Palau, sem tók við af Koror sem stjórnsýslumiðstöð árið 2006?",
+                        "options": [
+                              "Melekeok",
+                              "Ngerulmud",
+                              "Airai",
+                              "Koror City"
+                        ],
+                        "correct": 1,
+                        "fact": "Ngerulmud er á eyjunni Babeldaob. Koror er þó áfram helsta efnahagsmiðstöð landsins."
+                  },
+                  {
+                        "q": "Hvaða stöðuvatn í Síberíu er dýpst í heimi og geymir um fimmtung af ófrosnum ferskvatnsforða yfirborðs jarðar?",
+                        "options": [
+                              "Ladogavatn",
+                              "Tanganyika-vatn",
+                              "Baikalvatn",
+                              "Viktoríuvatn"
+                        ],
+                        "correct": 2,
+                        "fact": "Baikalvatn er um 1.700 metra djúpt samkvæmt UNESCO og er jafnframt eitt elsta stöðuvatn jarðar."
+                  }
+            ]
+      },
+      {
+            "id": "hard4",
+            "icon": "🎨",
+            "title": "Listir, tónlist & bókmenntir",
+            "subtitle": "Listfræðileg hugtök, tónskáld og bókmenntasaga",
+            "questions": [
+                  {
+                        "q": "Hvaða flæmski listmálari málaði Arnolfini-myndina frá 1434, þar sem kúptur spegill sýnir fleiri persónur í herberginu?",
+                        "options": [
+                              "Rogier van der Weyden",
+                              "Jan van Eyck",
+                              "Pieter Bruegel eldri",
+                              "Hans Memling"
+                        ],
+                        "correct": 1,
+                        "fact": "Jan van Eyck málaði verkið árið 1434. Í kúpta speglinum á bakveggnum sjást tvær litlar manneskjur og yfir speglinum stendur áletrunin „Jan van Eyck was here“."
+                  },
+                  {
+                        "q": "Hvaða stefnu í abstraktlist þróaði Kazimir Malevich og byggði á einföldum rúmfræðiformum og hreinni abstraksjón?",
+                        "options": [
+                              "Fútúrisma",
+                              "Dadaismi",
+                              "Suprematismi",
+                              "Kúbismi"
+                        ],
+                        "correct": 2,
+                        "fact": "Malevich kynnti Suprematisma árið 1915 og hafnaði því að myndlist þyrfti að sýna hluti úr raunveruleikanum."
+                  },
+                  {
+                        "q": "Hvaða enski rithöfundur skrifaði undir skáldnafninu George Eliot?",
+                        "options": [
+                              "Mary Ann Evans",
+                              "Elizabeth Gaskell",
+                              "Charlotte Brontë",
+                              "Virginia Woolf"
+                        ],
+                        "correct": 0,
+                        "fact": "Mary Ann Evans tók sér skáldanafnið George Eliot árið 1857. Meðal þekktustu verka hennar er skáldsagan Middlemarch."
+                  },
+                  {
+                        "q": "Hvaða tónskáld samdi óperuna Wozzeck, sem var frumflutt í Berlín árið 1925?",
+                        "options": [
+                              "Arnold Schönberg",
+                              "Kurt Weill",
+                              "Paul Hindemith",
+                              "Alban Berg"
+                        ],
+                        "correct": 3,
+                        "fact": "Alban Berg samdi bæði tónlist og textabók Wozzeck, sem byggir á leikriti Georgs Büchners, Woyzeck."
+                  },
+                  {
+                        "q": "Hvaða bandaríska skáld og gagnrýnandi hjálpaði T. S. Eliot að stytta og móta lokagerð ljóðsins The Waste Land?",
+                        "options": [
+                              "Wallace Stevens",
+                              "Ezra Pound",
+                              "Robert Frost",
+                              "William Carlos Williams"
+                        ],
+                        "correct": 1,
+                        "fact": "Ezra Pound vann náið með Eliot að handriti ljóðsins og skar það verulega niður. Eliot tileinkaði honum verkið með orðunum „il miglior fabbro“."
+                  }
+            ]
+      }
+];
+
     const QUESTION_SETS = {
       thanksgiving: { title: 'Thanksgiving & fjölskyldan', description: 'Hefðir, árið 2026, tónlist og fjölskylduspurningar', categories: DEFAULT_CATEGORIES },
-      brands: { title: 'Lógó • Beauty Products • Tækni • Matur', description: 'Vörumerki, snyrtivörur, tækni og matarþekking', categories: BRAND_CATEGORIES }
+      brands: { title: 'Lógó • Beauty Products • Tækni • Matur', description: 'Vörumerki, snyrtivörur, tækni og matarþekking', categories: BRAND_CATEGORIES },
+      hard: { title: 'MJÖG ERFITT • Saga • Vísindi • Landafræði • Listir', description: 'Krefjandi spurningar fyrir harðkjarna fróðleiksunnendur', categories: HARD_CATEGORIES }
     };
 
     let activeQuestionSetId = 'thanksgiving';
@@ -1173,7 +1429,7 @@
       exportDocument.querySelectorAll('script[data-bard-client-injected=\"true\"], script[ws-interception-config]').forEach(script => script.remove());
       const rawHtml = '<!DOCTYPE html>\n' + exportDocument.outerHTML;
       const serializedCategories = JSON.stringify(categories, null, 6);
-      const dataConstant = activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES';
+      const dataConstant = activeQuestionSetId === 'hard' ? 'HARD_CATEGORIES' : (activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES');
       const dataPattern = new RegExp('const ' + dataConstant + ' = \\[\\s\\S]*?\\n\\];');
       let updatedHtml = rawHtml.replace(dataPattern, 'const ' + dataConstant + ' = ' + serializedCategories + ';');
       updatedHtml = updatedHtml.replace(
@@ -1730,7 +1986,7 @@
           <div class="text-center mb-8 sm:mb-10">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 text-xs sm:text-sm font-bold mb-4">
               <span>📺</span>
-              <span>Tvö spurningasett í boði • 19 eða 20 spurningar</span>
+              <span>Þrjú spurningasett í boði • 19 eða 20 spurningar</span>
             </div>
             <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 tracking-tight leading-tight">
               Spurningakeppni <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">kvöldsins!</span>
@@ -1741,7 +1997,7 @@
           </div>
 
           <!-- Primary Start Card -->
-          <div class="glass-card rounded-3xl p-7 sm:p-11 border-2 border-amberwarm-400/45 text-center relative overflow-hidden max-w-2xl mx-auto">
+          <div class="glass-card rounded-3xl p-7 sm:p-11 border-2 border-amberwarm-400/45 text-center relative overflow-hidden max-w-5xl mx-auto">
             <div class="text-6xl sm:text-7xl mb-4 animate-float inline-block">🧠</div>
             <h3 class="font-display text-2xl sm:text-3xl font-bold text-cream-50 mb-2">
               Veldu spurningasett
@@ -1749,7 +2005,7 @@
             <p class="text-cream-100/80 text-sm sm:text-base mb-6 max-w-xl mx-auto leading-relaxed">
               Veldu hvaða keppni á að keyra. Þegar þú velur sett opnast herbergið og QR-kóðinn fyrir síma liðanna.
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 text-left">
               <div class="p-5 rounded-2xl bg-plum-950/75 border border-amberwarm-400/35 flex flex-col">
                 <div class="text-3xl mb-2">🦃</div>
                 <div class="text-[11px] uppercase tracking-wider font-extrabold text-amberwarm-300">Sett 1 • 19 spurningar</div>
@@ -1765,6 +2021,14 @@
                 <p class="text-xs text-cream-100/70 mt-2 mb-4">Fjórir fjölbreyttir flokkar um vörumerki, snyrtivörur, tækni og matarþekkingu.</p>
                 <button onclick="selectAndOpenHostLobby('brands')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-extrabold text-sm shadow-lg">🚀 Velja þetta sett</button>
                 <button onclick="selectSetAndOpenEditor('brands')" class="mt-2 text-xs font-bold text-emerald-300 hover:underline">✏️ Breyta spurningum</button>
+              </div>
+              <div class="p-5 rounded-2xl bg-plum-950/75 border border-red-400/40 flex flex-col">
+                <div class="text-3xl mb-2">🧠</div>
+                <div class="text-[11px] uppercase tracking-wider font-extrabold text-red-300">Sett 3 • 20 spurningar • MJÖG ERFITT</div>
+                <h4 class="font-display text-lg sm:text-xl font-extrabold text-cream-50 mt-1">Saga • Vísindi • Landafræði • Listir</h4>
+                <p class="text-xs text-cream-100/70 mt-2 mb-4">Fyrir þau sem vilja alvöru áskorun — fjögur sérhæfð svið og engar auðveldar spurningar.</p>
+                <button onclick="selectAndOpenHostLobby('hard')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-700 text-white font-extrabold text-sm shadow-lg">🔥 Velja erfiða settið</button>
+                <button onclick="selectSetAndOpenEditor('hard')" class="mt-2 text-xs font-bold text-red-300 hover:underline">✏️ Breyta spurningum</button>
               </div>
             </div>
 
@@ -2799,6 +3063,12 @@
     function getPlayerRankTitle(score, total) {
       const maxPts = total * 1000;
       const pct = maxPts > 0 ? score / maxPts : 0;
+      if (activeQuestionSetId === 'hard') {
+        if (pct >= 0.85) return { title: "Alfræðisnillingur 🧠", desc: "Frábær frammistaða á sannkölluðu sérfræðiprófi!" };
+        if (pct >= 0.65) return { title: "Sérfræðingur 📚", desc: "Mjög sterkt skor á erfiðasta settinu!" };
+        if (pct >= 0.45) return { title: "Fróðleiksmaður 🔍", desc: "Vel gert — þetta voru engar auðveldar spurningar." };
+        return { title: "Þrautseigur keppandi 🏅", desc: "Þetta var erfitt próf. Nú veistu meira en áður!" };
+      }
       if (activeQuestionSetId === 'brands') {
         if (pct >= 0.85) return { title: "Alfræðimeistari 👑", desc: "Frábær frammistaða – þú kannt skil á vörumerkjum, tækni og ýmsu fleiru!" };
         if (pct >= 0.65) return { title: "Þekkingarfræðingur 🧠", desc: "Glæsilegur árangur! Þú ert með þetta allt á hreinu." };
