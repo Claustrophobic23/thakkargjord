@@ -721,6 +721,18 @@
                         ],
                         "correct": 2,
                         "fact": "Amma Salla á 23 afkomendur!"
+                  },
+                  {
+                        "id": "family-panorama-outcome",
+                        "q": "Amma bað afa að taka víðmynd (panorama) af allri fjölskyldunni. Afi færði símann rólega frá vinstri til hægri — en einn frændi var á hlaupum að ná sér í aðra kalkúnasneið. Hvað kom í ljós þegar myndin birtist?",
+                        "options": [
+                              "Frændinn birtist tvisvar á myndinni — eins og hann ætti tvíburabróður",
+                              "Afi hafði óvart tekið mynd af sjónvarpinu",
+                              "Allir litu út eins og þeir væru með risastórt höfuð nema hundurinn",
+                              "Myndin sýndi bara fætur allra við matarborðið"
+                        ],
+                        "correct": 0,
+                        "fact": "Þegar víðmynd er tekin saumar síminn saman marga hluta myndarinnar. Ef einhver hreyfir sig á meðan getur hann birst tvisvar — frændinn fékk sem sagt ókeypis tvíburahlutverk!"
                   }
             ]
       }
@@ -1825,12 +1837,22 @@
       activeQuestionSetId = QUESTION_SETS[setId] ? setId : 'thanksgiving';
       categories = JSON.parse(JSON.stringify(getQuestionSetDefaults(activeQuestionSetId)));
       try {
-        const storageKey = (activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId);
+        const storageKey = (activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId));
         let saved = localStorage.getItem(storageKey);
-        if (!saved && activeQuestionSetId === 'thanksgiving') saved = localStorage.getItem('thanksgiving_quiz_2026_v2');
+        if (!saved && activeQuestionSetId === 'thanksgiving') saved = localStorage.getItem('thanksgiving_quiz_2026_v2_thanksgiving') || localStorage.getItem('thanksgiving_quiz_2026_v2');
         if (saved) {
           const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length === 4) categories = parsed;
+          if (Array.isArray(parsed) && parsed.length === 4) {
+            categories = parsed;
+            if (activeQuestionSetId === 'thanksgiving') {
+              const defaultFamily = getQuestionSetDefaults('thanksgiving').find(cat => cat.id === 'cat4');
+              const savedFamily = categories.find(cat => cat.id === 'cat4');
+              const newFamilyQuestion = defaultFamily && defaultFamily.questions.find(q => q.id === 'family-panorama-outcome');
+              if (savedFamily && newFamilyQuestion && !savedFamily.questions.some(q => q.id === newFamilyQuestion.id)) {
+                savedFamily.questions.push(newFamilyQuestion);
+              }
+            }
+          }
         }
       } catch (e) { console.warn('Gat ekki hlaðið vistuðum spurningum:', e); }
       state.editorTab = 0;
@@ -2582,7 +2604,7 @@
             <div class="grid grid-cols-1 gap-4 text-left" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))">
               <div class="p-5 rounded-2xl bg-plum-950/75 border border-amberwarm-400/35 flex flex-col">
                 <div class="text-3xl mb-2">🦃</div>
-                <div class="text-[11px] uppercase tracking-wider font-extrabold text-amberwarm-300">Sett 1 • 19 spurningar</div>
+                <div class="text-[11px] uppercase tracking-wider font-extrabold text-amberwarm-300">Sett 1 • 20 spurningar</div>
                 <h4 class="font-display text-lg sm:text-xl font-extrabold text-cream-50 mt-1">Thanksgiving & fjölskyldan</h4>
                 <p class="text-xs text-cream-100/70 mt-2 mb-4">Þakkargjörð, árið 2026, tónlist og kvikmyndir ásamt sérsniðnum fjölskylduspurningum.</p>
                 <button onclick="selectAndOpenHostLobby('thanksgiving')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amberwarm-400 to-cranberry-600 text-white font-extrabold text-sm shadow-lg">🚀 Velja þetta sett</button>
@@ -4143,7 +4165,7 @@
 
     function saveEditorChanges() {
       try {
-        localStorage.setItem((activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId), JSON.stringify(categories));
+        localStorage.setItem((activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId)), JSON.stringify(categories));
       } catch (e) {}
       closeEditorModal();
       playSound('correct');
@@ -4157,8 +4179,8 @@
     function resetQuestionsToDefault() {
       categories = JSON.parse(JSON.stringify(getQuestionSetDefaults(activeQuestionSetId)));
       try {
-        localStorage.removeItem((activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId));
-        if (activeQuestionSetId === 'thanksgiving') localStorage.removeItem('thanksgiving_quiz_2026_v2');
+        localStorage.removeItem((activeQuestionSetId === 'visual' ? 'thanksgiving_quiz_2026_v3_visual' : (activeQuestionSetId === 'thanksgiving' ? 'thanksgiving_quiz_2026_v3_thanksgiving' : 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId)));
+        if (activeQuestionSetId === 'thanksgiving') { localStorage.removeItem('thanksgiving_quiz_2026_v2_thanksgiving'); localStorage.removeItem('thanksgiving_quiz_2026_v2'); }
       } catch (e) {}
       renderEditorTabs();
       renderEditorQuestions();
