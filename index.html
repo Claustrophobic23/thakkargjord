@@ -2772,13 +2772,13 @@
                   <span>📱</span> Skref 1 • Skannaðu í símann
                 </div>
                 <h2 class="font-display text-2xl sm:text-3xl font-bold text-cream-50">
-                  Komdu í leikinn!
+                  ${activeQuestionSetId === 'plushie' ? 'THANKSGIVING FAMILY ARCADE' : 'Komdu í leikinn!'}
                 </h2>
                 <p class="text-xs sm:text-sm text-cream-100/80 mt-1">
                   Opnaðu myndavélina í símanum og skannaðu QR-kóðann
                 </p>
                 <div class="mt-3 px-3 py-2 rounded-xl bg-plum-950/75 border border-amberwarm-400/20 text-xs font-bold text-amberwarm-300">
-                  Spurningasett: ${escapeHtml((QUESTION_SETS[activeQuestionSetId] || QUESTION_SETS.thanksgiving).title)}
+                  Spurningasett: ${escapeHtml((QUESTION_SETS[activeQuestionSetId] || QUESTION_SETS.thanksgiving).title)}${activeQuestionSetId === 'plushie' ? '<div class="mt-2 text-[10px] text-cyan-200">🕹️ 25 PLUSHIES · 8 OPTIONS · 1 POINT PER CORRECT GUESS</div>' : ''}
                 </div>
               </div>
 
@@ -2876,10 +2876,31 @@
 
     function launchQuizForAllPlayers() {
       if (activeQuestionSetId === 'plushie') {
+        const boys = ['Andri','Magnus','Gudjon','Isaac','Baldur','Eythor','Leon','Baltasar','Fannar','Kristofer Baldur','Wesley'];
+        const girls = ['Kidda','Maria Alejandra','Catherine','Karen','Sara','Greta','Bryndis','Johanna','Maria Greta','Asa','Þordis Gyda','Hrafnhildur Imba','Gudrun Bjorg','Hrafnhildur Eva'];
+        const shuffle = arr => {
+          const a = arr.slice();
+          for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+          }
+          return a;
+        };
         const plushieQuestions = categories.flatMap(cat => cat.questions || []);
-        const ready = plushieQuestions.length > 0 && plushieQuestions.every(q => q && q.q === "WHO'S THAT PLUSHIE?" && Array.isArray(q.options) && q.options.length >= 2 && Number.isInteger(q.correct) && q.correct >= 0 && q.correct < q.options.length && q.media && q.media.type === 'plushie' && typeof q.media.src === 'string' && q.media.src.trim());
-        if (!ready) { showToast('Við þurfum plushie-myndirnar og nöfnin áður en hægt er að byrja!', '🧸'); return; }
-        categories.forEach(cat => { for (let j = cat.questions.length - 1; j > 0; j--) { const k = Math.floor(Math.random() * (j + 1)); [cat.questions[j], cat.questions[k]] = [cat.questions[k], cat.questions[j]]; } });
+        const ready = plushieQuestions.length === 25 && plushieQuestions.every(q =>
+          q && q.q === "WHO'S THAT PLUSHIE?" &&
+          (q.gender === 'male' ? boys : girls).includes(q.correctName) &&
+          q.media && q.media.type === 'plushie' &&
+          q.media.src === 'assets/plushies/family-plushies-sprite.webp' &&
+          Number.isInteger(q.media.spriteCol) && Number.isInteger(q.media.spriteRow)
+        );
+        if (!ready) { showToast('Athugaðu að plushie-myndasafnið sé rétt uppsett áður en byrjað er!', '🧸'); return; }
+        plushieQuestions.forEach(q => {
+          const pool = q.gender === 'male' ? boys : girls;
+          q.options = shuffle([q.correctName, ...shuffle(pool.filter(name => name !== q.correctName)).slice(0, 7)]);
+          q.correct = q.options.indexOf(q.correctName);
+        });
+        categories.forEach(cat => { cat.questions = shuffle(cat.questions); });
       }
       playSound('fanfare');
       state.currentCatIndex = 0;
@@ -2991,7 +3012,7 @@
       const question = cat.questions[state.currentQIndex];
       const flatIndex = getFlatQuestionIndex(state.currentCatIndex, state.currentQIndex);
       const totalQuestions = getTotalQuestionsCount();
-      const letters = ['A', 'B', 'C', 'D'];
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
       const isFirstQuestion = state.currentCatIndex === 0 && state.currentQIndex === 0;
       const isLastQuestion =
@@ -3003,11 +3024,11 @@
       const sortedTeams = [...state.teams].sort((a, b) => b.score - a.score);
 
       // Compute answer distribution counts across A, B, C, D for this question
-      const optionCounts = [0, 0, 0, 0];
+      const optionCounts = Array.from({ length: question.options.length }, () => 0);
       let totalResponsesForQ = 0;
       state.teams.forEach(t => {
         const chosen = t.answersMap ? t.answersMap[flatIndex] : undefined;
-        if (typeof chosen === 'number' && chosen >= 0 && chosen <= 3) {
+        if (typeof chosen === 'number' && chosen >= 0 && chosen < question.options.length) {
           optionCounts[chosen]++;
           totalResponsesForQ++;
         }
@@ -3517,7 +3538,7 @@
       const currentScore = state.playerAnswers.reduce((sum, a) => sum + (a.pointsEarned || (a.isCorrect ? getPointsPerQuestion() : 0)), 0);
       const playerTimerRemaining = state.timerDeadlineAt ? Math.max(0, Math.ceil((state.timerDeadlineAt - Date.now()) / 1000)) : getQuestionDurationSeconds();
       const currentAnsObj = state.playerAnswers.find(a => a.catIndex === state.currentCatIndex && a.qIndex === state.currentQIndex);
-      const letters = ['A', 'B', 'C', 'D'];
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
       if (state.hostCategoryIntro) {
         return `
@@ -4195,7 +4216,7 @@
       const container = document.getElementById('editor-questions-container');
       if (!container) return;
       const cat = categories[state.editorTab];
-      const letters = ['A', 'B', 'C', 'D'];
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
       container.innerHTML = `
         <div class="p-4 rounded-2xl bg-plum-950/75 border border-amberwarm-400/25">
