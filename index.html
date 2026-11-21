@@ -726,13 +726,293 @@
       }
 ];
 
+    const BRAND_CATEGORIES = [
+      {
+            "id": "brand1",
+            "icon": "🔎",
+            "title": "Lógó",
+            "subtitle": "Þekkt vörumerki og tákn sem flest kannast við",
+            "questions": [
+                  {
+                        "q": "Hvaða íþróttavörumerki er þekkt fyrir einfalt „swoosh“-merki?",
+                        "options": [
+                              "Adidas",
+                              "Nike",
+                              "Puma",
+                              "Reebok"
+                        ],
+                        "correct": 1,
+                        "fact": "Nike-merkið var hannað árið 1971 af nemandanum Carolyn Davidson. Það átti að minna á væng gyðjunnar Nike."
+                  },
+                  {
+                        "q": "Hvaða tæknifyrirtæki notar epli með biti úr sem merki?",
+                        "options": [
+                              "Microsoft",
+                              "Samsung",
+                              "Apple",
+                              "Google"
+                        ],
+                        "correct": 2,
+                        "fact": "Apple-merkið hefur tekið nokkrum breytingum frá því fyrsta merkið var hannað árið 1976."
+                  },
+                  {
+                        "q": "Hvaða bílaframleiðandi notar fjóra samtengda hringi í merkinu sínu?",
+                        "options": [
+                              "BMW",
+                              "Mercedes-Benz",
+                              "Volkswagen",
+                              "Audi"
+                        ],
+                        "correct": 3,
+                        "fact": "Hringarnir fjórir tákna sameiningu fjögurra bílaframleiðenda í Auto Union árið 1932."
+                  },
+                  {
+                        "q": "Hvaða kaffikeðja er með tvíhalaða hafmeyju í merkinu sínu?",
+                        "options": [
+                              "Costa Coffee",
+                              "Starbucks",
+                              "Caffè Nero",
+                              "Dunkin'"
+                        ],
+                        "correct": 1,
+                        "fact": "Merki Starbucks sýnir sirenu, goðsagnakennda hafmeyju sem vísar til sjávar- og siglingaarfleifðar kaffiverslunar."
+                  },
+                  {
+                        "q": "Hvaða skyndibitakeðja er þekkt fyrir tvo gyllta boga sem mynda stafinn M?",
+                        "options": [
+                              "Burger King",
+                              "Subway",
+                              "McDonald's",
+                              "Wendy's"
+                        ],
+                        "correct": 2,
+                        "fact": "Gylltu bogarnir urðu eitt þekktasta vörumerkjatákn heims og voru teknir upp í núverandi mynd á sjöunda áratugnum."
+                  }
+            ]
+      },
+      {
+            "id": "brand2",
+            "icon": "💄",
+            "title": "Beauty Products",
+            "subtitle": "Snyrtivörur, húðvörur og þekkt fegurðarmerki",
+            "questions": [
+                  {
+                        "q": "Hvaða snyrtivörumerki framleiðir húðsermið Advanced Night Repair?",
+                        "options": [
+                              "Clinique",
+                              "Estée Lauder",
+                              "Lancôme",
+                              "Clarins"
+                        ],
+                        "correct": 1,
+                        "fact": "Advanced Night Repair frá Estée Lauder kom fyrst á markað árið 1982 og varð eitt þekktasta húðserum vörumerkisins."
+                  },
+                  {
+                        "q": "Hvaða innihaldsefni er sérstaklega þekkt fyrir að binda raka í húðinni?",
+                        "options": [
+                              "Salisýlsýra",
+                              "Hýalúrónsýra",
+                              "Retínól",
+                              "Bensóýlperoxíð"
+                        ],
+                        "correct": 1,
+                        "fact": "Hýalúrónsýra getur bundið mikið magn vatns og er því algengt rakagefandi innihaldsefni í húðvörum."
+                  },
+                  {
+                        "q": "Retínól er afleiða hvaða vítamíns?",
+                        "options": [
+                              "A-vítamíns",
+                              "B12-vítamíns",
+                              "C-vítamíns",
+                              "D-vítamíns"
+                        ],
+                        "correct": 0,
+                        "fact": "Retínól er form A-vítamíns sem er notað í húðvörur, meðal annars til að bæta áferð húðar og draga úr fínum línum."
+                  },
+                  {
+                        "q": "Hvaða snyrtivörumerki er þekkt fyrir varalitinn Ruby Woo?",
+                        "options": [
+                              "NARS",
+                              "MAC Cosmetics",
+                              "Bobbi Brown",
+                              "bareMinerals"
+                        ],
+                        "correct": 1,
+                        "fact": "Ruby Woo frá MAC er klassískur, mattur rauður varalitur sem hefur verið í vörulínu merkisins í mörg ár."
+                  },
+                  {
+                        "q": "Hvað merkir SPF á sólarvörn?",
+                        "options": [
+                              "Skin Protection Formula",
+                              "Sun Protection Factor",
+                              "Solar Prevention Filter",
+                              "Sunlight Protection Feature"
+                        ],
+                        "correct": 1,
+                        "fact": "SPF stendur fyrir Sun Protection Factor og gefur til kynna vörn gegn UVB-geislum."
+                  }
+            ]
+      },
+      {
+            "id": "brand3",
+            "icon": "📱",
+            "title": "Tækni",
+            "subtitle": "Tæki, hugtök og uppfinningar úr tækniheiminum",
+            "questions": [
+                  {
+                        "q": "Fyrir hvað stendur skammstöfunin QR í QR-kóða?",
+                        "options": [
+                              "Quick Response",
+                              "Quality Reading",
+                              "Question Recognition",
+                              "Quick Record"
+                        ],
+                        "correct": 0,
+                        "fact": "QR stendur fyrir Quick Response. Kóðinn var þróaður í Japan árið 1994 til að rekja íhluti í bílaiðnaði."
+                  },
+                  {
+                        "q": "Hvaðan kemur nafnið Bluetooth?",
+                        "options": [
+                              "Úr nafni sænsks vísindamanns",
+                              "Úr nafni dansks konungs",
+                              "Úr ensku orði yfir útvarpsbylgju",
+                              "Úr nafni fyrstu tölvunnar"
+                        ],
+                        "correct": 1,
+                        "fact": "Bluetooth er nefnt eftir Harald Blátönn, konungi Danmerkur og Noregs á 10. öld."
+                  },
+                  {
+                        "q": "Hvað er sérstakt við USB-C tengi miðað við eldri USB-A tengi?",
+                        "options": [
+                              "Það virkar aðeins í eina átt",
+                              "Það er eingöngu fyrir hljóð",
+                              "Það má stinga í samband á báða vegu",
+                              "Það þarf alltaf nettengingu"
+                        ],
+                        "correct": 2,
+                        "fact": "USB-C tengið er samhverft og því er hægt að tengja það án þess að snúa því á ákveðinn hátt."
+                  },
+                  {
+                        "q": "Fyrir hvað stendur CPU í tölvu?",
+                        "options": [
+                              "Central Processing Unit",
+                              "Computer Power Utility",
+                              "Core Program Upload",
+                              "Central Program User"
+                        ],
+                        "correct": 0,
+                        "fact": "CPU er aðalvinnslueining tölvunnar og framkvæmir skipanir og útreikninga forrita."
+                  },
+                  {
+                        "q": "Hvaða kerfi notar gervihnetti til að ákvarða staðsetningu þína?",
+                        "options": [
+                              "NFC",
+                              "Wi-Fi Direct",
+                              "GPS",
+                              "HDMI"
+                        ],
+                        "correct": 2,
+                        "fact": "GPS byggir á merkjum frá gervihnöttum sem móttakari notar til að reikna út staðsetningu sína."
+                  }
+            ]
+      },
+      {
+            "id": "brand4",
+            "icon": "🍽️",
+            "title": "Matur",
+            "subtitle": "Hráefni, réttir og matarhefðir víðs vegar að úr heiminum",
+            "questions": [
+                  {
+                        "q": "Hvaða land er upprunaland sushi?",
+                        "options": [
+                              "Kína",
+                              "Suður-Kórea",
+                              "Japan",
+                              "Taíland"
+                        ],
+                        "correct": 2,
+                        "fact": "Sushi eins og við þekkjum það í dag þróaðist í Japan, þó eldri aðferðir við að geyma fisk í gerjuðum hrísgrjónum eigi sér lengri sögu í Asíu."
+                  },
+                  {
+                        "q": "Úr hvaða hráefni er hummus fyrst og fremst búið til?",
+                        "options": [
+                              "Linsubaunum",
+                              "Kjúklingabaunum",
+                              "Hvítum baunum",
+                              "Grænum baunum"
+                        ],
+                        "correct": 1,
+                        "fact": "Kjúklingabaunir, tahini, sítrónusafi og hvítlaukur eru meðal helstu hráefna í klassískum hummus."
+                  },
+                  {
+                        "q": "Frá hvaða landi kemur osturinn Parmigiano Reggiano?",
+                        "options": [
+                              "Frakklandi",
+                              "Sviss",
+                              "Spáni",
+                              "Ítalíu"
+                        ],
+                        "correct": 3,
+                        "fact": "Parmigiano Reggiano er upprunaverndaður ítalskur ostur frá afmörkuðu svæði á Norður-Ítalíu."
+                  },
+                  {
+                        "q": "Hvaða krydd er unnið úr fræni saffrankrókussins og er oft kallað dýrasta krydd heims?",
+                        "options": [
+                              "Kardimommur",
+                              "Saffran",
+                              "Vanilla",
+                              "Kúrkuma"
+                        ],
+                        "correct": 1,
+                        "fact": "Saffran er handtínt úr frænum krókusblómsins og þarf gríðarlega mörg blóm til að framleiða lítið magn."
+                  },
+                  {
+                        "q": "Úr hverju er japanska kryddmaukið miso yfirleitt búið til?",
+                        "options": [
+                              "Gerjuðum sojabaunum",
+                              "Möluðum hrísgrjónum og sykri",
+                              "Kókosmjólk",
+                              "Þurrkuðum þangi"
+                        ],
+                        "correct": 0,
+                        "fact": "Miso er gerjað mauk, oftast úr sojabaunum, salti og koji-rækt, og er algengt í súpur og sósur."
+                  }
+            ]
+      }
+];
+
+    const QUESTION_SETS = {
+      thanksgiving: { title: 'Thanksgiving & fjölskyldan', description: 'Hefðir, árið 2026, tónlist og fjölskylduspurningar', categories: DEFAULT_CATEGORIES },
+      brands: { title: 'Lógó • Beauty Products • Tækni • Matur', description: 'Vörumerki, snyrtivörur, tækni og matarþekking', categories: BRAND_CATEGORIES }
+    };
+
+    let activeQuestionSetId = 'thanksgiving';
+    function getQuestionSetDefaults(setId = activeQuestionSetId) {
+      return (QUESTION_SETS[setId] || QUESTION_SETS.thanksgiving).categories;
+    }
+
+    function activateQuestionSet(setId) {
+      activeQuestionSetId = QUESTION_SETS[setId] ? setId : 'thanksgiving';
+      categories = JSON.parse(JSON.stringify(getQuestionSetDefaults(activeQuestionSetId)));
+      try {
+        const storageKey = 'thanksgiving_quiz_2026_v2_' + activeQuestionSetId;
+        let saved = localStorage.getItem(storageKey);
+        if (!saved && activeQuestionSetId === 'thanksgiving') saved = localStorage.getItem('thanksgiving_quiz_2026_v2');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length === 4) categories = parsed;
+        }
+      } catch (e) { console.warn('Gat ekki hlaðið vistuðum spurningum:', e); }
+      state.editorTab = 0;
+    }
+
     // =========================================================================
     // 2. APPLICATION STATE & FIREBASE REAL-TIME SYNC
     // =========================================================================
     // Paste your free Firebase Realtime Database URL below (or use the "Tengja Firebase" button in the app)
     let FIREBASE_DB_URL = "https://thakkargjord-default-rtdb.europe-west1.firebasedatabase.app";
 
-    let categories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+    let categories = JSON.parse(JSON.stringify(getQuestionSetDefaults()));
 
     let state = {
       view: 'landing', // 'landing' | 'host-lobby' | 'host-quiz' | 'player-setup' | 'player-waiting' | 'player-quiz' | 'player-results'
@@ -803,6 +1083,10 @@
           state.roomId = generateRoomCode();
         }
 
+        // Select the question set before applying any question overrides from the URL.
+        const setMatch = hash.match(/[#&]set=([^&]+)/);
+        activateQuestionSet(setMatch ? decodeURIComponent(setMatch[1]) : 'thanksgiving');
+
         // Custom question edits from URL hash
         const qMatch = hash.match(/[#&](q|quiz)=([^&]+)/);
         if (qMatch) {
@@ -827,20 +1111,14 @@
           }
         }
 
-        const saved = localStorage.getItem('thanksgiving_quiz_2026_v2');
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length === 4) {
-            categories = parsed;
-          }
-        }
+        // Saved questions are loaded by activateQuestionSet() above.
       } catch (e) {
         console.warn('Gat ekki hlaðið stillingum:', e);
       }
     }
 
     function buildPlayerShareHash() {
-      const parts = ['play'];
+      const parts = ['play', 'set=' + encodeURIComponent(activeQuestionSetId)];
       if (state.roomId) {
         parts.push('room=' + encodeURIComponent(state.roomId));
       }
@@ -850,7 +1128,7 @@
 
       const diffs = [];
       categories.forEach((cat, cIdx) => {
-        const defCat = DEFAULT_CATEGORIES[cIdx];
+        const defCat = getQuestionSetDefaults(activeQuestionSetId)[cIdx];
         if (cat.title !== defCat.title) {
           diffs.push({ c: cIdx, t: cat.title });
         }
@@ -895,10 +1173,9 @@
       exportDocument.querySelectorAll('script[data-bard-client-injected=\"true\"], script[ws-interception-config]').forEach(script => script.remove());
       const rawHtml = '<!DOCTYPE html>\n' + exportDocument.outerHTML;
       const serializedCategories = JSON.stringify(categories, null, 6);
-      let updatedHtml = rawHtml.replace(
-        /const DEFAULT_CATEGORIES = \[[\s\S]*?\n    \];/,
-        `const DEFAULT_CATEGORIES = ${serializedCategories};`
-      );
+      const dataConstant = activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES';
+      const dataPattern = new RegExp('const ' + dataConstant + ' = \\[\\s\\S]*?\\n    \\];');
+      let updatedHtml = rawHtml.replace(dataPattern, 'const ' + dataConstant + ' = ' + serializedCategories + ';');
       updatedHtml = updatedHtml.replace(
         /let FIREBASE_DB_URL = "[^"]*";/,
         `let FIREBASE_DB_URL = "${FIREBASE_DB_URL.replace(/"/g, '')}";`
@@ -1105,6 +1382,8 @@
     function getCurrentHostStatePayload() {
       return {
         status: state.roomStatus,
+        questionSetId: activeQuestionSetId,
+        questionSetTitle: (QUESTION_SETS[activeQuestionSetId] || QUESTION_SETS.thanksgiving).title,
         catIndex: state.currentCatIndex,
         qIndex: state.currentQIndex,
         categoryIntro: state.hostCategoryIntro,
@@ -1292,6 +1571,7 @@
     function handleHostStateOnPlayer(hostPayload) {
       if (!hostPayload) return;
 
+      if (QUESTION_SETS[hostPayload.questionSetId]) activeQuestionSetId = hostPayload.questionSetId;
       if (Array.isArray(hostPayload.categories) && hostPayload.categories.length === 4) {
         categories = hostPayload.categories;
       }
@@ -2858,7 +3138,7 @@
 
     function saveEditorChanges() {
       try {
-        localStorage.setItem('thanksgiving_quiz_2026_v2', JSON.stringify(categories));
+        localStorage.setItem('thanksgiving_quiz_2026_v2_' + activeQuestionSetId, JSON.stringify(categories));
       } catch (e) {}
       closeEditorModal();
       playSound('correct');
@@ -2870,9 +3150,10 @@
     }
 
     function resetQuestionsToDefault() {
-      categories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+      categories = JSON.parse(JSON.stringify(getQuestionSetDefaults(activeQuestionSetId)));
       try {
-        localStorage.removeItem('thanksgiving_quiz_2026_v2');
+        localStorage.removeItem('thanksgiving_quiz_2026_v2_' + activeQuestionSetId);
+        if (activeQuestionSetId === 'thanksgiving') localStorage.removeItem('thanksgiving_quiz_2026_v2');
       } catch (e) {}
       renderEditorTabs();
       renderEditorQuestions();
