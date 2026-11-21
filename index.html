@@ -3220,7 +3220,16 @@
     }
 
     function toggleHostReveal() {
-      if (!state.hostAnswerRevealed) revealHostAnswer();
+      if (state.hostAnswerRevealed) return;
+      if (activeQuestionSetId === 'plushie') {
+        const flat = getFlatQuestionIndex(state.currentCatIndex, state.currentQIndex);
+        const activeTeams = state.teams.filter(t => t.playerId);
+        if (activeTeams.length && activeTeams.some(t => (t.lastAnsweredQ ?? -1) < flat)) {
+          showToast('Leyfið öllum liðum að giska áður en svarið er sýnt!', '🧸');
+          return;
+        }
+      }
+      revealHostAnswer();
     }
 
     function finishQuizAndShowPodium() {
