@@ -1851,39 +1851,10 @@
           options: [],
           correct: null,
           fact: "🎉 Það var " + person[0] + "! Þú þekkir fjölskylduna — eða ert að verða Plushie Expert!",
-          media: {
-            type: "plushie",
-            src: person[2],
-            alt: "Family plushie representing " + person[0]
-          }
-        }))
-      }
-    ]
-    const PLUSHIE_CATEGORIES = [
-      {
-        id: "plushie-category",
-        icon: "🧸",
-        title: "Guess the Family Plushie!",
-        subtitle: "Every family has its characters. Can you recognise yours?",
-        questions: PLUSHIE_PEOPLE.map((person, index) => ({
-          id: "plushie-" + String(index + 1).padStart(2, "0"),
-          q: "WHO'S THAT PLUSHIE?",
-          correctName: person[0],
-          gender: person[1],
-          options: [],
-          correct: null,
-          fact: "🎉 Það var " + person[0] + "! Þú þekkir fjölskylduna — eða ert að verða Plushie Expert!",
-          media: {
-            type: "plushie",
-            src: "family-plushies-sprite.webp",
-            spriteCol: person[2],
-            spriteRow: person[3],
-            alt: "Arcade claw machine plushie representing " + person[0]
-          }
+          media: { type: "plushie", src: person[2], alt: "Family plushie representing " + person[0] }
         }))
       }
     ];
-
 
     const QUESTION_SETS = {
       thanksgiving: { title: 'Thanksgiving & fjölskyldan', description: 'Hefðir, árið 2026, tónlist og fjölskylduspurningar', categories: DEFAULT_CATEGORIES },
