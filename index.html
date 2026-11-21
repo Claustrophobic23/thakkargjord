@@ -1853,7 +1853,7 @@
           fact: "🎉 Það var " + person[0] + "! Þú þekkir fjölskylduna — eða ert að verða Plushie Expert!",
           media: {
             type: "plushie",
-            src: "assets/plushies/family-plushies-sprite.webp",
+            src: "family-plushies-sprite.webp",
             spriteCol: person[2],
             spriteRow: person[3],
             alt: "Arcade claw machine plushie representing " + person[0]
@@ -2891,7 +2891,7 @@
           q && q.q === "WHO'S THAT PLUSHIE?" &&
           (q.gender === 'male' ? boys : girls).includes(q.correctName) &&
           q.media && q.media.type === 'plushie' &&
-          q.media.src === 'assets/plushies/family-plushies-sprite.webp' &&
+          q.media.src === 'family-plushies-sprite.webp' &&
           Number.isInteger(q.media.spriteCol) && Number.isInteger(q.media.spriteRow)
         );
         if (!ready) { showToast('Athugaðu að plushie-myndasafnið sé rétt uppsett áður en byrjað er!', '🧸'); return; }
