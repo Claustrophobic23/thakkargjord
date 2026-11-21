@@ -1236,10 +1236,485 @@
       }
 ];
 
+    const VISUAL_CATEGORIES = [
+      {
+            "id": "visual1",
+            "icon": "🔍",
+            "title": "Nærmyndir – þekkirðu dýrið?",
+            "subtitle": "Skoðaðu smáatriðin vel — stundum er svarið í einu auga eða nefi",
+            "questions": [
+                  {
+                        "q": "Hvaða fugl horfir beint í myndavélina með risastóran skó-laga gogg?",
+                        "options": [
+                              "Skófur (shoebill)",
+                              "Marabú",
+                              "Pelíkani",
+                              "Skógauki"
+                        ],
+                        "correct": 0,
+                        "fact": "Skófurinn er stór vaðfugl frá votlendi Mið- og Austur-Afríku. Risastóri goggurinn minnir á skó og er afar einkennandi.",
+                        "media": {
+                              "type": "image",
+                              "tag": "NÆRMYND",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/The_shoebill_portrait.jpg/960px-The_shoebill_portrait.jpg",
+                              "alt": "Nærmynd af skófugli með stóran gogg",
+                              "credit": "Jameswasswa · CC BY-SA 4.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:The_shoebill_portrait.jpg",
+                              "fit": "cover"
+                        }
+                  },
+                  {
+                        "q": "Hvað heitir þetta vatnadýr sem heldur útliti lirfu jafnvel eftir að það verður kynþroska?",
+                        "options": [
+                              "Axolotl",
+                              "Rafáll",
+                              "Salamandra eldsins",
+                              "Glerfroskur"
+                        ],
+                        "correct": 0,
+                        "fact": "Axolotl er salamandra sem sýnir oft neóteníu: hún nær kynþroska án þess að ganga í gegnum hefðbundna myndbreytingu í landdýr.",
+                        "media": {
+                              "type": "image",
+                              "tag": "HVAÐ ER ÞETTA?",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/TheAxolotl.jpg/960px-TheAxolotl.jpg",
+                              "alt": "Ljós axolotl með ytri tálkn í vatni",
+                              "credit": "Opouy · CC0",
+                              "source": "https://commons.wikimedia.org/wiki/File:TheAxolotl.jpg",
+                              "fit": "contain"
+                        }
+                  },
+                  {
+                        "q": "Hvaða spendýr sést hér, þakið hörðum hreisturplötum?",
+                        "options": [
+                              "Pangólín",
+                              "Armadillo",
+                              "Broddgöltur",
+                              "Músaþyrnir"
+                        ],
+                        "correct": 0,
+                        "fact": "Pangólín eru einu spendýrin sem eru þakin stórum keratínhreistrum. Þau nærast aðallega á maurum og termítum.",
+                        "media": {
+                              "type": "image",
+                              "tag": "ZOOM-AÐGERÐ",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Pangolin.jpg/960px-Pangolin.jpg",
+                              "alt": "Pangólín með hreisturplötur vafið um trjágrein",
+                              "credit": "U.S. Fish and Wildlife Service Headquarters · CC BY 2.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Pangolin.jpg",
+                              "fit": "cover"
+                        }
+                  },
+                  {
+                        "q": "Hvað eru stjörnulaga útvextirnir á trýni þessa móls fyrst og fremst notaðir til?",
+                        "options": [
+                              "Að skynja snertingu og finna fæðu",
+                              "Að sprauta eitri",
+                              "Að nema hljóð undir jörðu",
+                              "Að stjórna líkamshita"
+                        ],
+                        "correct": 0,
+                        "fact": "Stjörnumólið hefur 22 mjög næma, fingurlaga útvexti á trýninu. Þeir hjálpa því að þreifa sig hratt áfram og finna smá bráð.",
+                        "media": {
+                              "type": "image",
+                              "tag": "FINNDU SMÁATRIÐIÐ",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Baby_star-nosed_moles.jpg/960px-Baby_star-nosed_moles.jpg",
+                              "alt": "Ung stjörnumól þar sem stjörnulaga trýnið sést",
+                              "credit": "Hillbraith · Public Domain",
+                              "source": "https://commons.wikimedia.org/wiki/File:Baby_star-nosed_moles.jpg",
+                              "fit": "cover"
+                        }
+                  },
+                  {
+                        "q": "Þetta er nærmynd af kolkrabba. Hversu mörg hjörtu hefur hann?",
+                        "options": [
+                              "Eitt",
+                              "Tvö",
+                              "Þrjú",
+                              "Fjögur"
+                        ],
+                        "correct": 2,
+                        "fact": "Kolkrabbar hafa þrjú hjörtu: tvö dæla blóði til tálknanna en eitt dælir því til annarra hluta líkamans.",
+                        "media": {
+                              "type": "image",
+                              "tag": "NÆRMYND AF AUGA",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Octopus_eyes_closeup.jpg/960px-Octopus_eyes_closeup.jpg",
+                              "alt": "Nærmynd af auga og húð kolkrabba",
+                              "credit": "Victor Micallef · CC BY-SA 4.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Octopus_eyes_closeup.jpg",
+                              "fit": "cover"
+                        }
+                  }
+            ]
+      },
+      {
+            "id": "visual2",
+            "icon": "🗺️",
+            "title": "Kennileiti frá óvenjulegu sjónarhorni",
+            "subtitle": "Loftmyndir, víðmyndir og myndir sem reyna á staðsetningarskynið",
+            "questions": [
+                  {
+                        "q": "Hvaða sögufræga varnarmannvirki liggur í löngum bugðum yfir fjallshlíðar á myndinni?",
+                        "options": [
+                              "Kínamúrinn",
+                              "Hadrianusarmúrinn",
+                              "Berlínarmúrinn",
+                              "Múrinn í Dubrovnik"
+                        ],
+                        "correct": 0,
+                        "fact": "Kínamúrinn er ekki eitt samfellt mannvirki heldur víðfeðmt kerfi múra og varnargarða sem byggt var á mismunandi tímum.",
+                        "media": {
+                              "type": "image",
+                              "tag": "LOFT- OG VÍÐMYND",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Great_wall_of_china.jpg/960px-Great_wall_of_china.jpg",
+                              "alt": "Kínamúrinn liggur eftir grænum hæðum",
+                              "credit": "Akhtargorshani · CC BY-SA 3.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Great_wall_of_china.jpg",
+                              "fit": "cover"
+                        }
+                  },
+                  {
+                        "q": "Fyrir hvaða alþjóðlegu sýningu var mannvirkið á myndinni reist árið 1889?",
+                        "options": [
+                              "Heimsýninguna í París 1889",
+                              "Heimsýninguna í Chicago 1893",
+                              "Heimsýninguna í London 1851",
+                              "Heimsýninguna í Brussel 1958"
+                        ],
+                        "correct": 0,
+                        "fact": "Eiffel-turninn var byggður sem inngangsbogi að Exposition Universelle í París árið 1889 og átti upphaflega að standa tímabundið.",
+                        "media": {
+                              "type": "image",
+                              "tag": "HVAÐ VAR TILGANGURINN?",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Eiffel_Tower_from_above.JPG/960px-Eiffel_Tower_from_above.JPG",
+                              "alt": "Eiffel-turninn séður úr hærra sjónarhorni með París í bakgrunni",
+                              "credit": "Mdschick · CC BY-SA 3.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_from_above.JPG",
+                              "fit": "contain"
+                        }
+                  },
+                  {
+                        "q": "Í hvaða landi er þessi fjallaborg Inka, sem sést frá Huayna Picchu?",
+                        "options": [
+                              "Bólivíu",
+                              "Perú",
+                              "Ekvador",
+                              "Chile"
+                        ],
+                        "correct": 1,
+                        "fact": "Machu Picchu er í Perú í Andesfjöllum og var reist á 15. öld á tímum Inkaríkisins.",
+                        "media": {
+                              "type": "image",
+                              "tag": "LANDSLAGSGÁTA",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Machu_Picchu_from_above.JPG/960px-Machu_Picchu_from_above.JPG",
+                              "alt": "Machu Picchu séð frá Huayna Picchu",
+                              "credit": "Dinanna1 · CC BY-SA 3.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Machu_Picchu_from_above.JPG",
+                              "fit": "cover"
+                        }
+                  },
+                  {
+                        "q": "Loftmyndin sýnir píramídana í Giza. Hvaða stórborg er næst þessum fornleifastað?",
+                        "options": [
+                              "Alexandría",
+                              "Kaíró",
+                              "Luxor",
+                              "Aswan"
+                        ],
+                        "correct": 1,
+                        "fact": "Giza er í vesturjaðri Kaíró-svæðisins í Egyptalandi. Píramídarnir þrír stóru eru meðal þekktustu minja forn-Egypta.",
+                        "media": {
+                              "type": "image",
+                              "tag": "LOFTMYND",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Giza-pyramids.JPG/960px-Giza-pyramids.JPG",
+                              "alt": "Píramídarnir í Giza séðir ofan frá",
+                              "credit": "Robster1983 · CC0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Giza-pyramids.JPG",
+                              "fit": "cover"
+                        }
+                  },
+                  {
+                        "q": "Berðu saman myndir A og B. Hvor þeirra sýnir hringleikahúsið Colosseum í Róm?",
+                        "options": [
+                              "Mynd A",
+                              "Mynd B",
+                              "Báðar myndir",
+                              "Hvorug mynd"
+                        ],
+                        "correct": 0,
+                        "fact": "Colosseum var stórt hringleikahús í Róm til forna. Það var vígt árið 80 e.Kr. undir stjórn Títusar.",
+                        "media": {
+                              "type": "pair",
+                              "tag": "BERÐU SAMAN",
+                              "items": [
+                                    {
+                                          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Panoramic_View_of_the_Colosseum_in_Rome.jpg/960px-Panoramic_View_of_the_Colosseum_in_Rome.jpg",
+                                          "alt": "Víður útsýnisrammi yfir Colosseum í Róm",
+                                          "label": "MYND A"
+                                    },
+                                    {
+                                          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Machu_Picchu_from_above.JPG/960px-Machu_Picchu_from_above.JPG",
+                                          "alt": "Machu Picchu í Andesfjöllum",
+                                          "label": "MYND B"
+                                    }
+                              ],
+                              "sources": [
+                                    {
+                                          "url": "https://commons.wikimedia.org/wiki/File:Panoramic_View_of_the_Colosseum_in_Rome.jpg",
+                                          "label": "Colosseum: Vacaped3 · CC0"
+                                    },
+                                    {
+                                          "url": "https://commons.wikimedia.org/wiki/File:Machu_Picchu_from_above.JPG",
+                                          "label": "Machu Picchu: Dinanna1 · CC BY-SA 3.0"
+                                    }
+                              ]
+                        }
+                  }
+            ]
+      },
+      {
+            "id": "visual3",
+            "icon": "🖼️",
+            "title": "Listaverk, smáatriði & sjónblekkingar",
+            "subtitle": "Fræg verk, listamenn og mynd sem virðist hreyfast þótt hún sé kyrr",
+            "questions": [
+                  {
+                        "q": "Hver málaði portrettið á myndinni sem er eitt frægasta málverk heims?",
+                        "options": [
+                              "Leonardo da Vinci",
+                              "Michelangelo",
+                              "Raphael",
+                              "Sandro Botticelli"
+                        ],
+                        "correct": 0,
+                        "fact": "Leonardo da Vinci málaði Mona Lisa á fyrri hluta 16. aldar. Verkið er varðveitt í Louvre-safninu í París.",
+                        "media": {
+                              "type": "image",
+                              "tag": "LISTAVERK",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Mona_Lisa.jpg/960px-Mona_Lisa.jpg",
+                              "alt": "Mona Lisa eftir Leonardo da Vinci",
+                              "credit": "Leonardo da Vinci · Public Domain",
+                              "source": "https://commons.wikimedia.org/wiki/File:Mona_Lisa.jpg",
+                              "fit": "contain"
+                        }
+                  },
+                  {
+                        "q": "Hvaða listmálari skapaði þetta næturlandslag með hringiðum og björtum stjörnum?",
+                        "options": [
+                              "Claude Monet",
+                              "Vincent van Gogh",
+                              "Paul Cézanne",
+                              "Edvard Munch"
+                        ],
+                        "correct": 1,
+                        "fact": "Van Gogh málaði Stjörnubjarta nótt árið 1889 meðan hann dvaldi á Saint-Rémy-de-Provence í Suður-Frakklandi.",
+                        "media": {
+                              "type": "image",
+                              "tag": "ÞEKKIRÐU LISTAMANNINN?",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Vincent_van_Gogh_Starry_Night.jpg/960px-Vincent_van_Gogh_Starry_Night.jpg",
+                              "alt": "Stjörnubjört nótt eftir Vincent van Gogh",
+                              "credit": "Vincent van Gogh · Public Domain",
+                              "source": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_Starry_Night.jpg",
+                              "fit": "contain"
+                        }
+                  },
+                  {
+                        "q": "Hvaða japanski listamaður skapaði þessa frægu tréristu með risastórri öldu?",
+                        "options": [
+                              "Hiroshige",
+                              "Katsushika Hokusai",
+                              "Utagawa Kuniyoshi",
+                              "Ogata Kōrin"
+                        ],
+                        "correct": 1,
+                        "fact": "Katsushika Hokusai skapaði Stóru ölduna við Kanagawa um 1831. Verkið er hluti af myndaröðinni „36 útsýni yfir Fuji-fjall“.",
+                        "media": {
+                              "type": "image",
+                              "tag": "JAPÖNSK LIST",
+                              "src": "https://upload.wikimedia.org/wikipedia/commons/7/71/GreatWave.jpg",
+                              "alt": "Stóra aldan við Kanagawa eftir Hokusai",
+                              "credit": "Katsushika Hokusai · Public Domain",
+                              "source": "https://commons.wikimedia.org/wiki/File:GreatWave.jpg",
+                              "fit": "contain"
+                        }
+                  },
+                  {
+                        "q": "Í hvaða mynd — A eða B — sést „Stúlkan með perlueyrnalokkinn“ eftir Johannes Vermeer?",
+                        "options": [
+                              "Mynd A",
+                              "Mynd B",
+                              "Báðar myndir",
+                              "Hvorug mynd"
+                        ],
+                        "correct": 1,
+                        "fact": "Vermeer málaði verkið um 1665. Það er eitt þekktasta verk hollenskrar gullaldar og er varðveitt í Mauritshuis í Haag.",
+                        "media": {
+                              "type": "pair",
+                              "tag": "FINNDU RÉTTA VERKIÐ",
+                              "items": [
+                                    {
+                                          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Mona_Lisa.jpg/960px-Mona_Lisa.jpg",
+                                          "alt": "Mona Lisa eftir Leonardo da Vinci",
+                                          "label": "MYND A"
+                                    },
+                                    {
+                                          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0f/1665_Girl_with_a_Pearl_Earring.jpg/960px-1665_Girl_with_a_Pearl_Earring.jpg",
+                                          "alt": "Stúlkan með perlueyrnalokkinn eftir Johannes Vermeer",
+                                          "label": "MYND B"
+                                    }
+                              ],
+                              "sources": [
+                                    {
+                                          "url": "https://commons.wikimedia.org/wiki/File:Mona_Lisa.jpg",
+                                          "label": "Mona Lisa: Public Domain"
+                                    },
+                                    {
+                                          "url": "https://commons.wikimedia.org/wiki/File:1665_Girl_with_a_Pearl_Earring.jpg",
+                                          "label": "Girl with a Pearl Earring: Public Domain"
+                                    }
+                              ]
+                        }
+                  },
+                  {
+                        "q": "Hvað er óvenjulegt við þessa mynd? Skoðaðu hringina í nokkrar sekúndur.",
+                        "options": [
+                              "Myndin er í raun hreyfimynd",
+                              "Hún er kyrr en virðist hreyfast",
+                              "Hún er þrívíddarmynd",
+                              "Hringirnir breyta um lit þegar þú horfir"
+                        ],
+                        "correct": 1,
+                        "fact": "Þetta er sjónblekking. Kyrr mynd virðist hreyfast vegna samspils birtuskila, stærðar og þess hvernig sjónkerfið vinnur úr mynstrinu.",
+                        "media": {
+                              "type": "image",
+                              "tag": "SJÓNBLEKKING",
+                              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Motion_illusion_in_star_arrangement.png/960px-Motion_illusion_in_star_arrangement.png",
+                              "alt": "Kyrr mynd af grænum hringjum sem virðast snúast inn í miðju",
+                              "credit": "Fiestoforo · CC BY 3.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Motion_illusion_in_star_arrangement.png",
+                              "fit": "contain"
+                        }
+                  }
+            ]
+      },
+      {
+            "id": "visual4",
+            "icon": "🎬",
+            "title": "Myndskeið – hvað gerist?",
+            "subtitle": "Stutt klipp — fylgstu með hreyfingunni og gríptu smáatriðin",
+            "questions": [
+                  {
+                        "q": "Hvað er bisoninn að gera til að komast í grasið undir snjónum?",
+                        "options": [
+                              "Hann plægir snjóinn frá með höfðinu",
+                              "Hann brýtur ísinn með hófunum",
+                              "Hann grafar holu með hornunum",
+                              "Hann bíður eftir að snjórinn bráðni"
+                        ],
+                        "correct": 0,
+                        "fact": "Bisonar nota höfuðið og trýnið til að ýta snjó til hliðar og komast að gróðri undir honum.",
+                        "media": {
+                              "type": "video",
+                              "tag": "MYNDSKEIÐ · 27 SEK.",
+                              "src": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Bison_bison_grazing_in_snow_%28Yellowstone%29.ogv",
+                              "mime": "video/ogg",
+                              "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Bison_bison_grazing_in_snow_%28Yellowstone%29.ogv/960px--Bison_bison_grazing_in_snow_%28Yellowstone%29.ogv.jpg",
+                              "alt": "Bison í Yellowstone ýtir trýninu í gegnum snjó",
+                              "credit": "Yathin S Krishnappa · CC BY-SA 3.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Bison_bison_grazing_in_snow_(Yellowstone).ogv"
+                        }
+                  },
+                  {
+                        "q": "Hvað er karlfuglinn að gera í þessu klippi?",
+                        "options": [
+                              "Hann syngur og kallar",
+                              "Hann fóðrar unga",
+                              "Hann baðar sig",
+                              "Hann byggir hreiður"
+                        ],
+                        "correct": 0,
+                        "fact": "Þetta er karlfugl af tegundinni red-winged blackbird. Karlfuglarnir syngja og kalla gjarnan frá sýnilegum setstöðum.",
+                        "media": {
+                              "type": "video",
+                              "tag": "HLUSTAÐU OG HORFÐU · 38 SEK.",
+                              "src": "https://upload.wikimedia.org/wikipedia/commons/9/94/Male_Red-Winged_Blackbird_%28Agelaius_phoeniceus%29_Singing_-_John_Heinz_National_Wildlife_Refuge.webm",
+                              "mime": "video/webm",
+                              "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Male_Red-Winged_Blackbird_%28Agelaius_phoeniceus%29_Singing_-_John_Heinz_National_Wildlife_Refuge.webm/960px--Male_Red-Winged_Blackbird_%28Agelaius_phoeniceus%29_Singing_-_John_Heinz_National_Wildlife_Refuge.webm.jpg",
+                              "alt": "Karlfugl red-winged blackbird með rauðan og gulan blett á væng",
+                              "credit": "Chuck Homler / FocusOnWildlife.Me · CC BY-SA 4.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Male_Red-Winged_Blackbird_(Agelaius_phoeniceus)_Singing_-_John_Heinz_National_Wildlife_Refuge.webm"
+                        }
+                  },
+                  {
+                        "q": "Fiskurinn tekur snöggt viðbragð og skjótast áfram. Hvaða líkamshluti gefur honum mesta spyrnuna?",
+                        "options": [
+                              "Ugginn á bakinu",
+                              "Sterki sporðurinn",
+                              "Tálknalokið",
+                              "Brjóstuggarnir"
+                        ],
+                        "correct": 1,
+                        "fact": "Karfi getur náð skyndilegri hröðun með kröftugum slögum sporðsins.",
+                        "media": {
+                              "type": "video",
+                              "tag": "HRAÐI · 4 SEK.",
+                              "src": "https://upload.wikimedia.org/wikipedia/commons/0/06/Fish1004.webm",
+                              "mime": "video/webm",
+                              "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Fish1004.webm/500px--Fish1004.webm.jpg",
+                              "alt": "Karfi í vatni rétt áður en hann tekur sprett",
+                              "credit": "Jon Houseman · CC BY-SA 4.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:Fish1004.webm"
+                        }
+                  },
+                  {
+                        "q": "Hvaða náttúrufyrirbæri sést hér yfir Spáni í ágúst 2026?",
+                        "options": [
+                              "Norðurljós",
+                              "Algjör sólmyrkvi",
+                              "Halastjarna",
+                              "Eldgos"
+                        ],
+                        "correct": 1,
+                        "fact": "Algjör sólmyrkvi varð sýnilegur á Spáni 12. ágúst 2026. Í algjörum myrkva hylur tunglið alla sýnilega skífu sólarinnar.",
+                        "media": {
+                              "type": "video",
+                              "tag": "TÍMAHLAUP · 20 SEK.",
+                              "src": "https://upload.wikimedia.org/wikipedia/commons/d/da/SolarEclipse2026Spain%28TimeLapse%29.webm",
+                              "mime": "video/webm",
+                              "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/SolarEclipse2026Spain%28TimeLapse%29.webm/960px--SolarEclipse2026Spain%28TimeLapse%29.webm.jpg",
+                              "alt": "Algjör sólmyrkvi séður yfir Valladolid á Spáni",
+                              "credit": "Plenz · CC BY 3.0",
+                              "source": "https://commons.wikimedia.org/wiki/File:SolarEclipse2026Spain(TimeLapse).webm"
+                        }
+                  },
+                  {
+                        "q": "Í myndskeiðinu fylgir geimfarið Lucy eftir smástirninu Dinkinesh. Hvað er litla fyrirbærið við hlið þess?",
+                        "options": [
+                              "Tungl smástirnisins, Selam",
+                              "Annað geimfar",
+                              "Gervihnöttur á braut um jörðu",
+                              "Halastjarna"
+                        ],
+                        "correct": 0,
+                        "fact": "NASA Lucy fór fram hjá smástirninu Dinkinesh í nóvember 2023 og uppgötvaði þar lítinn fylgihnött sem fékk nafnið Selam.",
+                        "media": {
+                              "type": "video",
+                              "tag": "GEIMFERÐ · 27 SEK.",
+                              "src": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Lucy_Sees_Asteroid_Dinkinesh_in_Detail_%28SVS14596_-_Lucy-Dinkinesh-Encounter%29.webm",
+                              "mime": "video/webm",
+                              "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Lucy_Sees_Asteroid_Dinkinesh_in_Detail_%28SVS14596_-_Lucy-Dinkinesh-Encounter%29.webm/960px--Lucy_Sees_Asteroid_Dinkinesh_in_Detail_%28SVS14596_-_Lucy-Dinkinesh-Encounter%29.webm.jpg",
+                              "alt": "Tímaskekkja af smástirninu Dinkinesh og fylgihnetti þess Selam",
+                              "credit": "NASA Goddard / SwRI / Johns Hopkins APL · Public Domain",
+                              "source": "https://commons.wikimedia.org/wiki/File:Lucy_Sees_Asteroid_Dinkinesh_in_Detail_(SVS14596_-_Lucy-Dinkinesh-Encounter).webm"
+                        }
+                  }
+            ]
+      }
+];
+
     const QUESTION_SETS = {
       thanksgiving: { title: 'Thanksgiving & fjölskyldan', description: 'Hefðir, árið 2026, tónlist og fjölskylduspurningar', categories: DEFAULT_CATEGORIES },
       brands: { title: 'Lógó • Beauty Products • Tækni • Matur', description: 'Vörumerki, snyrtivörur, tækni og matarþekking', categories: BRAND_CATEGORIES },
-      hard: { title: 'MJÖG ERFITT • Saga • Vísindi • Landafræði • Listir', description: 'Krefjandi spurningar fyrir harðkjarna fróðleiksunnendur', categories: HARD_CATEGORIES }
+      hard: { title: 'MJÖG ERFITT • Saga • Vísindi • Landafræði • Listir', description: 'Krefjandi spurningar fyrir harðkjarna fróðleiksunnendur', categories: HARD_CATEGORIES },
+      visual: { title: 'MYND & MYNDSKEIÐ • Sjónræn áskorun', description: 'Myndir, myndskeið, nærmyndir og sjónblekkingar', categories: VISUAL_CATEGORIES }
     };
 
     let activeQuestionSetId = 'thanksgiving';
@@ -1429,7 +1904,7 @@
       exportDocument.querySelectorAll('script[data-bard-client-injected=\"true\"], script[ws-interception-config]').forEach(script => script.remove());
       const rawHtml = '<!DOCTYPE html>\n' + exportDocument.outerHTML;
       const serializedCategories = JSON.stringify(categories, null, 6);
-      const dataConstant = activeQuestionSetId === 'hard' ? 'HARD_CATEGORIES' : (activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES');
+      const dataConstant = activeQuestionSetId === 'visual' ? 'VISUAL_CATEGORIES' : (activeQuestionSetId === 'hard' ? 'HARD_CATEGORIES' : (activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES'));
       const dataPattern = new RegExp('const ' + dataConstant + ' = \\[\\s\\S]*?\\n\\];');
       let updatedHtml = rawHtml.replace(dataPattern, 'const ' + dataConstant + ' = ' + serializedCategories + ';');
       updatedHtml = updatedHtml.replace(
@@ -1986,7 +2461,7 @@
           <div class="text-center mb-8 sm:mb-10">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 text-xs sm:text-sm font-bold mb-4">
               <span>📺</span>
-              <span>Þrjú spurningasett í boði • 19 eða 20 spurningar</span>
+              <span>Fjögur spurningasett í boði • 19–20 spurningar</span>
             </div>
             <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 tracking-tight leading-tight">
               Spurningakeppni <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">kvöldsins!</span>
@@ -2029,6 +2504,14 @@
                 <p class="text-xs text-cream-100/70 mt-2 mb-4">Fyrir þau sem vilja alvöru áskorun — fjögur sérhæfð svið og engar auðveldar spurningar.</p>
                 <button onclick="selectAndOpenHostLobby('hard')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-700 text-white font-extrabold text-sm shadow-lg">🔥 Velja erfiða settið</button>
                 <button onclick="selectSetAndOpenEditor('hard')" class="mt-2 text-xs font-bold text-red-300 hover:underline">✏️ Breyta spurningum</button>
+              </div>
+              <div class="p-5 rounded-2xl bg-plum-950/75 border border-sky-400/40 flex flex-col">
+                <div class="text-3xl mb-2">🎬</div>
+                <div class="text-[11px] uppercase tracking-wider font-extrabold text-sky-300">Sett 4 • 20 spurningar • MYND & MYNDSKEIÐ</div>
+                <h4 class="font-display text-lg sm:text-xl font-extrabold text-cream-50 mt-1">Sjónræn áskorun</h4>
+                <p class="text-xs text-cream-100/70 mt-2 mb-4">Nærmyndagátur, kennileiti, listaverk, sjónblekkingar og stutt myndskeið þar sem þarf að fylgjast vel með.</p>
+                <button onclick="selectAndOpenHostLobby('visual')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-extrabold text-sm shadow-lg">🎥 Velja sjónræna settið</button>
+                <button onclick="selectSetAndOpenEditor('visual')" class="mt-2 text-xs font-bold text-sky-300 hover:underline">✏️ Breyta spurningum</button>
               </div>
             </div>
 
@@ -2244,6 +2727,51 @@
       render();
     }
 
+    function renderMediaCreditHtml(media) {
+      const sources = Array.isArray(media.sources)
+        ? media.sources
+        : (media.source ? [{ url: media.source, label: media.credit || 'Heimild' }] : []);
+      if (!sources.length) return '';
+      return '<div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[10px] leading-snug text-cream-100/50">' +
+        sources.map(item => '<a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener noreferrer" class="underline decoration-cream-100/25 hover:text-cream-100/80">' + escapeHtml(item.label || 'Myndheimild') + '</a>').join('') +
+        '</div>';
+    }
+
+    function renderQuestionMediaHtml(question, mode = 'host') {
+      const media = question && question.media;
+      if (!media) return '';
+      const maxHeight = mode === 'host' ? '380px' : '290px';
+      const tag = media.tag
+        ? '<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-400/15 border border-sky-300/25 text-sky-200 text-[10px] font-extrabold uppercase tracking-wider mb-3">' + escapeHtml(media.tag) + '</div>'
+        : '';
+
+      if (media.type === 'pair' && Array.isArray(media.items)) {
+        return '<section class="my-5 rounded-2xl border border-amberwarm-400/20 bg-plum-950/65 p-3 sm:p-4">' + tag +
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">' +
+          media.items.map((item, index) =>
+            '<figure class="rounded-xl overflow-hidden bg-black/30 border border-cream-100/10">' +
+              '<div class="px-3 py-2 text-center text-[10px] font-extrabold tracking-widest text-amberwarm-300">' + escapeHtml(item.label || ('MYND ' + String.fromCharCode(65 + index))) + '</div>' +
+              '<img src="' + escapeHtml(item.src) + '" alt="' + escapeHtml(item.alt || '') + '" loading="eager" decoding="async" class="w-full object-contain bg-black/25" style="max-height:' + maxHeight + ';">' +
+            '</figure>'
+          ).join('') +
+          '</div>' + renderMediaCreditHtml(media) + '</section>';
+      }
+
+      if (media.type === 'video') {
+        return '<section class="my-5 rounded-2xl border border-sky-300/25 bg-black/35 p-3 sm:p-4">' + tag +
+          '<video controls playsinline preload="metadata" poster="' + escapeHtml(media.poster || '') + '" class="w-full rounded-xl bg-black" style="max-height:' + maxHeight + ';">' +
+            '<source src="' + escapeHtml(media.src) + '" type="' + escapeHtml(media.mime || 'video/webm') + '">' +
+            'Ekki tókst að spila myndskeiðið í þessum vafra.' +
+          '</video>' +
+          '<p class="mt-2 text-[10px] text-cream-100/55">Ýttu á play til að horfa á myndskeiðið. Hljóð er virkt þar sem það á við.</p>' +
+          renderMediaCreditHtml(media) + '</section>';
+      }
+
+      return '<section class="my-5 rounded-2xl border border-amberwarm-400/20 bg-plum-950/65 p-3 sm:p-4">' + tag +
+        '<img src="' + escapeHtml(media.src) + '" alt="' + escapeHtml(media.alt || '') + '" loading="eager" decoding="async" class="w-full rounded-xl bg-black/25" style="max-height:' + maxHeight + ';object-fit:' + (media.fit === 'cover' ? 'cover' : 'contain') + ';object-position:center;">' +
+        renderMediaCreditHtml(media) + '</section>';
+    }
+
     function renderHostQuizView() {
       const cat = categories[state.currentCatIndex];
       const question = cat.questions[state.currentQIndex];
@@ -2361,6 +2889,8 @@
               <h2 class="font-display text-2xl sm:text-3xl font-bold text-cream-50 leading-snug mb-6">
                 ${escapeHtml(question.q)}
               </h2>
+
+              ${renderQuestionMediaHtml(question, 'host')}
 
               <!-- 2x2 Grid of Options for Widescreen TV with Live Answer Distribution Bars -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
@@ -2811,6 +3341,8 @@
               ${escapeHtml(question.q)}
             </h2>
 
+            ${renderQuestionMediaHtml(question, 'player')}
+
             <!-- Answer Options -->
             <div class="space-y-3">
               ${question.options.map((opt, idx) => {
@@ -3063,6 +3595,12 @@
     function getPlayerRankTitle(score, total) {
       const maxPts = total * 1000;
       const pct = maxPts > 0 ? score / maxPts : 0;
+      if (activeQuestionSetId === 'visual') {
+        if (pct >= 0.85) return { title: "Sjónrænn snillingur 🎬", desc: "Þú sérð smáatriðin sem aðrir missa af!" };
+        if (pct >= 0.65) return { title: "Augnaglöggur keppandi 👀", desc: "Glæsilegur árangur í myndum, myndskeiðum og sjónblekkingum." };
+        if (pct >= 0.45) return { title: "Myndgreinir 🔎", desc: "Gott skor — næst tekurðu eftir enn fleiri smáatriðum." };
+        return { title: "Skarpur áhorfandi 🎨", desc: "Þetta reyndi á augun! Takk fyrir að taka þátt." };
+      }
       if (activeQuestionSetId === 'hard') {
         if (pct >= 0.85) return { title: "Alfræðisnillingur 🧠", desc: "Frábær frammistaða á sannkölluðu sérfræðiprófi!" };
         if (pct >= 0.65) return { title: "Sérfræðingur 📚", desc: "Mjög sterkt skor á erfiðasta settinu!" };
