@@ -956,7 +956,7 @@
                         "fact": "Parmigiano Reggiano er upprunaverndaður ítalskur ostur frá afmörkuðu svæði á Norður-Ítalíu."
                   },
                   {
-                        "q": "Hvaða krydd er unnið úr fræni saffrankrókussins og er oft kallað dýrasta krydd heims?",
+                        "q": "Hvaða krydd er handtínt úr blómum saffrankrókussins og er oft kallað dýrasta krydd heims?",
                         "options": [
                               "Kardimommur",
                               "Saffran",
@@ -964,7 +964,7 @@
                               "Kúrkuma"
                         ],
                         "correct": 1,
-                        "fact": "Saffran er handtínt úr frænum krókusblómsins og þarf gríðarlega mörg blóm til að framleiða lítið magn."
+                        "fact": "Saffran fæst úr rauðum þráðum blómsins og þarf gríðarlega mörg blóm til að framleiða lítið magn."
                   },
                   {
                         "q": "Úr hverju er japanska kryddmaukið miso yfirleitt búið til?",
@@ -1174,7 +1174,7 @@
       const rawHtml = '<!DOCTYPE html>\n' + exportDocument.outerHTML;
       const serializedCategories = JSON.stringify(categories, null, 6);
       const dataConstant = activeQuestionSetId === 'brands' ? 'BRAND_CATEGORIES' : 'DEFAULT_CATEGORIES';
-      const dataPattern = new RegExp('const ' + dataConstant + ' = \\[\\s\\S]*?\\n    \\];');
+      const dataPattern = new RegExp('const ' + dataConstant + ' = \\[\\s\\S]*?\\n\\];');
       let updatedHtml = rawHtml.replace(dataPattern, 'const ' + dataConstant + ' = ' + serializedCategories + ';');
       updatedHtml = updatedHtml.replace(
         /let FIREBASE_DB_URL = "[^"]*";/,
@@ -1729,7 +1729,7 @@
           <div class="text-center mb-8 sm:mb-10">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amberwarm-400/15 border border-amberwarm-400/35 text-amberwarm-300 text-xs sm:text-sm font-bold mb-4">
               <span>📺</span>
-              <span>Rauntíma Pub Quiz • 20 spurningar í hvoru setti</span>
+              <span>Tvö spurningasett í boði • 19 eða 20 spurningar</span>
             </div>
             <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-cream-50 tracking-tight leading-tight">
               Spurningakeppni <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberwarm-300 via-amberwarm-400 to-cranberry-600">kvöldsins!</span>
@@ -1751,7 +1751,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
               <div class="p-5 rounded-2xl bg-plum-950/75 border border-amberwarm-400/35 flex flex-col">
                 <div class="text-3xl mb-2">🦃</div>
-                <div class="text-[11px] uppercase tracking-wider font-extrabold text-amberwarm-300">Sett 1 • 20 spurningar</div>
+                <div class="text-[11px] uppercase tracking-wider font-extrabold text-amberwarm-300">Sett 1 • 19 spurningar</div>
                 <h4 class="font-display text-lg sm:text-xl font-extrabold text-cream-50 mt-1">Thanksgiving & fjölskyldan</h4>
                 <p class="text-xs text-cream-100/70 mt-2 mb-4">Þakkargjörð, árið 2026, tónlist og kvikmyndir ásamt sérsniðnum fjölskylduspurningum.</p>
                 <button onclick="selectAndOpenHostLobby('thanksgiving')" class="mt-auto w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amberwarm-400 to-cranberry-600 text-white font-extrabold text-sm shadow-lg">🚀 Velja þetta sett</button>
@@ -1797,7 +1797,7 @@
             <div class="flex items-center justify-between pb-3 border-b border-amberwarm-400/15">
               <div>
                 <h4 class="font-display font-bold text-lg text-cream-50">Flokkar í valda settinu</h4>
-                <p class="text-xs text-cream-100/70">5 spurningar í hverjum flokki • Samtals 20 spurningar</p>
+                <p class="text-xs text-cream-100/70">Fjöldi spurninga í flokkum • ${getTotalQuestionsCount()} samtals</p>
               </div>
               <span class="text-xs font-bold text-amberwarm-300">4 flokkar</span>
             </div>
@@ -2764,6 +2764,12 @@
     function getPlayerRankTitle(score, total) {
       const maxPts = total * 1000;
       const pct = maxPts > 0 ? score / maxPts : 0;
+      if (activeQuestionSetId === 'brands') {
+        if (pct >= 0.85) return { title: "Alfræðimeistari 👑", desc: "Frábær frammistaða – þú kannt skil á vörumerkjum, tækni og ýmsu fleiru!" };
+        if (pct >= 0.65) return { title: "Þekkingarfræðingur 🧠", desc: "Glæsilegur árangur! Þú ert með þetta allt á hreinu." };
+        if (pct >= 0.45) return { title: "Fróðleiksfús 💡", desc: "Mjög flottur árangur – vel yfir meðallagi!" };
+        return { title: "Góður keppandi ✨", desc: "Góð tilraun! Það er alltaf gaman að vera með." };
+      }
       if (pct >= 0.85) return { title: "Kalkúnameistari fjölskyldunnar 👑", desc: "Ótrúleg frammistaða og eldingarhraði! Þú átt skilið stærsta bita af graskersbökunni." };
       if (pct >= 0.65) return { title: "Þakkargjörðarsérfræðingur 🦃", desc: "Glæsilegur árangur! Þú ert með þetta allt á hreinu." };
       if (pct >= 0.45) return { title: "Fyllingar-fagmanneskja 🥧", desc: "Mjög flottur árangur – vel yfir meðallagi!" };
